@@ -20,7 +20,12 @@
         "drupal/core-recommended": "^9.2",
         "pantheon-systems/drupal-integrations": "^9",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "drush/drush": "^11 || ^12",
+        "drupal/gin": "^3.0@beta",
+        "drupal/admin_toolbar": "^3.1",
+        "drupal/pathauto": "^1.10",
+        "drupal/gin_login": "^1.2",
+        "drupal/group": "^1.4"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -28,7 +33,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "drupal-scaffold": {
