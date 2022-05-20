@@ -1,0 +1,40 @@
+uuid: 404df6fe-6f59-4019-a450-80776604c051
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.league.field_parent_sport
+    - group.type.league
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group.league.default
+targetEntityType: group
+bundle: league
+mode: default
+content:
+  field_parent_sport:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  uid: true

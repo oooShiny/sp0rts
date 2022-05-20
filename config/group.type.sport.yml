@@ -1,0 +1,12 @@
+uuid: 473fe073-fbf9-43a9-85b3-afebd75731d7
+langcode: en
+status: true
+dependencies: {  }
+id: sport
+label: Sport
+description: ''
+new_revision: false
+creator_membership: true
+creator_wizard: true
+creator_roles:
+  - sport-admin

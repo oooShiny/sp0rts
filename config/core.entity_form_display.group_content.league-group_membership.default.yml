@@ -1,0 +1,45 @@
+uuid: fc5e93c0-37be-4fc8-b1a3-f51f4ed925af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_content.league-group_membership.group_roles
+    - group.content_type.league-group_membership
+  module:
+    - field_layout
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group_content.league-group_membership.default
+targetEntityType: group_content
+bundle: league-group_membership
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  group_roles:
+    type: options_buttons
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

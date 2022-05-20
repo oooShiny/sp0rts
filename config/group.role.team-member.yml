@@ -1,0 +1,14 @@
+uuid: dac01cfd-83a2-4e6a-956e-03300d8ff98b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+id: team-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: team
+permissions_ui: true
+permissions: {  }

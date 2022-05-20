@@ -1,0 +1,14 @@
+uuid: 3217553d-8579-458d-b52a-05d0376da9eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.sport
+id: sport-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: sport
+permissions_ui: true
+permissions: {  }

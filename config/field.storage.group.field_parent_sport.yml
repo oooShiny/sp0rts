@@ -1,0 +1,19 @@
+uuid: 60410217-91c5-4432-b878-4518a243dd18
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_parent_sport
+field_name: field_parent_sport
+entity_type: group
+type: entity_reference
+settings:
+  target_type: group
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

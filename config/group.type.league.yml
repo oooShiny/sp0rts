@@ -1,0 +1,12 @@
+uuid: e57d4682-32fb-4d1a-9680-bae63dede6f0
+langcode: en
+status: true
+dependencies: {  }
+id: league
+label: League
+description: ''
+new_revision: true
+creator_membership: true
+creator_wizard: true
+creator_roles:
+  - league-admin

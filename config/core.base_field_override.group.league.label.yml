@@ -1,0 +1,18 @@
+uuid: 2626f2b1-9e26-48f1-beb8-69502e2cafb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+id: group.league.label
+field_name: label
+entity_type: group
+bundle: league
+label: 'League Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

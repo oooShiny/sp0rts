@@ -1,0 +1,19 @@
+uuid: 58d2d1b5-5cfe-4285-a94e-7930b7fa3ff0
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_parent_league
+field_name: field_parent_league
+entity_type: group
+type: entity_reference
+settings:
+  target_type: group
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

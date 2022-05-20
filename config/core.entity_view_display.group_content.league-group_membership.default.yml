@@ -1,0 +1,31 @@
+uuid: 12fb30a7-bfe8-49bf-a7fb-ff69c863868c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_content.league-group_membership.group_roles
+    - group.content_type.league-group_membership
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group_content.league-group_membership.default
+targetEntityType: group_content
+bundle: league-group_membership
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

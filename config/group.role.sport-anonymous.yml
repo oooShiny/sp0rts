@@ -1,0 +1,14 @@
+uuid: 1b7c01b3-7619-4a46-bbce-658278b19d7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.sport
+id: sport-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: sport
+permissions_ui: true
+permissions: {  }

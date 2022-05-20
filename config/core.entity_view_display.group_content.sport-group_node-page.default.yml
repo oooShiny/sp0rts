@@ -1,0 +1,32 @@
+uuid: 8daddf7b-c75c-4eae-bb40-001b76bf13d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_content.sport-group_node-page.field_header_image
+    - group.content_type.sport-group_node-page
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group_content.sport-group_node-page.default
+targetEntityType: group_content
+bundle: sport-group_node-page
+mode: default
+content:
+  field_header_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

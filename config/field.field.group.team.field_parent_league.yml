@@ -1,0 +1,29 @@
+uuid: 27204c9f-966a-4aa0-b23e-f25163f07a79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_parent_league
+    - group.type.league
+    - group.type.team
+id: group.team.field_parent_league
+field_name: field_parent_league
+entity_type: group
+bundle: team
+label: 'Parent League'
+description: 'Select in which league this team belongs.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      league: league
+    sort:
+      field: label
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+uuid: f1204419-dc25-4b56-a21a-7f8bf524bff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+id: league-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: league
+permissions_ui: true
+permissions: {  }

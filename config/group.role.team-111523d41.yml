@@ -1,0 +1,17 @@
+uuid: 1f8580d2-1069-4390-9286-126e742d559a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+  enforced:
+    config:
+      - user.role.content_editor
+id: team-111523d41
+label: 'Content editor'
+weight: 2
+internal: true
+audience: outsider
+group_type: team
+permissions_ui: false
+permissions: {  }

@@ -1,0 +1,14 @@
+uuid: be37354e-c963-49b9-a048-623e977b7b4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+id: league-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: league
+permissions_ui: true
+permissions: {  }

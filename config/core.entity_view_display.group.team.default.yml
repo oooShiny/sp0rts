@@ -1,0 +1,40 @@
+uuid: eda68f85-14a3-4c4a-98d9-547ab0b00d8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.team.field_parent_league
+    - group.type.team
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group.team.default
+targetEntityType: group
+bundle: team
+mode: default
+content:
+  field_parent_league:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  uid: true

@@ -1,0 +1,29 @@
+uuid: 2c7c154a-bf20-447c-b9b5-6a8c0ef9ae31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_header_image
+    - group.type.sport
+    - media.type.image
+id: group.sport.field_header_image
+field_name: field_header_image
+entity_type: group
+bundle: sport
+label: 'Header Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

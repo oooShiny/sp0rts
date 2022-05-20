@@ -1,0 +1,33 @@
+uuid: 311030c1-3212-49ed-a6a0-9feb585fe79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.league_teams
+  module:
+    - group
+    - views
+  theme:
+    - bartik
+id: views_block__league_teams_block_1
+theme: bartik
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'views_block:league_teams-block_1'
+settings:
+  id: 'views_block:league_teams-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league

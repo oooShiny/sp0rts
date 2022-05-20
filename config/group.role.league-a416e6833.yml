@@ -1,0 +1,17 @@
+uuid: 82cd3d6e-f668-4cc9-8c44-e4f3c85675e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+  enforced:
+    config:
+      - user.role.administrator
+id: league-a416e6833
+label: Administrator
+weight: 3
+internal: true
+audience: outsider
+group_type: league
+permissions_ui: false
+permissions: {  }

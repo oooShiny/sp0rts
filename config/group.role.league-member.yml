@@ -1,0 +1,14 @@
+uuid: 6cc91eae-c84f-4816-99f6-6c4a166e0612
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+id: league-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: league
+permissions_ui: true
+permissions: {  }

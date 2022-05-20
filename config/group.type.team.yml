@@ -1,0 +1,12 @@
+uuid: a82953a8-d246-4f55-ad67-bf579ee4931c
+langcode: en
+status: true
+dependencies: {  }
+id: team
+label: Team
+description: ''
+new_revision: true
+creator_membership: true
+creator_wizard: true
+creator_roles:
+  - team-admin
