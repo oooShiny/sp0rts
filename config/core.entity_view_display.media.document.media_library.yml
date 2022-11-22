@@ -10,12 +10,39 @@ dependencies:
   module:
     - field_layout
     - image
+    - layout_builder
     - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          745ccce2-3d9d-48c7-951d-57c8c637b6ef:
+            uuid: 745ccce2-3d9d-48c7-951d-57c8c637b6ef
+            region: content
+            configuration:
+              id: 'field_block:media:document:thumbnail'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: I5UTk5ubfYtD3-bkArNVwSyFASGkM7D3OATxRwID9I4
 id: media.document.media_library

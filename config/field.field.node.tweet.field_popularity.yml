@@ -1,20 +1,20 @@
-uuid: f8b9f4a8-4730-4a80-9155-e04f527baa6e
+uuid: c1007864-1d1a-4b5d-8873-eba4fca32ddf
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_popularity
-    - node.type.page
+    - node.type.tweet
   module:
     - radioactivity
-id: node.page.field_popularity
+id: node.tweet.field_popularity
 field_name: field_popularity
 entity_type: node
-bundle: page
+bundle: tweet
 label: Popularity
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

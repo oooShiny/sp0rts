@@ -74,8 +74,6 @@
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
   <footer>
-
-
     {#
       Indicate the semantic relationship between parent and child comments for
       accessibility. The list is difficult to navigate in a screen reader
@@ -85,16 +83,9 @@
       <p class="visually-hidden">{{ parent }}</p>
     {% endif %}
 
-{#    {{ permalink }}#}
   </footer>
 
   <div{{ content_attributes }}>
-    {% if title %}
-      {{ title_prefix }}
-      <h3{{ title_attributes }}>{{ title }}</h3>
-      {{ title_suffix }}
-    {% endif %}
     {{ content }}
-    {{ submitted }}
   </div>
 </article>

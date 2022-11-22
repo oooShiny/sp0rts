@@ -1,15 +1,15 @@
-uuid: 37f9dd1e-d9b8-456e-8b5e-153f8ec37213
+uuid: d2c74b91-0378-40f4-b3f1-1c33c641f607
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.node.highlight.body
+    - node.type.highlight
   module:
     - field_layout
-    - image
     - layout_builder
     - layout_discovery
+    - text
     - user
 third_party_settings:
   field_layout:
@@ -24,53 +24,47 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          790b5945-d485-4b1f-a0fc-21975cc363a9:
-            uuid: 790b5945-d485-4b1f-a0fc-21975cc363a9
+          847f29cc-f727-43ed-a446-452dd6e4d22a:
+            uuid: 847f29cc-f727-43ed-a446-452dd6e4d22a
             region: content
             configuration:
-              id: 'field_block:user:user:user_picture'
+              id: 'extra_field_block:node:highlight:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          ce2196d7-4a74-4b3b-ba73-19f792986499:
+            uuid: ce2196d7-4a74-4b3b-ba73-19f792986499
+            region: content
+            configuration:
+              id: 'field_block:node:highlight:body'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: image
+                type: text_default
                 label: hidden
-                settings:
-                  image_link: content
-                  image_style: thumbnail
+                settings: {  }
                 third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          c1b1a480-23bc-463a-8ff9-73a6c310a55f:
-            uuid: c1b1a480-23bc-463a-8ff9-73a6c310a55f
-            region: content
-            configuration:
-              id: 'extra_field_block:user:user:member_for'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
             weight: 1
             additional: {  }
         third_party_settings: {  }
-_core:
-  default_config_hash: E1qmUI2SlozLlJ308jfMMFKT67l1p6PywE2LTRbeYS4
-id: user.user.default
-targetEntityType: user
-bundle: user
+id: node.highlight.default
+targetEntityType: node
+bundle: highlight
 mode: default
 content:
-  member_for:
+  body:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 101
     region: content
-  user_picture:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: thumbnail
+  links:
+    settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 100
     region: content
 hidden: {  }

@@ -22,3 +22,12 @@ aside div.views-element-container {
 a {
     font-weight: bold;
 }
+
+.indented {
+    padding-left: 2em;
+}
+
+.layout--twocol-section.layout--twocol-section--25-75 > .layout__region--first {
+    flex: 0 1 10%;
+}
+

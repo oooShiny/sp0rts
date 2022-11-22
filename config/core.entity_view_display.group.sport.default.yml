@@ -7,12 +7,55 @@ dependencies:
     - group.type.sport
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          07cc2fa6-e08c-449c-b95d-580787ab84d4:
+            uuid: 07cc2fa6-e08c-449c-b95d-580787ab84d4
+            region: content
+            configuration:
+              id: 'field_block:group:sport:label'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          f44e4462-a48e-4c91-aeed-a0652f71dc0b:
+            uuid: f44e4462-a48e-4c91-aeed-a0652f71dc0b
+            region: content
+            configuration:
+              id: 'field_block:group:sport:field_header_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 id: group.sport.default
 targetEntityType: group
 bundle: sport

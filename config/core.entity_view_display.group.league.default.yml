@@ -12,6 +12,7 @@ dependencies:
   module:
     - field_layout
     - image
+    - layout_builder
     - layout_discovery
     - link
 third_party_settings:
@@ -19,6 +20,104 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0fa36f65-b833-4956-9a79-c0dfc60d491e:
+            uuid: 0fa36f65-b833-4956-9a79-c0dfc60d491e
+            region: content
+            configuration:
+              id: 'field_block:group:league:label'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          1cbbfcd9-82c9-467b-84d3-94fa2995fdf4:
+            uuid: 1cbbfcd9-82c9-467b-84d3-94fa2995fdf4
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_parent_sport'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          65c126b1-4ebc-4656-8b41-7780c7100bd6:
+            uuid: 65c126b1-4ebc-4656-8b41-7780c7100bd6
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_youtube_channel'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          568ab66a-0f32-4935-a64d-18dc2e10297d:
+            uuid: 568ab66a-0f32-4935-a64d-18dc2e10297d
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_twitter_account'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          01767437-dffc-4590-9a9e-0bb72ef88406:
+            uuid: 01767437-dffc-4590-9a9e-0bb72ef88406
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_logo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
 id: group.league.default
 targetEntityType: group
 bundle: league

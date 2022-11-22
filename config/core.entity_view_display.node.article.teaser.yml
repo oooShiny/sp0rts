@@ -13,6 +13,7 @@ dependencies:
   module:
     - field_layout
     - image
+    - layout_builder
     - layout_discovery
     - text
     - user
@@ -21,6 +22,74 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          b60634bf-a091-473d-a045-61bfec294d26:
+            uuid: b60634bf-a091-473d-a045-61bfec294d26
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: medium
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          eaee3d4e-81a2-4946-9928-6d6cfbc71ebf:
+            uuid: eaee3d4e-81a2-4946-9928-6d6cfbc71ebf
+            region: content
+            configuration:
+              id: 'field_block:node:article:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          a7d5dfab-e283-482b-be28-022a052e4dc0:
+            uuid: a7d5dfab-e283-482b-be28-022a052e4dc0
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          33946532-b1ca-49ad-b72c-81e25d4bb1eb:
+            uuid: 33946532-b1ca-49ad-b72c-81e25d4bb1eb
+            region: content
+            configuration:
+              id: 'extra_field_block:node:article:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: 0ur5-yZyR8pJ3lugC_Micbr6V_tpMWz-yHFhtuLcZo8
 id: node.article.teaser
@@ -54,9 +123,9 @@ content:
     weight: 10
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
 hidden:
   comment: true
-  field_image: true
-  field_tags: true

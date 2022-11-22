@@ -1,18 +1,16 @@
-uuid: 6b01a3c2-8854-4dc2-b85f-607c0f6d0ccc
+uuid: 00f4f44c-7220-4a57-b9d5-5ddc3bc9de0e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.page
+    - node.type.highlight
   module:
     - text
-_core:
-  default_config_hash: KgVkxLl_K3E3lvN6CEoWQIDT0V8J4Mv-fVYrAIc7-FE
-id: node.page.body
+id: node.highlight.body
 field_name: body
 entity_type: node
-bundle: page
+bundle: highlight
 label: Body
 description: ''
 required: false

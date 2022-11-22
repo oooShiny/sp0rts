@@ -4,6 +4,9 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
 
+/**
+ * Add imported tweets to groups based on twitter URL.
+ */
 function sports_importer_entity_update(EntityInterface $entity) {
   if ($entity->bundle() == 'tweet') {
 
@@ -20,5 +23,5 @@ function sports_importer_entity_update(EntityInterface $entity) {
       $group->addContent($node, $type);
     }
   }
-
 }
+

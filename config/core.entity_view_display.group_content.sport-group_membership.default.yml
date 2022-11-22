@@ -7,12 +7,38 @@ dependencies:
     - group.content_type.sport-group_membership
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          7bdf1680-d826-46b5-a32c-b1f20aa188fd:
+            uuid: 7bdf1680-d826-46b5-a32c-b1f20aa188fd
+            region: content
+            configuration:
+              id: 'field_block:group_content:sport-group_membership:group_roles'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: group_content.sport-group_membership.default
 targetEntityType: group_content
 bundle: sport-group_membership

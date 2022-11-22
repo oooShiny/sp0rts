@@ -16,6 +16,7 @@ dependencies:
   module:
     - field_layout
     - image
+    - layout_builder
     - layout_discovery
     - link
     - media
@@ -24,6 +25,137 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          485c1058-28d9-4c62-9a66-ee1c935fc935:
+            uuid: 485c1058-28d9-4c62-9a66-ee1c935fc935
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_header_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          3052a270-701d-42ba-be72-9c7a9c67cca6:
+            uuid: 3052a270-701d-42ba-be72-9c7a9c67cca6
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_parent_league'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          a14b6955-69c7-40b5-a4dc-ca09443cfda8:
+            uuid: a14b6955-69c7-40b5-a4dc-ca09443cfda8
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_youtube_channel'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: null
+                  url_only: true
+                  url_plain: true
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          23482dec-3bf9-4721-a03e-f38bcbfb916f:
+            uuid: 23482dec-3bf9-4721-a03e-f38bcbfb916f
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_twitter_account'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: null
+                  url_only: true
+                  url_plain: true
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          a634682e-7ae5-4f3e-ad32-895733f61381:
+            uuid: a634682e-7ae5-4f3e-ad32-895733f61381
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_parent_sport'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          c111843c-fa38-4b53-98a8-09db5d30e22e:
+            uuid: c111843c-fa38-4b53-98a8-09db5d30e22e
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_logo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          730840f8-eba7-46c2-bce3-aa4c4bb4cb99:
+            uuid: 730840f8-eba7-46c2-bce3-aa4c4bb4cb99
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_conference_division'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+        third_party_settings: {  }
 id: group.team.default
 targetEntityType: group
 bundle: team

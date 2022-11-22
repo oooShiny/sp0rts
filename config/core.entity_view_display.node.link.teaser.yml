@@ -10,6 +10,7 @@ dependencies:
     - node.type.link
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
     - radioactivity
     - user
@@ -18,6 +19,51 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0e12f84d-4e65-442a-ad6c-45d2f164851e:
+            uuid: 0e12f84d-4e65-442a-ad6c-45d2f164851e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:link:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          febe6b1d-5a5b-47fc-a6eb-df70afdf08a9:
+            uuid: febe6b1d-5a5b-47fc-a6eb-df70afdf08a9
+            region: content
+            configuration:
+              id: 'field_block:node:link:field_popularity'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: radioactivity_reference_value
+                label: above
+                settings:
+                  decimals: !!float 0
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          7d9e2794-e867-4377-ab71-72cfb7658232:
+            uuid: 7d9e2794-e867-4377-ab71-72cfb7658232
+            region: content
+            configuration:
+              id: 'extra_field_block:node:link:rate_vote'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.link.teaser
 targetEntityType: node
 bundle: link

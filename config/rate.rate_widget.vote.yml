@@ -7,11 +7,15 @@ label: Vote
 template: thumbsupdown
 value_type: points
 entity_types:
+  - node.highlight
   - node.link
   - node.text_post
+  - node.tweet
 comment_types:
+  - node.highlight
   - node.link
   - node.text_post
+  - node.tweet
 options:
   -
     value: '1'

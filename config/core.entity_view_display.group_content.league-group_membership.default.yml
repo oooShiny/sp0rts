@@ -7,12 +7,38 @@ dependencies:
     - group.content_type.league-group_membership
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          8898c6b4-1d8a-4ea2-b916-07716b1269ed:
+            uuid: 8898c6b4-1d8a-4ea2-b916-07716b1269ed
+            region: content
+            configuration:
+              id: 'field_block:group_content:league-group_membership:group_roles'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: group_content.league-group_membership.default
 targetEntityType: group_content
 bundle: league-group_membership

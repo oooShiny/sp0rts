@@ -10,6 +10,7 @@ dependencies:
     - node.type.text_post
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
     - radioactivity
     - user
@@ -18,6 +19,53 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0c11b3b3-0447-46cc-9955-eaa4a7b9da99:
+            uuid: 0c11b3b3-0447-46cc-9955-eaa4a7b9da99
+            region: content
+            configuration:
+              id: 'extra_field_block:node:text_post:rate_vote'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          cfc05790-d92e-4148-b2c5-b66c6dcb15af:
+            uuid: cfc05790-d92e-4148-b2c5-b66c6dcb15af
+            region: content
+            configuration:
+              id: 'extra_field_block:node:text_post:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          488a02d3-2e96-4af5-8c09-5bf90dcff508:
+            uuid: 488a02d3-2e96-4af5-8c09-5bf90dcff508
+            region: content
+            configuration:
+              id: 'field_block:node:text_post:field_popularity'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: radioactivity_reference_emitter
+                label: hidden
+                settings:
+                  energy: !!float 10
+                  display: false
+                  decimals: !!float 0
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.text_post.teaser
 targetEntityType: node
 bundle: text_post

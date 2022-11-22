@@ -7,6 +7,7 @@ dependencies:
     - media.type.remote_video
   module:
     - field_layout
+    - layout_builder
     - layout_discovery
     - media
 third_party_settings:
@@ -14,6 +15,32 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0411f006-e851-4e2d-b29c-afdf4c75957a:
+            uuid: 0411f006-e851-4e2d-b29c-afdf4c75957a
+            region: content
+            configuration:
+              id: 'field_block:media:remote_video:field_media_oembed_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: oembed
+                label: hidden
+                settings:
+                  max_width: 0
+                  max_height: 0
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: zQoBQ0BtnMM_rlDdgftyu6eI4AVs9mo5K8xq7NFO2Zc
 id: media.remote_video.default

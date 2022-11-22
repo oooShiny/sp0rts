@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.tweet.comment
+    - field.field.node.tweet.field_popularity
     - field.field.node.tweet.field_tweet_author
     - field.field.node.tweet.field_tweet_content
     - field.field.node.tweet.field_tweet_external_image
@@ -20,6 +21,7 @@ dependencies:
     - layout_discovery
     - link
     - path
+    - radioactivity
     - text
 third_party_settings:
   field_layout:
@@ -42,6 +44,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_popularity:
+    type: radioactivity_reference
+    weight: 122
     region: content
     settings: {  }
     third_party_settings: {  }
