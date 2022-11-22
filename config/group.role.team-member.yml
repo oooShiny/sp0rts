@@ -32,3 +32,4 @@ permissions:
   - 'view group_membership content'
   - 'view group_node:link entity'
   - 'view group_node:text_post entity'
+  - 'view group_node:tweet entity'
