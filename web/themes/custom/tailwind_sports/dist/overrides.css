@@ -3,7 +3,8 @@ aside h2 {
     font-weight: lighter;
 }
 
-aside div.contextual-region {
+aside div.contextual-region,
+aside div.views-element-container {
     border: 1px solid black;
     padding: 1em;
     margin: 0.5em 0;

@@ -16,7 +16,9 @@ dependencies:
   module:
     - comment
     - field_layout
+    - image
     - layout_discovery
+    - link
     - text
     - user
 third_party_settings:
@@ -38,20 +40,39 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 1
+    weight: 3
+    region: content
+  field_tweet_author:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_tweet_content:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
+    region: content
+  field_tweet_local_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
-  field_tweet_author: true
   field_tweet_external_image: true
   field_tweet_hashtags: true
   field_tweet_id: true
-  field_tweet_local_image: true
   field_tweet_mentions: true
   links: true
