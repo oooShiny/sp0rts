@@ -1,0 +1,33 @@
+uuid: c311b2ff-8097-4679-b008-c2fde4b780c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sport_leagues
+  module:
+    - group
+    - views
+  theme:
+    - tailwindcss
+id: tailwindcss_views_block__sport_leagues_block_1
+theme: tailwindcss
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:sport_leagues-block_1'
+settings:
+  id: 'views_block:sport_leagues-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      sport: sport

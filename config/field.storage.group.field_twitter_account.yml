@@ -1,0 +1,19 @@
+uuid: 2f1e7972-9363-4b25-afbd-537a56457a15
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - link
+id: group.field_twitter_account
+field_name: field_twitter_account
+entity_type: group
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

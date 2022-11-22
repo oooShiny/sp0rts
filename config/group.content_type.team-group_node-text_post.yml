@@ -1,0 +1,19 @@
+uuid: cdf577ed-d3ff-4f4d-a008-81690c191dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.text_post
+  module:
+    - gnode
+    - node
+id: team-group_node-text_post
+label: 'Team: Group node (Text Post)'
+description: 'Adds <em class="placeholder">Text Post</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:text_post'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

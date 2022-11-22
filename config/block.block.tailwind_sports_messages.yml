@@ -1,0 +1,22 @@
+uuid: 43328cf8-2fa7-451a-9262-d28e17d7a26c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: tailwind_sports_messages
+theme: tailwind_sports
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

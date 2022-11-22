@@ -1,0 +1,19 @@
+uuid: 9b253f0d-2d69-4e7b-b69b-65472f605126
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.sport
+    - node.type.link
+  module:
+    - gnode
+    - node
+id: sport-group_node-link
+label: 'Sport: Group node (Link)'
+description: 'Adds <em class="placeholder">Link</em> content to groups both publicly and privately.'
+group_type: sport
+content_plugin: 'group_node:link'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

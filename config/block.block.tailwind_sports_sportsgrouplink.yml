@@ -1,0 +1,31 @@
+uuid: 332592e6-168c-4dad-a35e-f76583aa285d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sports_module
+  theme:
+    - tailwind_sports
+id: tailwind_sports_sportsgrouplink
+theme: tailwind_sports
+region: breadcrumb
+weight: 0
+provider: null
+plugin: sports_group_link
+settings:
+  id: sports_group_link
+  label: 'Sports Group Link'
+  label_display: '0'
+  provider: sports_module
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      link: link
+      text_post: text_post

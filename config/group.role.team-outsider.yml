@@ -1,4 +1,4 @@
-uuid: 50a5afa7-04a5-4dd0-8a89-0a56d4047567
+uuid: 44448090-8bb2-4634-8c62-d61c8dd97b4e
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,15 @@ internal: true
 audience: outsider
 group_type: team
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'create group_node:link entity'
+  - 'create group_node:text_post entity'
+  - 'delete own group_node:link entity'
+  - 'delete own group_node:text_post entity'
+  - 'join group'
+  - 'update own group_node:link entity'
+  - 'update own group_node:text_post entity'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

@@ -1,0 +1,23 @@
+uuid: cfbe2967-14b4-4bd0-8c5a-bf8972a107eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Luo_gj6-sYvN4MF26pyhtV8lZLWeCTLXsigCcE6lRg8
+id: node.field_tweet_mentions
+field_name: field_tweet_mentions
+entity_type: node
+type: string
+settings:
+  max_length: 140
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

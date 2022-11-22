@@ -1,0 +1,22 @@
+uuid: ce69dcb2-0f52-475d-b826-7434384988c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: sport_group_path
+label: 'Sport group path'
+type: 'canonical_entities:group'
+pattern: '[group:title]'
+selection_criteria:
+  a956171d-74b2-42c8-9f39-4c15a978456f:
+    id: 'entity_bundle:group'
+    negate: false
+    uuid: a956171d-74b2-42c8-9f39-4c15a978456f
+    context_mapping:
+      group: group
+    bundles:
+      sport: sport
+selection_logic: and
+weight: -5
+relationships: {  }

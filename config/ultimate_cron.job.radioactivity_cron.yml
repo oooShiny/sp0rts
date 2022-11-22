@@ -1,0 +1,17 @@
+uuid: f75e7984-fe71-469b-90cc-55a877051263
+langcode: en
+status: true
+dependencies:
+  module:
+    - radioactivity
+title: 'Default cron handler'
+id: radioactivity_cron
+weight: 0
+module: radioactivity
+callback: radioactivity_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

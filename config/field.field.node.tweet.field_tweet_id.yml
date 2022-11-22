@@ -1,0 +1,21 @@
+uuid: a2fa7dcf-7e4d-4bfc-b2cc-76d517ea2ddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_id
+    - node.type.tweet
+_core:
+  default_config_hash: KREmFCrSBv7MDNOC0qcA8ZQeEm_0L4soA5ljnj84ow4
+id: node.tweet.field_tweet_id
+field_name: field_tweet_id
+entity_type: node
+bundle: tweet
+label: 'Tweet ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

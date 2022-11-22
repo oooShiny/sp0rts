@@ -1,0 +1,24 @@
+uuid: 8e5d4ed5-4c3e-4d44-98ab-c9f168dd3b43
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: MjMChFykEa-4UxdnGstVk1FcXqwUF3p_GBJLIFT3_XI
+id: tailwind_sports_group_operations
+theme: tailwind_sports
+region: sidebar_first
+weight: -9
+provider: null
+plugin: group_operations
+settings:
+  id: group_operations
+  label: 'Group operations'
+  label_display: visible
+  provider: group
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility: {  }

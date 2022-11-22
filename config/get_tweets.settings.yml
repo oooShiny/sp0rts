@@ -1,0 +1,16 @@
+import: true
+queries:
+  -
+    query: '@patriots'
+    endpoint: statuses/user_timeline
+    parameter: screen_name
+  -
+    query: '@buffalobills'
+    endpoint: statuses/user_timeline
+    parameter: screen_name
+count: 10
+expire: 0
+consumer_key: k0on2CukgxPepR9NCvmx0Cyxf
+consumer_secret: Leyxiq0qfTcnBiZtduv7BmlxMwy0ty77OaeZnCED9aiA1jzoVl
+oauth_token: 941026140721942528-NqswGt6PdR2x4HKuQBaY6rN6JtPKe0F
+oauth_token_secret: Uu8P9mapjSLLu2AhhBwiWOEQXjHNCLGioF5HOSPB6DU0f

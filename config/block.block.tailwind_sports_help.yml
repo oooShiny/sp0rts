@@ -1,0 +1,22 @@
+uuid: 0151f5dd-fab0-4ede-9e0f-3b8b1c79abeb
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: '-laWx8WA-ikiIEH3NJQ0hVbjqk3iEuBms91LB0B4IQU'
+id: tailwind_sports_help
+theme: tailwind_sports
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

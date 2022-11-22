@@ -1,4 +1,4 @@
-uuid: 6cc91eae-c84f-4816-99f6-6c4a166e0612
+uuid: 50a67841-36bb-4586-b457-776eef71ed1b
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,15 @@ internal: true
 audience: member
 group_type: league
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'create group_node:link entity'
+  - 'create group_node:text_post entity'
+  - 'delete own group_node:link entity'
+  - 'delete own group_node:text_post entity'
+  - 'leave group'
+  - 'update own group_node:link entity'
+  - 'update own group_node:text_post entity'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

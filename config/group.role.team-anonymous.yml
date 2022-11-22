@@ -1,4 +1,4 @@
-uuid: b2890680-27fb-4ab8-ac79-b078ca256c72
+uuid: 870ac82f-7bc0-42d7-b442-b2f2569e2995
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,7 @@ internal: true
 audience: anonymous
 group_type: team
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'view group'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

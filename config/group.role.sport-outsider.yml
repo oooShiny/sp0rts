@@ -1,4 +1,4 @@
-uuid: 470dd2f1-4e32-4a9e-9b46-85e84735fc95
+uuid: 1232e011-837a-4619-8a31-b30cf6a3180b
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,15 @@ internal: true
 audience: outsider
 group_type: sport
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'create group_node:link entity'
+  - 'create group_node:text_post entity'
+  - 'delete own group_node:link entity'
+  - 'delete own group_node:text_post entity'
+  - 'join group'
+  - 'update own group_node:link entity'
+  - 'update own group_node:text_post entity'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

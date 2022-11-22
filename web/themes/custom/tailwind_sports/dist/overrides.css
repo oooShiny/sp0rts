@@ -1,0 +1,23 @@
+aside h2 {
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+aside div.contextual-region {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 0.5em 0;
+}
+
+.button {
+    --text-opacity: 1!important;
+    color: rgba(255,255,255,var(--text-opacity))!important;
+    --bg-opacity: 1!important;
+    padding: .25rem!important;
+    border-radius: .5rem!important;
+    background-color: rgba(74,85,104,var(--bg-opacity))!important;
+}
+
+a {
+    font-weight: bold;
+}

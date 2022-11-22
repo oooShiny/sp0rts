@@ -1,0 +1,35 @@
+uuid: 03fb6c8a-4004-4e95-b674-96a65ed8a953
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - group
+    - views
+  theme:
+    - tailwind_sports
+id: views_block__frontpage_block_1
+theme: tailwind_sports
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:frontpage-block_1'
+settings:
+  id: 'views_block:frontpage-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league
+      sport: sport
+      team: team

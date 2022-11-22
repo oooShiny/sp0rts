@@ -1,0 +1,19 @@
+uuid: 9a9d796b-8725-4dfe-87b2-0dd72086d095
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.link
+  module:
+    - gnode
+    - node
+id: team-group_node-link
+label: 'Team: Group node (Link)'
+description: 'Adds <em class="placeholder">Link</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:link'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

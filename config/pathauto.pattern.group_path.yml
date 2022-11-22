@@ -1,0 +1,22 @@
+uuid: 0f1d0991-8df3-443e-b398-ee8f89a8c3f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group_path
+label: 'League group path'
+type: 'canonical_entities:group'
+pattern: '[group:field_parent_sport]/[group:title]'
+selection_criteria:
+  6b607a86-0396-4641-8d1e-5bca93b080ae:
+    id: 'entity_bundle:group'
+    negate: false
+    uuid: 6b607a86-0396-4641-8d1e-5bca93b080ae
+    context_mapping:
+      group: group
+    bundles:
+      league: league
+selection_logic: and
+weight: -5
+relationships: {  }

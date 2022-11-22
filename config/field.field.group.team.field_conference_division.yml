@@ -1,0 +1,29 @@
+uuid: 43f7a05f-f70b-443e-b773-c2595a10884e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_conference_division
+    - group.type.team
+    - taxonomy.vocabulary.team_division_conference
+id: group.team.field_conference_division
+field_name: field_conference_division
+entity_type: group
+bundle: team
+label: Conference/Division
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      team_division_conference: team_division_conference
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,31 @@
+uuid: d40f9d47-8a3a-4955-8f9d-35b37f10e11e
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+id: tailwind_sports_page_title
+theme: tailwind_sports
+region: content
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: true
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league
+      sport: sport
+      team: team

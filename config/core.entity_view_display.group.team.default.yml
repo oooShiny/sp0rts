@@ -3,11 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.team.field_conference_division
+    - field.field.group.team.field_header_image
+    - field.field.group.team.field_logo
     - field.field.group.team.field_parent_league
+    - field.field.group.team.field_parent_sport
+    - field.field.group.team.field_twitter_account
+    - field.field.group.team.field_youtube_channel
     - group.type.team
+    - image.style.thumbnail
+    - image.style.wide
   module:
     - field_layout
+    - image
     - layout_discovery
+    - link
+    - media
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -18,23 +29,75 @@ targetEntityType: group
 bundle: team
 mode: default
 content:
-  field_parent_league:
+  field_conference_division:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: -4
+    weight: 6
     region: content
-  label:
-    type: string
+  field_header_image:
+    type: media_thumbnail
     label: hidden
     settings:
-      link_to_entity: false
+      image_link: ''
+      image_style: wide
     third_party_settings: {  }
-    weight: -5
+    weight: 0
+    region: content
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_parent_league:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_parent_sport:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_twitter_account:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_youtube_channel:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
+  breadcrumbs: true
   changed: true
   created: true
+  label: true
   uid: true

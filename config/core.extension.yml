@@ -4,6 +4,8 @@ module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
+  allowed_formats: 0
+  auto_entitylabel: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -20,6 +22,7 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   entity: 0
   field: 0
@@ -27,6 +30,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  get_tweets: 0
   gin_login: 0
   gin_toolbar: 0
   gnode: 0
@@ -46,9 +50,13 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  radioactivity: 0
+  rate: 0
   rdf: 0
   search: 0
   shortcut: 0
+  sports_importer: 0
+  sports_module: 0
   standard: 0
   system: 0
   taxonomy: 0
@@ -56,9 +64,14 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_extensions: 0
+  twig_tweak: 0
+  ultimate_cron: 0
   user: 0
   variationcache: 0
+  views_infinite_scroll: 0
   views_ui: 0
+  votingapi: 0
   pathauto: 1
   views: 10
 theme:
@@ -66,4 +79,7 @@ theme:
   seven: 0
   claro: 0
   gin: 0
+  stable: 0
+  tailwindcss: 0
+  tailwind_sports: 0
 profile: standard

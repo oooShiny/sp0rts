@@ -11,7 +11,7 @@ _core:
 id: group_operations
 theme: bartik
 region: sidebar_first
-weight: -7
+weight: -9
 provider: null
 plugin: group_operations
 settings:

@@ -1,0 +1,21 @@
+uuid: 6b82b19d-ffa2-4098-8ae4-68be6d81a8b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: HiLv76gYJKcbWj44TCzHMX9UooOmgBCXI1JKwfPXg14
+id: node.field_tweet_external_image
+field_name: field_tweet_external_image
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

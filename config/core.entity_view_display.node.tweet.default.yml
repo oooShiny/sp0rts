@@ -1,0 +1,57 @@
+uuid: 7652344e-0304-41f9-9f62-208bf826d7cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.tweet.comment
+    - field.field.node.tweet.field_tweet_author
+    - field.field.node.tweet.field_tweet_content
+    - field.field.node.tweet.field_tweet_external_image
+    - field.field.node.tweet.field_tweet_hashtags
+    - field.field.node.tweet.field_tweet_id
+    - field.field.node.tweet.field_tweet_local_image
+    - field.field.node.tweet.field_tweet_mentions
+    - node.type.tweet
+  module:
+    - comment
+    - field_layout
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: n1naCLJ95e-a4yGDpEVSm6f2HbsP9a6tOXnU_NUyPhI
+id: node.tweet.default
+targetEntityType: node
+bundle: tweet
+mode: default
+content:
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tweet_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_tweet_author: true
+  field_tweet_external_image: true
+  field_tweet_hashtags: true
+  field_tweet_id: true
+  field_tweet_local_image: true
+  field_tweet_mentions: true
+  links: true

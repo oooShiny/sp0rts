@@ -1,0 +1,38 @@
+uuid: 99e59843-b9e4-44cb-94f0-364caf479bba
+langcode: en
+status: true
+dependencies: {  }
+id: vote
+label: Vote
+template: thumbsupdown
+value_type: points
+entity_types:
+  - node.link
+  - node.text_post
+comment_types:
+  - node.link
+  - node.text_post
+options:
+  -
+    value: '1'
+    label: up
+    class: ''
+  -
+    value: '-1'
+    label: down
+    class: ''
+voting:
+  use_deadline: 0
+  anonymous_window: -2
+  user_window: -2
+display:
+  display_label: ''
+  label_class: ''
+  label_position: hidden
+  description: ''
+  description_class: ''
+  description_position: hidden
+  readonly: 0
+results:
+  result_type: user_vote_average
+  result_position: below

@@ -1,0 +1,70 @@
+uuid: 672e32af-61aa-484d-9540-11d32b0b1fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.link.comment
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_popularity
+    - node.type.link
+  module:
+    - comment
+    - field_layout
+    - layout_discovery
+    - link
+    - radioactivity
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.link.default
+targetEntityType: node
+bundle: link
+mode: default
+content:
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_popularity:
+    type: radioactivity_reference_emitter
+    label: above
+    settings:
+      energy: !!float 10
+      display: false
+      decimals: !!float 0
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  breadcrumbs: true

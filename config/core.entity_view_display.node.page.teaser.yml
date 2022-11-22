@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_popularity
+    - field.field.node.page.field_vote
     - node.type.page
   module:
     - field_layout
@@ -34,4 +36,6 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_popularity: true
+  field_vote: true

@@ -1,0 +1,17 @@
+uuid: 0341b66c-1fd8-4b74-b9cb-bb34bf60c552
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Text Post'
+type: text_post
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

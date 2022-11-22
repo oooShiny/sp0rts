@@ -1,0 +1,24 @@
+uuid: d090e87c-f0d7-4270-a691-3f6823aaf710
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+  theme:
+    - tailwindcss
+_core:
+  default_config_hash: MjMChFykEa-4UxdnGstVk1FcXqwUF3p_GBJLIFT3_XI
+id: tailwindcss_group_operations
+theme: tailwindcss
+region: sidebar_first
+weight: -9
+provider: null
+plugin: group_operations
+settings:
+  id: group_operations
+  label: 'Group operations'
+  label_display: visible
+  provider: group
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility: {  }

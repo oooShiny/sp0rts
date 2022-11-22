@@ -1,0 +1,17 @@
+<ul>
+{% for sport, sport_data in groups %}
+    <li><a class="tw-font-bold" href="/group/{{ sport_data.id }}">{{ sport|title }}</a>
+        <ul>
+        {% for league, league_data in sport_data.leagues %}
+            <li class="tw-pl-2"><a href="/group/{{ league_data.id }}">{{ league }}</a>
+                <ul>
+                {% for team, team_data in league_data.teams %}
+                    <li class="tw-pl-2"><a href="/group/{{ team_data.id }}">{{ team }}</a></li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>

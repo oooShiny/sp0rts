@@ -1,0 +1,19 @@
+uuid: d3a41e1a-368c-4f41-8604-97a01b2b153c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+    - node.type.text_post
+  module:
+    - gnode
+    - node
+id: league-group_node-text_post
+label: 'League: Group node (Text Post)'
+description: 'Adds <em class="placeholder">Text Post</em> content to groups both publicly and privately.'
+group_type: league
+content_plugin: 'group_node:text_post'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

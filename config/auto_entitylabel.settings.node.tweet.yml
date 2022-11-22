@@ -1,0 +1,9 @@
+status: 1
+pattern: '(@[node:field_tweet_author:title]) [node:field_tweet_content:value]'
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - node.type.tweet
+save: 1
+chunk: '50'

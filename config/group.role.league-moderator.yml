@@ -1,0 +1,41 @@
+uuid: afd6edbd-df06-4021-98f5-25ed37f8e11d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+id: league-moderator
+label: Moderator
+weight: 4
+internal: false
+audience: member
+group_type: league
+permissions_ui: true
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:link entity'
+  - 'create group_node:page entity'
+  - 'create group_node:text_post entity'
+  - 'delete any group_node:link entity'
+  - 'delete any group_node:page entity'
+  - 'delete any group_node:text_post entity'
+  - 'delete own group_node:link entity'
+  - 'delete own group_node:page entity'
+  - 'delete own group_node:text_post entity'
+  - 'edit group'
+  - 'update any group_node:link entity'
+  - 'update any group_node:page entity'
+  - 'update any group_node:text_post entity'
+  - 'update own group_membership content'
+  - 'update own group_node:link entity'
+  - 'update own group_node:page entity'
+  - 'update own group_node:text_post entity'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view group_node:link entity'
+  - 'view group_node:page entity'
+  - 'view group_node:text_post entity'
+  - 'view own unpublished group'
+  - 'view unpublished group_node:link entity'
+  - 'view unpublished group_node:page entity'
+  - 'view unpublished group_node:text_post entity'

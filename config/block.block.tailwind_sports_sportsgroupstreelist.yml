@@ -1,0 +1,25 @@
+uuid: df4e5922-0f93-49f0-81d8-ffebeabbf4cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - sports_module
+    - system
+  theme:
+    - tailwind_sports
+id: tailwind_sports_sportsgroupstreelist
+theme: tailwind_sports
+region: sidebar_first
+weight: -4
+provider: null
+plugin: sports_group_tree
+settings:
+  id: sports_group_tree
+  label: 'Sports Groups List'
+  label_display: visible
+  provider: sports_module
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

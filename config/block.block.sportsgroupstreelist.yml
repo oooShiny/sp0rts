@@ -1,0 +1,25 @@
+uuid: 51bfdf87-cd97-457f-8dbe-5ae75c98eef8
+langcode: en
+status: true
+dependencies:
+  module:
+    - sports_module
+    - system
+  theme:
+    - bartik
+id: sportsgroupstreelist
+theme: bartik
+region: sidebar_first
+weight: -4
+provider: null
+plugin: sports_group_tree
+settings:
+  id: sports_group_tree
+  label: 'Sports Groups List'
+  label_display: visible
+  provider: sports_module
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

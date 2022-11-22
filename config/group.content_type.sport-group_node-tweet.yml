@@ -1,0 +1,19 @@
+uuid: 9be78a53-50fc-4768-b044-fe5d56d9614b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.sport
+    - node.type.tweet
+  module:
+    - gnode
+    - node
+id: sport-group_node-tweet
+label: 'Sport: Group node (Tweet)'
+description: 'Adds <em class="placeholder">Tweet</em> content to groups both publicly and privately.'
+group_type: sport
+content_plugin: 'group_node:tweet'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

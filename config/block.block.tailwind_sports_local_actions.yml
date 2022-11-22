@@ -1,0 +1,20 @@
+uuid: c5ffffa3-e769-49e1-9620-414345be2ff0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: XRdb8LpbArVA6CpuuEZxzi50JIdjsJaCCZ5o3fH0Blk
+id: tailwind_sports_local_actions
+theme: tailwind_sports
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -3,11 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.team.field_conference_division
+    - field.field.group.team.field_header_image
+    - field.field.group.team.field_logo
     - field.field.group.team.field_parent_league
+    - field.field.group.team.field_parent_sport
+    - field.field.group.team.field_twitter_account
+    - field.field.group.team.field_youtube_channel
     - group.type.team
+    - image.style.thumbnail
   module:
     - field_layout
+    - image
     - layout_discovery
+    - link
+    - media_library
     - path
 third_party_settings:
   field_layout:
@@ -19,9 +29,9 @@ targetEntityType: group
 bundle: team
 mode: default
 content:
-  field_parent_league:
+  field_conference_division:
     type: entity_reference_autocomplete
-    weight: 121
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -29,9 +39,60 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_header_image:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_logo:
+    type: image_image
+    weight: 9
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_parent_league:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parent_sport:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_twitter_account:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: Twitter
+    third_party_settings: {  }
+  field_youtube_channel:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: Youtube
+    third_party_settings: {  }
   label:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -39,13 +100,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 2
     region: content
     settings:
       display_label: true

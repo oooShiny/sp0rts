@@ -3,11 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
+    - field.field.group.league.field_twitter_account
+    - field.field.group.league.field_youtube_channel
     - group.type.league
+    - image.style.thumbnail
   module:
     - field_layout
+    - image
     - layout_discovery
+    - link
     - path
 third_party_settings:
   field_layout:
@@ -19,6 +25,14 @@ targetEntityType: group
 bundle: league
 mode: default
 content:
+  field_logo:
+    type: image_image
+    weight: 124
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_parent_sport:
     type: entity_reference_autocomplete
     weight: 121
@@ -28,6 +42,22 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_twitter_account:
+    type: link_default
+    weight: 123
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_youtube_channel:
+    type: link_default
+    weight: 122
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   label:
     type: string_textfield

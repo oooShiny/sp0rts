@@ -27,7 +27,19 @@
         "drupal/gin_login": "^1.2",
         "drupal/group": "^1.4",
         "drupal/paragraphs": "^1.14",
-        "drupal/layout_paragraphs": "^1.0"
+        "drupal/layout_paragraphs": "^1.0",
+        "drupal/rate": "^3.0",
+        "drupal/radioactivity": "^4.0",
+        "drupal/custom_breadcrumbs": "^1.0",
+        "drupal/tailwindcss": "^2.8",
+        "drupal/twig_tweak": "^3.1",
+        "drupal/twig_extensions": "^2.0",
+        "drupal/easy_breadcrumb": "^2.0",
+        "drupal/allowed_formats": "^1.5",
+        "drupal/get_tweets": "^2.0@beta",
+        "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/views_infinite_scroll": "^2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -48,7 +60,8 @@
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[project-root]/pantheon.upstream.yml": false,
-                "[project-root]/.gitattributes": false
+                "[project-root]/.gitattributes": false,
+                "[web-root]/sites/development.services.yml": false
             }
         },
         "installer-paths": {
@@ -66,6 +79,10 @@
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "enable-patching": "true",
+        "patches": {
+
         }
     },
     "autoload": {

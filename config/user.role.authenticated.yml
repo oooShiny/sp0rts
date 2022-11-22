@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.link
+    - node.type.text_post
   module:
     - comment
     - contact
     - filter
     - media
+    - node
+    - rate
     - search
     - shortcut
     - system
@@ -23,8 +27,18 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'cast rate vote on comment on node of link'
+  - 'cast rate vote on node of link'
+  - 'change own username'
+  - 'create link content'
+  - 'create text_post content'
+  - 'delete own link content'
+  - 'delete own text_post content'
+  - 'edit own link content'
+  - 'edit own text_post content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
+  - 'view own unpublished content'

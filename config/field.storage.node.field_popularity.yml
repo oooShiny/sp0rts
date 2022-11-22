@@ -1,0 +1,24 @@
+uuid: f6340c59-8e7f-41e6-89fc-dc0f1042597e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - radioactivity
+id: node.field_popularity
+field_name: field_popularity
+entity_type: node
+type: radioactivity_reference
+settings:
+  target_type: radioactivity
+  profile: decay
+  granularity: 900
+  halflife: 43200
+  cutoff: !!float 1
+module: radioactivity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

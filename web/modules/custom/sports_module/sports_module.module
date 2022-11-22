@@ -1,0 +1,17 @@
+<?php
+
+function sports_module_theme($existing, $type, $theme, $path) {
+    return [
+        'sports_group_tree' => [
+            'variables' => [
+                'groups' => ''
+            ]
+        ],
+        'sports_group_link' => [
+            'variables' => [
+                'url' => '',
+                'title' => ''
+            ]
+        ]
+    ];
+}

@@ -1,0 +1,22 @@
+uuid: 6ccfb117-8940-4b8c-88e7-0c49acdf7ddb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+id: tailwind_sports_breadcrumbs
+theme: tailwind_sports
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,4 +1,4 @@
-uuid: be37354e-c963-49b9-a048-623e977b7b4d
+uuid: dbcacdc7-4210-4511-8de7-60de6f48caa9
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,7 @@ internal: true
 audience: anonymous
 group_type: league
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'view group'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

@@ -1,0 +1,19 @@
+uuid: 86b3b669-4950-4588-92ea-20bf5d26dc95
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+    - node.type.tweet
+  module:
+    - gnode
+    - node
+id: league-group_node-tweet
+label: 'League: Group node (Tweet)'
+description: 'Adds <em class="placeholder">Tweet</em> content to groups both publicly and privately.'
+group_type: league
+content_plugin: 'group_node:tweet'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

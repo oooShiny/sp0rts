@@ -1,0 +1,29 @@
+uuid: 39a91669-f9b6-4896-bbdc-343e899c30f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_parent_sport
+    - group.type.sport
+    - group.type.team
+id: group.team.field_parent_sport
+field_name: field_parent_sport
+entity_type: group
+bundle: team
+label: 'Parent Sport'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      sport: sport
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

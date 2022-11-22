@@ -1,0 +1,31 @@
+uuid: c3d1733e-d257-486f-bbf4-46d9b76deba1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sports_module
+  theme:
+    - bartik
+id: sportsgrouplink
+theme: bartik
+region: breadcrumb
+weight: 0
+provider: null
+plugin: sports_group_link
+settings:
+  id: sports_group_link
+  label: 'Sports Group Link'
+  label_display: '0'
+  provider: sports_module
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      link: link
+      text_post: text_post

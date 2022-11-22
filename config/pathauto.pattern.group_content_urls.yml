@@ -1,0 +1,23 @@
+uuid: a7d8aec5-a40b-4ef5-a1eb-6724462faf9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: group_content_urls
+label: 'Group Content URLs'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  ad41e8f5-3902-4060-b957-b414f0fb8a0b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ad41e8f5-3902-4060-b957-b414f0fb8a0b
+    context_mapping:
+      node: node
+    bundles:
+      link: link
+      text_post: text_post
+selection_logic: and
+weight: -5
+relationships: {  }

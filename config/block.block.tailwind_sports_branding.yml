@@ -1,0 +1,25 @@
+uuid: e8e4c748-7123-4682-a01e-1728b7a5f979
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: tailwind_sports_branding
+theme: tailwind_sports
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

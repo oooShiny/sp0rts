@@ -1,0 +1,33 @@
+uuid: f9e181de-3071-4d0f-b68b-cf91d708cdc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.league_teams
+  module:
+    - group
+    - views
+  theme:
+    - tailwind_sports
+id: tailwind_sports_views_block__league_teams_block_1
+theme: tailwind_sports
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'views_block:league_teams-block_1'
+settings:
+  id: 'views_block:league_teams-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league

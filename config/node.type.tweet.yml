@@ -1,0 +1,13 @@
+uuid: d2ae45c0-808c-460d-bf67-ecf603247a8b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: D-DudpD1nvJYw2wsTeGCgF1Z_kWD3C1JpdxO-0jUh5g
+name: Tweet
+type: tweet
+description: 'Content type for import tweets.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

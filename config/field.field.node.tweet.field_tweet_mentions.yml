@@ -1,0 +1,21 @@
+uuid: 07fbd377-6c38-475f-a851-a4c1540c75e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_mentions
+    - node.type.tweet
+_core:
+  default_config_hash: MQtGhPWVYufGKKolJSapeuCR7C0ZNLpZ0dF7aWuq-Bs
+id: node.tweet.field_tweet_mentions
+field_name: field_tweet_mentions
+entity_type: node
+bundle: tweet
+label: 'Tweet Mentions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

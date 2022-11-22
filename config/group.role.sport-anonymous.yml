@@ -1,4 +1,4 @@
-uuid: 1b7c01b3-7619-4a46-bbce-658278b19d7c
+uuid: a44f9991-7402-47ec-964a-235af15baf01
 langcode: en
 status: true
 dependencies:
@@ -11,4 +11,7 @@ internal: true
 audience: anonymous
 group_type: sport
 permissions_ui: true
-permissions: {  }
+permissions:
+  - 'view group'
+  - 'view group_node:link entity'
+  - 'view group_node:text_post entity'

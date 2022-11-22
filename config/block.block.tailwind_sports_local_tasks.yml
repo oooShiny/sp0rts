@@ -1,0 +1,22 @@
+uuid: 7a2195c6-a184-4ff9-a4b0-38d2ca4a3cce
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: Qf2BoIzd9py5AYXZj8fJzCYDyVk1-AWXcu-AqQeDZKA
+id: tailwind_sports_local_tasks
+theme: tailwind_sports
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

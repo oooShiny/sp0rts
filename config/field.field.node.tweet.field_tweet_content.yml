@@ -1,0 +1,23 @@
+uuid: b308515f-6c2b-472e-994a-35298e11c287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tweet_content
+    - node.type.tweet
+  module:
+    - text
+_core:
+  default_config_hash: UF-g7tlUS_aNxqtpNZV3fNe2sbb7a-sT81UjwAUljnI
+id: node.tweet.field_tweet_content
+field_name: field_tweet_content
+entity_type: node
+bundle: tweet
+label: 'Tweet Content'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

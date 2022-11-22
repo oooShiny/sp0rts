@@ -1,0 +1,23 @@
+uuid: 951d4c3f-9ac4-4db1-91fb-d871477fa048
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_twitter_account
+    - group.type.team
+  module:
+    - link
+id: group.team.field_twitter_account
+field_name: field_twitter_account
+entity_type: group
+bundle: team
+label: 'Official Team Twitter Account'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

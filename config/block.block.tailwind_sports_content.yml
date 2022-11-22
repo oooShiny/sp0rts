@@ -1,0 +1,22 @@
+uuid: 5556caf7-e4c9-4121-85a7-63d9fb04d5b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tailwind_sports
+_core:
+  default_config_hash: kigu8pTxXt1qGR2NJ5HHdC4G2G1wsDrIjLPKBT5wUBc
+id: tailwind_sports_content
+theme: tailwind_sports
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

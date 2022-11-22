@@ -1,0 +1,49 @@
+uuid: e0827608-fd67-405c-a8fd-953155f66ddc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.text_post.body
+    - field.field.node.text_post.comment
+    - field.field.node.text_post.field_popularity
+    - node.type.text_post
+  module:
+    - field_layout
+    - layout_discovery
+    - radioactivity
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.text_post.teaser
+targetEntityType: node
+bundle: text_post
+mode: teaser
+content:
+  field_popularity:
+    type: radioactivity_reference_emitter
+    label: hidden
+    settings:
+      energy: !!float 10
+      display: false
+      decimals: !!float 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  comment: true
