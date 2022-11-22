@@ -23,6 +23,10 @@ a {
     font-weight: bold;
 }
 
+h1.tw-text-3xl.tw-text-center.tw-w-full {
+    -webkit-text-stroke: 1px black;
+}
+
 .indented {
     padding-left: 2em;
 }

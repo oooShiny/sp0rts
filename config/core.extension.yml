@@ -54,6 +54,7 @@ module:
   radioactivity: 0
   rate: 0
   rdf: 0
+  scheduler: 0
   search: 0
   shortcut: 0
   sports_importer: 0

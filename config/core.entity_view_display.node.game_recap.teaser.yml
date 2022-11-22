@@ -1,0 +1,30 @@
+uuid: 5dd18b3b-d195-49df-bc8b-37d4cfb81d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.game_recap.body
+    - node.type.game_recap
+  module:
+    - text
+    - user
+id: node.game_recap.teaser
+targetEntityType: node
+bundle: game_recap
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

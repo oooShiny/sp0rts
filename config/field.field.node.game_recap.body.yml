@@ -1,0 +1,23 @@
+uuid: 7e557055-3d21-4f72-b2b0-8b5523f6188c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.game_recap
+  module:
+    - text
+id: node.game_recap.body
+field_name: body
+entity_type: node
+bundle: game_recap
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

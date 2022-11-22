@@ -5,6 +5,7 @@
  * Functions to support theming in the Tailwind CSS theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 
@@ -45,4 +46,10 @@ function tailwind_sports_preprocess_group(&$variables) {
     else {
       $variables['header_bg'] = '';
     }
+}
+
+function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (str_contains($form['#id'], 'views-exposed-form-frontpage')) {
+    $form['#attributes']['class'][] = 'tw-bg-gray-300 tw-border-b tw-flex tw-gap-5 tw-justify-center tw-p-2';
+  }
 }
