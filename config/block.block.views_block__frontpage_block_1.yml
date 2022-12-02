@@ -6,6 +6,7 @@ dependencies:
     - views.view.frontpage
   module:
     - group
+    - system
     - views
   theme:
     - tailwind_sports
@@ -33,3 +34,7 @@ visibility:
       league: league
       sport: sport
       team: team
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/group/*/members'

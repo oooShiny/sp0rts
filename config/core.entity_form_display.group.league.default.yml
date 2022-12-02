@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.league.field_group_youtube_channel
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
     - field.field.group.league.field_twitter_account
-    - field.field.group.league.field_youtube_channel
     - group.type.league
     - image.style.thumbnail
   module:
@@ -25,6 +25,14 @@ targetEntityType: group
 bundle: league
 mode: default
 content:
+  field_group_youtube_channel:
+    type: string_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_logo:
     type: image_image
     weight: 124
@@ -46,14 +54,6 @@ content:
   field_twitter_account:
     type: link_default
     weight: 123
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_youtube_channel:
-    type: link_default
-    weight: 122
     region: content
     settings:
       placeholder_url: ''

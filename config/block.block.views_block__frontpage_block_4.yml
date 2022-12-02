@@ -1,0 +1,29 @@
+uuid: 948ef466-73ff-4e97-afde-3ff5b230a38c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - system
+    - views
+  theme:
+    - tailwind_sports
+id: views_block__frontpage_block_4
+theme: tailwind_sports
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:frontpage-block_4'
+settings:
+  id: 'views_block:frontpage-block_4'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: '24'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

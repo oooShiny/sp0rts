@@ -245,7 +245,7 @@ display:
               field: field_conference_division
               rendered: true
               rendered_strip: false
-          columns: 32
+          columns: 4
           automatic_width: true
           alignment: horizontal
           row_class_custom: ''

@@ -13,7 +13,7 @@ settings:
   target_type: radioactivity
   profile: decay
   granularity: 900
-  halflife: 43200
+  halflife: 3600
   cutoff: !!float 1
 module: radioactivity
 locked: false

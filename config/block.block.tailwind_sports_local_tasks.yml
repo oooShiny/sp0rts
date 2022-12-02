@@ -9,7 +9,7 @@ _core:
 id: tailwind_sports_local_tasks
 theme: tailwind_sports
 region: content
-weight: -8
+weight: -10
 provider: null
 plugin: local_tasks_block
 settings:

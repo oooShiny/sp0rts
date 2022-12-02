@@ -1,28 +1,28 @@
-uuid: d33e1397-80f0-4ad0-bca8-75383877c9dd
+uuid: 41153bbf-622a-4a6b-a452-ef7dd83e0e18
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.group_members
   module:
     - group
-    - views
+    - yasm_blocks
   theme:
     - tailwind_sports
-id: tailwind_sports_views_block__group_members_block_1
+id: yasmgroupscounts
 theme: tailwind_sports
 region: sidebar_first
-weight: -5
+weight: -6
 provider: null
-plugin: 'views_block:group_members-block_1'
+plugin: yasm_block_group
 settings:
-  id: 'views_block:group_members-block_1'
-  label: ''
+  id: yasm_block_group
+  label: 'Group Members'
   label_display: visible
-  provider: views
-  context_mapping: {  }
-  views_label: ''
-  items_per_page: none
+  provider: yasm_blocks
+  block_style: item_list
+  with_icons: 0
+  attach_fontawesome: 0
+  groups:
+    _route_: _route_
 visibility:
   'entity_bundle:group':
     id: 'entity_bundle:group'

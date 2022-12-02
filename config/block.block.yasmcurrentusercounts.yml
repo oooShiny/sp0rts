@@ -1,0 +1,28 @@
+uuid: e9ae092b-2240-4460-b63f-427120138379
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - yasm_blocks
+  theme:
+    - tailwind_sports
+id: yasmcurrentusercounts
+theme: tailwind_sports
+region: content
+weight: -7
+provider: null
+plugin: yasm_block_user
+settings:
+  id: yasm_block_user
+  label: 'YASM current user counts'
+  label_display: '0'
+  provider: yasm_blocks
+  block_style: cards
+  with_icons: 0
+  attach_fontawesome: 0
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'

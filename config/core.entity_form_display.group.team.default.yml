@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.group.team.field_conference_division
+    - field.field.group.team.field_group_youtube_channel
     - field.field.group.team.field_header_image
     - field.field.group.team.field_logo
     - field.field.group.team.field_parent_league
     - field.field.group.team.field_parent_sport
     - field.field.group.team.field_twitter_account
-    - field.field.group.team.field_youtube_channel
     - group.type.team
     - image.style.thumbnail
   module:
@@ -36,6 +36,14 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_group_youtube_channel:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -81,14 +89,6 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: Twitter
-    third_party_settings: {  }
-  field_youtube_channel:
-    type: link_default
-    weight: 5
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: Youtube
     third_party_settings: {  }
   label:
     type: string_textfield

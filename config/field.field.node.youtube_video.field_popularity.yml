@@ -1,0 +1,29 @@
+uuid: d59e2f4f-996c-4711-b3a9-a6a0a8b92387
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popularity
+    - node.type.youtube_video
+  module:
+    - radioactivity
+id: node.youtube_video.field_popularity
+field_name: field_popularity
+entity_type: node
+bundle: youtube_video
+label: Popularity
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:radioactivity'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+  default_energy: !!float 0
+field_type: radioactivity_reference

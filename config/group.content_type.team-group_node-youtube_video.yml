@@ -1,0 +1,19 @@
+uuid: c8b8ad64-8db1-4b4a-ae27-ff775259f0f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.youtube_video
+  module:
+    - gnode
+    - node
+id: team-group_node-youtube_video
+label: 'Team: Group node (Youtube Video)'
+description: 'Adds <em class="placeholder">Youtube Video</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:youtube_video'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

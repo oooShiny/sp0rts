@@ -1,0 +1,42 @@
+uuid: 17349e84-02e8-42a7-94f5-8ef7a766ac7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.teaser
+    - field.field.group.sport.field_header_image
+    - field.field.group.sport.field_logo
+    - group.type.sport
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: group.sport.teaser
+targetEntityType: group
+bundle: sport
+mode: teaser
+content:
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  changed: true
+  created: true
+  field_header_image: true
+  label: true
+  uid: true

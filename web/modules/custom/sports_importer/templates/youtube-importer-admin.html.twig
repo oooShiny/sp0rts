@@ -1,0 +1,9 @@
+
+{% for team, video in videos %}
+    {{ team }}
+<ul>
+    {% for v in video %}
+        <li><a href="https://youtube.com/watch?v={{ v.id }}">{{ v.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}

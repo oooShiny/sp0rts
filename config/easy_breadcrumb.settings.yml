@@ -4,7 +4,7 @@ applies_admin_routes: false
 include_invalid_paths: true
 excluded_paths: ''
 replaced_titles: ''
-custom_paths: ''
+custom_paths: '/site/basic-page/untitled-home-page :: Home | / :: Home'
 include_home_segment: true
 alternative_title_field: field_breadcrumb_title
 home_segment_title: Home
@@ -42,4 +42,4 @@ truncator_mode: false
 truncator_length: 100
 truncator_dots: true
 remove_repeated_segments_text_only: 0
-home_segment_validation_skip: 0
+home_segment_validation_skip: 1

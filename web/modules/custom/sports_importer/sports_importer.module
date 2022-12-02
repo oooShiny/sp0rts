@@ -3,20 +3,17 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
+use Drupal\sports_importer\Controller\EspnController;
+use Drupal\sports_importer\Controller\YoutubeController;
 
 /**
  * Add imported tweets to groups based on twitter URL.
  */
 function sports_importer_entity_update(EntityInterface $entity) {
   if ($entity->bundle() == 'tweet') {
-
-    $account = strtolower($entity->get('field_tweet_author')->uri);
-    $ids = \Drupal::entityQuery('group')
-      ->condition('field_twitter_account', $account)
-      ->execute();
-    $group = Group::load(array_pop($ids));
     $type = 'group_node:' . $entity->getType();
     $node = Node::load($entity->id());
+    $group = _get_group_ids($entity, $entity->bundle());
 
     $relation = $group->getContentByEntityId($type, $node->id());
     if (!$relation) {
@@ -25,3 +22,46 @@ function sports_importer_entity_update(EntityInterface $entity) {
   }
 }
 
+function sports_importer_theme($existing, $type, $theme, $path) {
+  return [
+    'sports_importer_admin' => [
+      'variables' => [
+        'teams' => ''
+      ]
+    ],
+    'youtube_importer_admin' => [
+      'variables' => [
+        'videos' => ''
+      ]
+    ]
+  ];
+}
+
+/**
+ * Implements hook_cron().
+ */
+function sports_importer_cron() {
+  $espn_importer  = new EspnController;
+  // Get NFL data.
+  $espn_importer->get_data('football', 'nfl', '32');
+
+  $youtube_importer = new YoutubeController;
+  // Get NFL videos.
+  $youtube_importer->get_data();
+
+
+
+}
+
+function _get_group_ids($entity, $type) {
+  switch ($type) {
+    case 'tweet':
+      $account = strtolower($entity->get('field_tweet_author')->uri);
+      $ids = \Drupal::entityQuery('group')
+        ->condition('field_twitter_account', $account)
+        ->execute();
+      return Group::load(array_pop($ids));
+  }
+
+
+}

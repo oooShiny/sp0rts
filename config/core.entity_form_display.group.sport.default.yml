@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.group.sport.field_header_image
+    - field.field.group.sport.field_logo
     - group.type.sport
+    - image.style.thumbnail
   module:
     - field_layout
+    - image
     - layout_discovery
     - media_library
     - path
@@ -26,6 +29,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_logo:
+    type: image_image
+    weight: 122
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   label:
     type: string_textfield

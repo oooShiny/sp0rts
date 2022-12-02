@@ -40,7 +40,10 @@
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_infinite_scroll": "^2.0",
-        "drupal/scheduler": "^1.4"
+        "drupal/scheduler": "^1.4",
+        "drupal/yasm": "^2.0",
+        "guzzlehttp/guzzle": "^6",
+        "drupal/flag": "^4.0@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

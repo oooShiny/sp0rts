@@ -1,0 +1,29 @@
+uuid: 7b5a3a52-6b8e-4482-ab94-e0a13d6228e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - sports_importer
+title: 'Default cron handler'
+id: sports_importer_cron
+weight: 0
+module: sports_importer
+callback: sports_importer_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ */6 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

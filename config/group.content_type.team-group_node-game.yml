@@ -1,0 +1,19 @@
+uuid: 32f593a5-8fb6-49e0-b533-82e96b712e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.game
+  module:
+    - gnode
+    - node
+id: team-group_node-game
+label: 'Team: Group node (Game)'
+description: 'Adds <em class="placeholder">Game</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:game'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

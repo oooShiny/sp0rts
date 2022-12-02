@@ -1,0 +1,53 @@
+uuid: 760d43cd-6759-4d89-bebe-006e52ec7395
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.teaser
+    - field.field.group.team.field_conference_division
+    - field.field.group.team.field_group_youtube_channel
+    - field.field.group.team.field_header_image
+    - field.field.group.team.field_logo
+    - field.field.group.team.field_parent_league
+    - field.field.group.team.field_parent_sport
+    - field.field.group.team.field_twitter_account
+    - group.type.team
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: group.team.teaser
+targetEntityType: group
+bundle: team
+mode: teaser
+content:
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  changed: true
+  created: true
+  field_conference_division: true
+  field_group_youtube_channel: true
+  field_header_image: true
+  field_parent_league: true
+  field_parent_sport: true
+  field_twitter_account: true
+  label: true
+  uid: true

@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Team</th>
+            <th>Record</th>
+            <th>Win Pct</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for team in teams %}
+    <tr>
+        <td>{{ team.id }}</td>
+        <td>{{ team.displayName }}</td>
+        <td>{{ team.record.0.displayValue }}</td>
+        <td>{{ team.record.0.value }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>

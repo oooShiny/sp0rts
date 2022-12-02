@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.group.league.label
+    - field.field.group.league.field_group_youtube_channel
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
     - field.field.group.league.field_twitter_account
-    - field.field.group.league.field_youtube_channel
     - group.type.league
     - image.style.thumbnail
   module:
@@ -22,6 +23,7 @@ third_party_settings:
       label: ''
   layout_builder:
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -60,26 +62,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          65c126b1-4ebc-4656-8b41-7780c7100bd6:
-            uuid: 65c126b1-4ebc-4656-8b41-7780c7100bd6
-            region: content
-            configuration:
-              id: 'field_block:group:league:field_youtube_channel'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: link
-                label: above
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
           568ab66a-0f32-4935-a64d-18dc2e10297d:
             uuid: 568ab66a-0f32-4935-a64d-18dc2e10297d
             region: content
@@ -117,12 +99,36 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
+          bbac55bb-d7e6-4376-80e3-5f0f9dae185c:
+            uuid: bbac55bb-d7e6-4376-80e3-5f0f9dae185c
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_group_youtube_channel'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
 id: group.league.default
 targetEntityType: group
 bundle: league
 mode: default
 content:
+  field_group_youtube_channel:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_logo:
     type: image
     label: hidden
@@ -151,18 +157,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: -2
-    region: content
-  field_youtube_channel:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: -3
     region: content
   label:
     type: string

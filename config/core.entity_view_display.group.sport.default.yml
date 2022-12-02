@@ -3,10 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.group.sport.label
     - field.field.group.sport.field_header_image
+    - field.field.group.sport.field_logo
     - group.type.sport
   module:
     - field_layout
+    - image
     - layout_builder
     - layout_discovery
 third_party_settings:
@@ -16,6 +19,7 @@ third_party_settings:
       label: ''
   layout_builder:
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -55,6 +59,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          6ad5f1a6-aa6b-49b1-b38d-9ff426bc3c8a:
+            uuid: 6ad5f1a6-aa6b-49b1-b38d-9ff426bc3c8a
+            region: content
+            configuration:
+              id: 'field_block:group:sport:field_logo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: group.sport.default
 targetEntityType: group
@@ -69,6 +90,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: -4
+    region: content
+  field_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: -3
     region: content
   label:
     type: string

@@ -30,6 +30,9 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flag: 0
+  flag_count: 0
+  flag_follower: 0
   get_tweets: 0
   gin_login: 0
   gin_toolbar: 0
@@ -74,6 +77,8 @@ module:
   views_infinite_scroll: 0
   views_ui: 0
   votingapi: 0
+  yasm: 0
+  yasm_blocks: 0
   pathauto: 1
   views: 10
 theme:

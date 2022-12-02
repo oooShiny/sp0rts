@@ -1,0 +1,34 @@
+uuid: c88d74c9-2791-4492-9289-128f78713b43
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.youtube_video.body
+    - field.field.node.youtube_video.field_popularity
+    - field.field.node.youtube_video.field_youtube_video_link
+    - node.type.youtube_video
+  module:
+    - text
+    - user
+id: node.youtube_video.teaser
+targetEntityType: node
+bundle: youtube_video
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_popularity: true
+  field_youtube_video_link: true

@@ -1,0 +1,19 @@
+uuid: 58db93da-9968-4309-91ee-39f31cca7106
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_2
+    - node.type.game
+id: node.game.field_team_2
+field_name: field_team_2
+entity_type: node
+bundle: game
+label: 'Team 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

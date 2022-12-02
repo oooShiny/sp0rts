@@ -1,0 +1,29 @@
+uuid: 23d440b3-fdf9-4415-b291-5ab63eb02498
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popularity
+    - node.type.game
+  module:
+    - radioactivity
+id: node.game.field_popularity
+field_name: field_popularity
+entity_type: node
+bundle: game
+label: Popularity
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:radioactivity'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+  default_energy: !!float 100
+field_type: radioactivity_reference

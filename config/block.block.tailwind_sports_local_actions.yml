@@ -9,7 +9,7 @@ _core:
 id: tailwind_sports_local_actions
 theme: tailwind_sports
 region: content
-weight: -6
+weight: -8
 provider: null
 plugin: local_actions_block
 settings:
