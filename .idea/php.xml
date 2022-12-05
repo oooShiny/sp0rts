@@ -144,6 +144,7 @@
       <path value="$PROJECT_DIR$/../portal/docroot/libraries" />
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
       <path value="$PROJECT_DIR$/vendor/abraham/twitteroauth" />
+      <path value="$PROJECT_DIR$/vendor/tkijewski/reddit-php-sdk" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

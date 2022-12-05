@@ -4,10 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.game.body
+    - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
+    - field.field.node.game.field_line
     - field.field.node.game.field_popularity
     - field.field.node.game.field_team_1
+    - field.field.node.game.field_team_1_logo
+    - field.field.node.game.field_team_1_record
     - field.field.node.game.field_team_2
+    - field.field.node.game.field_team_2_logo
+    - field.field.node.game.field_team_2_record
+    - field.field.node.game.field_temperature
+    - field.field.node.game.field_venue
+    - field.field.node.game.field_weather
     - node.type.game
   module:
     - datetime
@@ -26,14 +35,33 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_favorite:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
   field_game_date:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_line:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_popularity:
     type: radioactivity_reference_emitter
@@ -47,21 +75,88 @@ content:
     region: content
   field_team_1:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 102
     region: content
+  field_team_1_logo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_team_1_record:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
   field_team_2:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
     region: content
+  field_team_2_logo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_team_2_record:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_temperature:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_venue:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_weather:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  rate_vote:
     settings: {  }
     third_party_settings: {  }
     weight: 100

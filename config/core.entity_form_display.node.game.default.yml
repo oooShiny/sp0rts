@@ -4,10 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.game.body
+    - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
+    - field.field.node.game.field_line
     - field.field.node.game.field_popularity
     - field.field.node.game.field_team_1
+    - field.field.node.game.field_team_1_logo
+    - field.field.node.game.field_team_1_record
     - field.field.node.game.field_team_2
+    - field.field.node.game.field_team_2_logo
+    - field.field.node.game.field_team_2_record
+    - field.field.node.game.field_temperature
+    - field.field.node.game.field_venue
+    - field.field.node.game.field_weather
     - node.type.game
   module:
     - datetime
@@ -43,11 +52,26 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_favorite:
+    type: string_textfield
+    weight: 129
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_game_date:
     type: datetime_default
     weight: 124
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_line:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_popularity:
     type: radioactivity_reference
@@ -63,9 +87,64 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_team_1_logo:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_1_record:
+    type: string_textfield
+    weight: 133
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_team_2:
     type: string_textfield
     weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_2_logo:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_2_record:
+    type: string_textfield
+    weight: 134
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_temperature:
+    type: number
+    weight: 127
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_venue:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weather:
+    type: string_textfield
+    weight: 126
     region: content
     settings:
       size: 60

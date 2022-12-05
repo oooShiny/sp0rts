@@ -70,11 +70,27 @@ function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $for
  */
 function tailwind_sports_preprocess_node(&$variables) {
   $node = $variables['node'];
+
+  // Tweet overrides.
   if ($node->bundle() == 'tweet') {
     $variables['tweet_id'] = $node->get('field_tweet_id')->value;
   }
+
+  // Reddit post overrides.
   if ($node->bundle() == 'reddit_post') {
     $variables['reddit_id'] = $node->get('field_reddit_id')->value;
   }
 
+
+  // Game overrides.
+  if ($node->bundle() == 'game') {
+    $variables['t1_logo'] = $node->get('field_team_1_logo')->value;
+    $variables['t2_logo'] = $node->get('field_team_2_logo')->value;
+    $variables['t1_record'] = $node->get('field_team_1_record')->value;
+    $variables['t2_record'] = $node->get('field_team_2_record')->value;
+    $variables['temp'] = $node->get('field_temperature')->value;
+    $variables['weather'] = $node->get('field_weather')->value;
+    $variables['favorite'] = $node->get('field_favorite')->value;
+    $variables['line'] = $node->get('field_line')->value;
+  }
 }

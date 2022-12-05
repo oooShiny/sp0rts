@@ -1,0 +1,19 @@
+uuid: bd4eb79a-0d4a-4a3b-bb2d-d8209fbf70c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_2_logo
+    - node.type.game
+id: node.game.field_team_2_logo
+field_name: field_team_2_logo
+entity_type: node
+bundle: game
+label: 'Team 2 Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

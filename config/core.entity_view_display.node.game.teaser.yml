@@ -5,10 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.game.body
+    - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
+    - field.field.node.game.field_line
     - field.field.node.game.field_popularity
     - field.field.node.game.field_team_1
+    - field.field.node.game.field_team_1_logo
+    - field.field.node.game.field_team_1_record
     - field.field.node.game.field_team_2
+    - field.field.node.game.field_team_2_logo
+    - field.field.node.game.field_team_2_record
+    - field.field.node.game.field_temperature
+    - field.field.node.game.field_venue
+    - field.field.node.game.field_weather
     - node.type.game
   module:
     - text
@@ -26,13 +35,32 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
+  field_favorite: true
   field_game_date: true
+  field_line: true
   field_popularity: true
   field_team_1: true
+  field_team_1_logo: true
+  field_team_1_record: true
   field_team_2: true
+  field_team_2_logo: true
+  field_team_2_record: true
+  field_temperature: true
+  field_venue: true
+  field_weather: true

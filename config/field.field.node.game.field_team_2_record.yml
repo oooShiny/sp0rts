@@ -1,0 +1,19 @@
+uuid: 05fb10cb-41e4-4bbb-b711-3e4040054e36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_2_record
+    - node.type.game
+id: node.game.field_team_2_record
+field_name: field_team_2_record
+entity_type: node
+bundle: game
+label: 'Team 2 Record'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

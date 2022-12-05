@@ -36,17 +36,27 @@ class EspnController extends ControllerBase {
 
           $team1 = [
             'name' => $g['competitions'][0]['competitors'][0]['team']['displayName'],
-            'record' => $g['competitions'][0]['competitors'][0]['records'][0]['summary']
+            'record' => $g['competitions'][0]['competitors'][0]['records'][0]['summary'],
+            'logo' => $g['competitions'][0]['competitors'][0]['team']['logo']
           ];
           $team2 = [
             'name' => $g['competitions'][0]['competitors'][1]['team']['displayName'],
-            'record' => $g['competitions'][0]['competitors'][1]['records'][0]['summary']
+            'record' => $g['competitions'][0]['competitors'][1]['records'][0]['summary'],
+            'logo' => $g['competitions'][0]['competitors'][1]['team']['logo']
           ];
 
           // Create the title text for the node.
           $week = 'Week ' . $g['week']['number'];
           $game_title = $g['season']['year'] . ' ' . $week . ': ' . $g['name'];
 
+          $odds = explode(' ', $g['competitions'][0]['odds'][0]['details']);
+
+          if ($g["competitions"][0]["competitors"][0]["team"]["abbreviation"] == $odds[0]) {
+            $favorite = $team1['name'];
+          }
+          else {
+            $favorite = $team2['name'];
+          }
           // Check to see if there's any content with this title already.
           $nodes = \Drupal::entityTypeManager()
             ->getStorage('node')
@@ -79,7 +89,16 @@ class EspnController extends ControllerBase {
                   'format' => 'full_html',
                 ],
                 'field_team_1' => $team1['name'],
+                'field_team_1_logo' => $team1['logo'],
+                'field_team_1_record' => $team1['record'],
                 'field_team_2' => $team2['name'],
+                'field_team_2_logo' => $team2['logo'],
+                'field_team_2_record' => $team2['record'],
+                'field_favorite' => $favorite,
+                'field_line' => end($odds),
+                'field_weather' => $g['weather']['displayValue'],
+                'field_temperature' => $g['weather']['temperature'],
+                'field_venue' => $g['competitions'][0]['venue']['fullName'],
                 'field_game_date' => $game_date->format('Y-m-d\TH:i:s'),
                 'publish_on' => $game_date->format('U') - 3600,
               ]);
