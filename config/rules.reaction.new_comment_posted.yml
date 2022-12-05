@@ -1,0 +1,44 @@
+uuid: 512ceb95-e5b2-4d1f-a30a-57d13119f2cd
+langcode: en
+status: false
+dependencies: {  }
+id: new_comment_posted
+label: 'New Comment posted'
+events:
+  -
+    event_name: 'rules_entity_insert:comment'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: e9683751-f412-4c7a-8f63-cae12041fb03
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 9ecd5d91-d49f-4353-829d-67627e65c4d6
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: 0f8aa852-2166-4b67-ae45-460df049fa93
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 979fe919-0a99-4888-a1c5-06053c64a309
+        weight: 0
+        action_id: 'rules_entity_create:radioactivity'
+        context_values:
+          langcode: ''
+          timestamp: ''
+          energy: '5'
+        context_mapping: {  }
+        context_processors:
+          langcode:
+            rules_tokens: {  }
+          timestamp:
+            rules_tokens: {  }
+          energy:
+            rules_tokens: {  }
+        provides_mapping: {  }

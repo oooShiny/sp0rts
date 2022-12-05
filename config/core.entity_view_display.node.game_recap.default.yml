@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.game_recap.body
+    - field.field.node.game_recap.field_popularity
     - node.type.game_recap
   module:
+    - radioactivity
     - text
     - user
 id: node.game_recap.default
@@ -20,7 +22,27 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_popularity:
+    type: radioactivity_reference_emitter
+    label: above
+    settings:
+      energy: !!float 10
+      display: false
+      decimals: !!float 0
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  rate_vote:
     settings: {  }
     third_party_settings: {  }
     weight: 100

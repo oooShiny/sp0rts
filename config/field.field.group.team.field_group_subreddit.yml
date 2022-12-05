@@ -1,0 +1,19 @@
+uuid: ef88b466-1273-4e78-a72c-405db1a61a99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_group_subreddit
+    - group.type.team
+id: group.team.field_group_subreddit
+field_name: field_group_subreddit
+entity_type: group
+bundle: team
+label: 'Team Subreddit'
+description: 'Enter the official subreddit, and the site will import any popular posts on a regular basis.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

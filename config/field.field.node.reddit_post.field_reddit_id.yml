@@ -1,0 +1,19 @@
+uuid: 035739f9-8980-4385-ab28-71ab40f0dcc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reddit_id
+    - node.type.reddit_post
+id: node.reddit_post.field_reddit_id
+field_name: field_reddit_id
+entity_type: node
+bundle: reddit_post
+label: 'Reddit ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

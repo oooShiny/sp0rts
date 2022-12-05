@@ -1,0 +1,19 @@
+uuid: 4a005751-7d9e-4484-a567-3388f85c4e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reddit_image
+    - node.type.reddit_post
+id: node.reddit_post.field_reddit_image
+field_name: field_reddit_image
+entity_type: node
+bundle: reddit_post
+label: 'Reddit Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

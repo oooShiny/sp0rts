@@ -1,0 +1,19 @@
+uuid: 589de61c-04e6-4d1e-a837-a417d11ee8a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.reddit_post
+  module:
+    - gnode
+    - node
+id: team-group_node-reddit_post
+label: 'Team: Group node (Reddit Post)'
+description: 'Adds <em class="placeholder">Reddit Post</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:reddit_post'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

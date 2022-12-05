@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.league.field_group_subreddit
     - field.field.group.league.field_group_youtube_channel
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
@@ -25,6 +26,14 @@ targetEntityType: group
 bundle: league
 mode: default
 content:
+  field_group_subreddit:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_group_youtube_channel:
     type: string_textfield
     weight: 125

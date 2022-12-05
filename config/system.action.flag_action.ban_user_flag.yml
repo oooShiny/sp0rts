@@ -1,0 +1,15 @@
+uuid: 66c4ed0f-0621-4dc1-bd4d-4f7ca2a0fb78
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.ban_user
+  module:
+    - flag
+id: flag_action.ban_user_flag
+label: 'Ban this user'
+type: user
+plugin: 'flag_action:ban_user_flag'
+configuration:
+  flag_id: ban_user
+  flag_action: flag

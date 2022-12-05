@@ -64,3 +64,14 @@ function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $for
     $form['#attributes']['class'][] = 'tw-bg-gray-300 tw-border-b tw-flex tw-gap-5 tw-justify-center tw-p-2';
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwind_sports_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->bundle() == 'tweet') {
+    $variables['tweet_id'] = $node->get('field_tweet_id')->value;
+  }
+
+}

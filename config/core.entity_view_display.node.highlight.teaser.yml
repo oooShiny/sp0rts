@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.highlight.body
+    - field.field.node.highlight.field_popularity
     - node.type.highlight
   module:
     - field_layout
@@ -51,6 +52,26 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          03c45eb5-60f0-41f8-8e90-b63ac7a48bbf:
+            uuid: 03c45eb5-60f0-41f8-8e90-b63ac7a48bbf
+            region: content
+            configuration:
+              id: 'extra_field_block:node:highlight:flag_flag_inappropriate_content'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          96af5e1f-01a5-40b2-b4bb-65110ab2d4c5:
+            uuid: 96af5e1f-01a5-40b2-b4bb-65110ab2d4c5
+            region: content
+            configuration:
+              id: 'extra_field_block:node:highlight:rate_vote'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.highlight.teaser
 targetEntityType: node
@@ -65,9 +86,20 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_popularity: true

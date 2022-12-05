@@ -1,0 +1,15 @@
+uuid: 16f153af-00cd-465d-85bf-45d54af3d04e
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.ban_user
+  module:
+    - flag
+id: flag_action.ban_user_unflag
+label: 'Unban this user'
+type: user
+plugin: 'flag_action:ban_user_unflag'
+configuration:
+  flag_id: ban_user
+  flag_action: unflag

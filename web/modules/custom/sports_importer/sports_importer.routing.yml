@@ -12,3 +12,10 @@ sports_importer.youtube:
     _title: 'Import Youtube videos'
   requirements:
     _role: 'administrator'
+sports_importer.reddit:
+  path: '/admin/import_reddit'
+  defaults:
+    _controller: '\Drupal\sports_importer\Controller\RedditController::get_data'
+    _title: 'Import Reddit posts'
+  requirements:
+    _role: 'administrator'

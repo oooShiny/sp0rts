@@ -1,0 +1,159 @@
+uuid: c674de9c-1bb5-4535-af38-82972aec70f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.reddit_post.body
+    - field.field.node.reddit_post.comment
+    - field.field.node.reddit_post.field_popularity
+    - field.field.node.reddit_post.field_post_link
+    - field.field.node.reddit_post.field_reddit_author
+    - field.field.node.reddit_post.field_reddit_id
+    - field.field.node.reddit_post.field_reddit_image
+    - field.field.node.reddit_post.field_reddit_url
+    - node.type.reddit_post
+  module:
+    - comment
+    - field_layout
+    - layout_discovery
+    - link
+    - path
+    - radioactivity
+    - scheduler
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.reddit_post.default
+targetEntityType: node
+bundle: reddit_post
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 128
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_popularity:
+    type: radioactivity_reference
+    weight: 127
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_post_link:
+    type: link_default
+    weight: 126
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_reddit_author:
+    type: link_default
+    weight: 125
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_reddit_id:
+    type: string_textfield
+    weight: 124
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_reddit_image:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_reddit_url:
+    type: link_default
+    weight: 122
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

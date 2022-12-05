@@ -1,0 +1,42 @@
+uuid: be4cd90b-ed4b-4093-bac9-be77aab9b6a1
+langcode: en
+status: false
+dependencies: {  }
+id: vote_entered
+label: 'Vote entered'
+events:
+  -
+    event_name: 'rules_entity_insert:vote--updown'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: eeb983f3-ea54-4016-8378-1c9735003e04
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 009e4b2a-11ec-4164-9713-299f26a74673
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: f5326ec6-fe3a-47c0-9adf-746cc432eceb
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: f8bbb4c5-e964-49d5-a421-d8ed064e8993
+        weight: 0
+        action_id: 'rules_entity_create:radioactivity'
+        context_values:
+          langcode: ''
+          timestamp: ''
+        context_mapping:
+          energy: vote.value.value
+        context_processors:
+          langcode:
+            rules_tokens: {  }
+          timestamp:
+            rules_tokens: {  }
+        provides_mapping: {  }

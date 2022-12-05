@@ -4,6 +4,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
 use Drupal\sports_importer\Controller\EspnController;
+use Drupal\sports_importer\Controller\RedditController;
 use Drupal\sports_importer\Controller\YoutubeController;
 
 /**
@@ -33,6 +34,11 @@ function sports_importer_theme($existing, $type, $theme, $path) {
       'variables' => [
         'videos' => ''
       ]
+    ],
+    'reddit_importer_admin' => [
+      'variables' => [
+        'posts' => ''
+      ]
     ]
   ];
 }
@@ -46,10 +52,11 @@ function sports_importer_cron() {
   $espn_importer->get_data('football', 'nfl', '32');
 
   $youtube_importer = new YoutubeController;
-  // Get NFL videos.
+  // Get videos.
   $youtube_importer->get_data();
 
-
+  $reddit_importer = new RedditController;
+  $reddit_importer->get_data();
 
 }
 

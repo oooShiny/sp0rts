@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.group.teaser
+    - field.field.group.league.field_group_subreddit
     - field.field.group.league.field_group_youtube_channel
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
@@ -40,6 +41,7 @@ hidden:
   breadcrumbs: true
   changed: true
   created: true
+  field_group_subreddit: true
   field_group_youtube_channel: true
   field_parent_sport: true
   field_twitter_account: true

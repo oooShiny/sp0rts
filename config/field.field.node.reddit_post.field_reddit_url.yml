@@ -1,0 +1,23 @@
+uuid: 57765c01-2fb6-47ba-bafc-950f8bf0eccb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reddit_url
+    - node.type.reddit_post
+  module:
+    - link
+id: node.reddit_post.field_reddit_url
+field_name: field_reddit_url
+entity_type: node
+bundle: reddit_post
+label: 'Reddit URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

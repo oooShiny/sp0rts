@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.base_field_override.group.league.label
+    - field.field.group.league.field_group_subreddit
     - field.field.group.league.field_group_youtube_channel
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
@@ -115,12 +116,36 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+          3f6c421f-b2ec-4372-9c28-084a45ea2041:
+            uuid: 3f6c421f-b2ec-4372-9c28-084a45ea2041
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_group_subreddit'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
 id: group.league.default
 targetEntityType: group
 bundle: league
 mode: default
 content:
+  field_group_subreddit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_group_youtube_channel:
     type: string
     label: above

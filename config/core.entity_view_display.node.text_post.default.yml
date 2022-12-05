@@ -97,6 +97,27 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
+          52156aff-b135-45a7-a857-46d710859e48:
+            uuid: 52156aff-b135-45a7-a857-46d710859e48
+            region: content
+            configuration:
+              id: 'field_block:node:text_post:field_popularity'
+              label: Popularity
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: radioactivity_reference_emitter
+                label: hidden
+                settings:
+                  energy: !!float 10
+                  display: false
+                  decimals: !!float 0
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
 id: node.text_post.default
 targetEntityType: node

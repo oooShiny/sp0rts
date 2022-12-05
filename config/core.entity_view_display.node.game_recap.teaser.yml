@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.game_recap.body
+    - field.field.node.game_recap.field_popularity
     - node.type.game_recap
   module:
     - text
@@ -22,9 +23,20 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_popularity: true

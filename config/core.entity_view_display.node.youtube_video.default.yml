@@ -25,7 +25,7 @@ content:
     region: content
   field_popularity:
     type: radioactivity_reference_emitter
-    label: above
+    label: hidden
     settings:
       energy: !!float 10
       display: false

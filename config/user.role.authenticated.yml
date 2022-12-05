@@ -10,6 +10,7 @@ dependencies:
     - comment
     - contact
     - filter
+    - flag
     - media
     - node
     - rate
@@ -39,9 +40,15 @@ permissions:
   - 'edit own comments'
   - 'edit own link content'
   - 'edit own text_post content'
+  - 'flag flag_inappropriate_comment_'
+  - 'flag flag_inappropriate_content'
+  - 'flag following'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'unflag flag_inappropriate_comment_'
+  - 'unflag flag_inappropriate_content'
+  - 'unflag following'
   - 'use text format basic_html'
   - 'view media'
   - 'view own unpublished content'

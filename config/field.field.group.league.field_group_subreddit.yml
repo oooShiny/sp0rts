@@ -1,0 +1,19 @@
+uuid: 3597a106-68b0-4037-a9aa-c9de86824ea3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_group_subreddit
+    - group.type.league
+id: group.league.field_group_subreddit
+field_name: field_group_subreddit
+entity_type: group
+bundle: league
+label: 'League Subreddit'
+description: 'Enter the official subreddit, and the site will import any popular posts on a regular basis.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

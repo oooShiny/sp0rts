@@ -1,0 +1,43 @@
+uuid: f926a57b-c9a1-4962-aceb-579101c3757a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: E1qmUI2SlozLlJ308jfMMFKT67l1p6PywE2LTRbeYS4
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

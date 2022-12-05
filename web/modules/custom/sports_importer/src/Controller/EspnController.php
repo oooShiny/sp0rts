@@ -72,6 +72,7 @@ class EspnController extends ControllerBase {
               $node = Node::create([
                 'type' => 'game',
                 'title' => $game_title,
+                'uid' => 1,
                 'body' => [
                   'summary' => '',
                   'value' => '<p>' . $text . '</p>',
@@ -80,9 +81,10 @@ class EspnController extends ControllerBase {
                 'field_team_1' => $team1['name'],
                 'field_team_2' => $team2['name'],
                 'field_game_date' => $game_date->format('Y-m-d\TH:i:s'),
-                'publish_on' => $game_date->format('U') - 3600
+                'publish_on' => $game_date->format('U') - 3600,
               ]);
 
+              $node->enforceIsNew();
               $node->save();
 
               $relation = $gr->getContentByEntityId('group_node:game', $node->id());

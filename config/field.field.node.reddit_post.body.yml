@@ -1,0 +1,23 @@
+uuid: b7c378ac-6c53-4b9b-8fb6-ae763d63c41b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.reddit_post
+  module:
+    - text
+id: node.reddit_post.body
+field_name: body
+entity_type: node
+bundle: reddit_post
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

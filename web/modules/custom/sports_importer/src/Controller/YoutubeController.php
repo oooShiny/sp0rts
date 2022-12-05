@@ -67,15 +67,17 @@ class YoutubeController extends ControllerBase {
             $node = Node::create([
               'type' => 'youtube_video',
               'title' => $video['snippet']['title'],
+              'uid' => 1,
               'body' => [
                 'summary' => '',
                 'value' => '<p>' . $video['snippet']['description'] . '</p>',
                 'format' => 'full_html',
               ],
               'field_youtube_video_link' => 'https://www.youtube.com/embed/' . $video['snippet']['resourceId']['videoId'],
-              'field_youtube_thumbnail' => $video['snippet']['thumbnails']['medium']['url']
+              'field_youtube_thumbnail' => $video['snippet']['thumbnails']['medium']['url'],
             ]);
 
+            $node->enforceIsNew();
             $node->save();
 
             $relation = $group->getContentByEntityId('group_node:youtube_video', $node->id());

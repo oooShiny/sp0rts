@@ -1,0 +1,15 @@
+uuid: 232639a3-8f61-4ba4-a724-3ab9c5d42f67
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.flag_inappropriate_content
+  module:
+    - flag
+id: flag_action.flag_inappropriate_content_unflag
+label: 'Unflag this item'
+type: node
+plugin: 'flag_action:flag_inappropriate_content_unflag'
+configuration:
+  flag_id: flag_inappropriate_content
+  flag_action: unflag

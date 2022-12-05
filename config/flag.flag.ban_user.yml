@@ -1,0 +1,30 @@
+uuid: ae76a572-7852-4744-b8b4-e276872157c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: ban_user
+label: 'Ban User'
+bundles: {  }
+entity_type: user
+global: true
+flag_short: 'Ban this user'
+flag_long: ''
+flag_message: ''
+unflag_short: 'Unban this user'
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+weight: 0
+flag_type: 'entity:user'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+  show_on_profile: true
+linkTypeConfig: {  }

@@ -1,0 +1,30 @@
+uuid: 852d13f4-e963-4903-bd10-bf8585f4c803
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+id: flag_inappropriate_comment_
+label: 'Flag inappropriate comment '
+bundles: {  }
+entity_type: comment
+global: false
+flag_short: 'Flag this comment'
+flag_long: ''
+flag_message: ''
+unflag_short: 'Unflag this comment'
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+weight: 0
+flag_type: 'entity:comment'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+    parent_owner: '0'
+linkTypeConfig: {  }

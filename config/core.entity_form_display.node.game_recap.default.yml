@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.game_recap.body
+    - field.field.node.game_recap.field_popularity
     - node.type.game_recap
   module:
     - field_layout
     - layout_discovery
     - path
+    - radioactivity
+    - scheduler
     - text
 third_party_settings:
   field_layout:
@@ -36,6 +39,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_popularity:
+    type: radioactivity_reference
+    weight: 122
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 30
@@ -48,6 +57,17 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -80,5 +100,11 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

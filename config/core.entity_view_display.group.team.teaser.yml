@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.group.teaser
     - field.field.group.team.field_conference_division
+    - field.field.group.team.field_group_subreddit
     - field.field.group.team.field_group_youtube_channel
     - field.field.group.team.field_header_image
     - field.field.group.team.field_logo
@@ -44,6 +45,7 @@ hidden:
   changed: true
   created: true
   field_conference_division: true
+  field_group_subreddit: true
   field_group_youtube_channel: true
   field_header_image: true
   field_parent_league: true

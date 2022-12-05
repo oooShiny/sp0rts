@@ -13,6 +13,11 @@ group_type: team
 permissions_ui: true
 permissions:
   - 'view group'
+  - 'view group_node:highlight entity'
   - 'view group_node:link entity'
+  - 'view group_node:reddit_post content'
+  - 'view group_node:reddit_post entity'
   - 'view group_node:text_post entity'
   - 'view group_node:tweet entity'
+  - 'view group_node:youtube_video content'
+  - 'view group_node:youtube_video entity'

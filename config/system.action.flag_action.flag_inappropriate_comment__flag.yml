@@ -1,0 +1,15 @@
+uuid: af2b2077-e30e-4bb0-947e-ac8032624c51
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.flag_inappropriate_comment_
+  module:
+    - flag
+id: flag_action.flag_inappropriate_comment__flag
+label: 'Flag this comment'
+type: comment
+plugin: 'flag_action:flag_inappropriate_comment__flag'
+configuration:
+  flag_id: flag_inappropriate_comment_
+  flag_action: flag

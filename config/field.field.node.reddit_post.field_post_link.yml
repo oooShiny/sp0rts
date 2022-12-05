@@ -1,0 +1,23 @@
+uuid: 07c17872-7952-43dd-b159-53739de9946c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_link
+    - node.type.reddit_post
+  module:
+    - link
+id: node.reddit_post.field_post_link
+field_name: field_post_link
+entity_type: node
+bundle: reddit_post
+label: 'Post Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

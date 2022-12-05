@@ -7,15 +7,23 @@ label: Vote
 template: thumbsupdown
 value_type: points
 entity_types:
+  - node.game
+  - node.game_recap
   - node.highlight
   - node.link
+  - node.reddit_post
   - node.text_post
   - node.tweet
+  - node.youtube_video
 comment_types:
+  - node.game
+  - node.game_recap
   - node.highlight
   - node.link
+  - node.reddit_post
   - node.text_post
   - node.tweet
+  - node.youtube_video
 options:
   -
     value: '1'

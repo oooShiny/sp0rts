@@ -1,0 +1,23 @@
+uuid: f375ad7a-6522-4e4d-bd49-807cbc7c340c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reddit_author
+    - node.type.reddit_post
+  module:
+    - link
+id: node.reddit_post.field_reddit_author
+field_name: field_reddit_author
+entity_type: node
+bundle: reddit_post
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

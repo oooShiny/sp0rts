@@ -1,0 +1,15 @@
+uuid: 52428f5f-ac0b-437b-be3b-5f8bd7466187
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.flag_inappropriate_content
+  module:
+    - flag
+id: flag_action.flag_inappropriate_content_flag
+label: 'Flag this item'
+type: node
+plugin: 'flag_action:flag_inappropriate_content_flag'
+configuration:
+  flag_id: flag_inappropriate_content
+  flag_action: flag

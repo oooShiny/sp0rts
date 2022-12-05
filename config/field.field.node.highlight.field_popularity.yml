@@ -1,0 +1,29 @@
+uuid: 5041e957-f893-48a8-a626-20134addf03c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popularity
+    - node.type.highlight
+  module:
+    - radioactivity
+id: node.highlight.field_popularity
+field_name: field_popularity
+entity_type: node
+bundle: highlight
+label: Popularity
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:radioactivity'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+  default_energy: !!float 75
+field_type: radioactivity_reference

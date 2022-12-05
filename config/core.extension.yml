@@ -57,6 +57,7 @@ module:
   radioactivity: 0
   rate: 0
   rdf: 0
+  rules: 0
   scheduler: 0
   search: 0
   shortcut: 0
@@ -71,6 +72,7 @@ module:
   tour: 0
   twig_extensions: 0
   twig_tweak: 0
+  typed_data: 0
   ultimate_cron: 0
   user: 0
   variationcache: 0

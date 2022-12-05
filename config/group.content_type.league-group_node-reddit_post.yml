@@ -1,0 +1,19 @@
+uuid: b82b6e45-94f3-4727-9144-9b30782633a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+    - node.type.reddit_post
+  module:
+    - gnode
+    - node
+id: league-group_node-reddit_post
+label: 'League: Group node (Reddit Post)'
+description: 'Adds <em class="placeholder">Reddit Post</em> content to groups both publicly and privately.'
+group_type: league
+content_plugin: 'group_node:reddit_post'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

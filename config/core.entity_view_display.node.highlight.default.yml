@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.highlight.body
+    - field.field.node.highlight.field_popularity
     - node.type.highlight
   module:
     - field_layout
     - layout_builder
     - layout_discovery
+    - radioactivity
     - text
     - user
 third_party_settings:
@@ -49,6 +51,44 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e0c05aed-7303-412f-a778-c77a3967bdc1:
+            uuid: e0c05aed-7303-412f-a778-c77a3967bdc1
+            region: content
+            configuration:
+              id: 'extra_field_block:node:highlight:flag_flag_inappropriate_content'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+          df81f953-26a5-44e4-ac76-d94c94834526:
+            uuid: df81f953-26a5-44e4-ac76-d94c94834526
+            region: content
+            configuration:
+              id: 'extra_field_block:node:highlight:rate_vote'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
+          48037cdd-cfd7-4aa1-aa98-888809b69e3b:
+            uuid: 48037cdd-cfd7-4aa1-aa98-888809b69e3b
+            region: content
+            configuration:
+              id: 'field_block:node:highlight:field_popularity'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: radioactivity_reference_emitter
+                label: above
+                settings:
+                  energy: !!float 10
+                  display: false
+                  decimals: !!float 0
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: node.highlight.default
 targetEntityType: node
@@ -62,7 +102,27 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_popularity:
+    type: radioactivity_reference_emitter
+    label: above
+    settings:
+      energy: !!float 10
+      display: false
+      decimals: !!float 0
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  rate_vote:
     settings: {  }
     third_party_settings: {  }
     weight: 100
