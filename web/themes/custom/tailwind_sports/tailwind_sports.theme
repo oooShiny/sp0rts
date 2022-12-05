@@ -73,5 +73,8 @@ function tailwind_sports_preprocess_node(&$variables) {
   if ($node->bundle() == 'tweet') {
     $variables['tweet_id'] = $node->get('field_tweet_id')->value;
   }
+  if ($node->bundle() == 'reddit_post') {
+    $variables['reddit_id'] = $node->get('field_reddit_id')->value;
+  }
 
 }
