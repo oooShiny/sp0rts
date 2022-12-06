@@ -13,6 +13,7 @@ group_type: team
 permissions_ui: true
 permissions:
   - 'view group'
+  - 'view group_node:game entity'
   - 'view group_node:highlight entity'
   - 'view group_node:link entity'
   - 'view group_node:reddit_post content'
