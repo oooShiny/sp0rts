@@ -83,24 +83,24 @@
   <div{{ content_attributes.addClass('node-content') }}>
 {#    {{ content }}#}
     <div class="tw-flex tw-justify-evenly">
-      <div>
-        <img src="{{ t1_logo }}" alt="Team 1 Logo" class="tw-h-16">
+      <div class="tw-text-center">
+        <img src="{{ t1_logo }}" alt="Team 1 Logo" class="tw-h-16 tw-m-auto tw-w-16">
         {{ content.field_team_1 }}
         ({{ t1_record }})
       </div>
-      <div>
-        <img src="{{ t2_logo }}" alt="Team 2 Logo" class="tw-h-16">
+      <div class="tw-text-center">
+        <img src="{{ t2_logo }}" alt="Team 2 Logo" class="tw-h-16 tw-m-auto tw-w-16">
         {{ content.field_team_2 }}
         ({{ t2_record }})
       </div>
     </div>
 
-    <div class="tw-mx-auto lg:tw-w-1/4">
+    <div class="tw-mx-auto lg:tw-w-1/5">
       {{ content.field_game_date }}
       {{ content.field_venue }}
-      {{ weather }} ({{ temp }}°F)
-      {{ favorite }} favored by {{ line }}
+      <div>{{ weather }} ({{ temp }}°F)</div>
+      <div>{{ favorite }} favored by {{ line }}</div>
     </div>
   </div>
-
+  {{ content.comment }}
 </article>

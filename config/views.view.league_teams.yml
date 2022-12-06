@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.group.field_logo
-    - image.style.thumbnail
+    - image.style.icon_50x50
   module:
     - group
     - image
@@ -35,7 +35,7 @@ display:
           entity_field: label
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -142,7 +142,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: icon_50x50
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -241,16 +241,11 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       style:
-        type: grid
+        type: default
         options:
           grouping: {  }
-          columns: 3
-          automatic_width: true
-          alignment: horizontal
-          row_class_custom: ''
-          row_class_default: true
-          col_class_custom: ''
-          col_class_default: true
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
       query:

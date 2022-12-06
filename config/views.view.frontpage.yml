@@ -804,6 +804,22 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
         comment_count:
           id: comment_count
           table: comment_entity_statistics
@@ -824,22 +840,6 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: date
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
           plugin_id: date
           order: DESC
           expose:

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.group.teaser
     - field.field.group.league.field_group_subreddit
     - field.field.group.league.field_group_youtube_channel
+    - field.field.group.league.field_header_image
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
     - field.field.group.league.field_twitter_account
@@ -43,6 +44,7 @@ hidden:
   created: true
   field_group_subreddit: true
   field_group_youtube_channel: true
+  field_header_image: true
   field_parent_sport: true
   field_twitter_account: true
   label: true

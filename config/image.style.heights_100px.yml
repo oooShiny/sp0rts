@@ -1,0 +1,15 @@
+uuid: 2d7898e5-1f78-46b5-84e8-f61828de898f
+langcode: en
+status: true
+dependencies: {  }
+name: heights_100px
+label: 'Height 100px'
+effects:
+  975db7b6-c383-4fa6-b90a-5910507d7a3a:
+    uuid: 975db7b6-c383-4fa6-b90a-5910507d7a3a
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 100
+      upscale: true

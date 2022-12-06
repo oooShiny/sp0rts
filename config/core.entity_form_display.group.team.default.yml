@@ -14,6 +14,7 @@ dependencies:
     - group.type.team
     - image.style.thumbnail
   module:
+    - field_group
     - field_layout
     - image
     - layout_discovery
@@ -25,6 +26,24 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  field_group:
+    group_social_media_accounts:
+      children:
+        - field_twitter_account
+        - field_group_youtube_channel
+        - field_group_subreddit
+      label: 'Social Media Accounts'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 id: group.team.default
 targetEntityType: group
 bundle: team
@@ -32,7 +51,7 @@ mode: default
 content:
   field_conference_division:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -42,7 +61,7 @@ content:
     third_party_settings: {  }
   field_group_subreddit:
     type: string_textfield
-    weight: 27
+    weight: 11
     region: content
     settings:
       size: 60
@@ -50,7 +69,7 @@ content:
     third_party_settings: {  }
   field_group_youtube_channel:
     type: string_textfield
-    weight: 26
+    weight: 10
     region: content
     settings:
       size: 60
@@ -58,14 +77,14 @@ content:
     third_party_settings: {  }
   field_header_image:
     type: media_library_widget
-    weight: 4
+    weight: 6
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_logo:
     type: image_image
-    weight: 9
+    weight: 7
     region: content
     settings:
       progress_indicator: throbber
@@ -83,7 +102,7 @@ content:
     third_party_settings: {  }
   field_parent_sport:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -93,7 +112,7 @@ content:
     third_party_settings: {  }
   field_twitter_account:
     type: link_default
-    weight: 6
+    weight: 9
     region: content
     settings:
       placeholder_url: ''

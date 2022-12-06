@@ -1,0 +1,15 @@
+uuid: 0851b524-45a4-45a9-ae6a-347e68e0d524
+langcode: en
+status: true
+dependencies: {  }
+name: icon_50x50
+label: 'Icon 50x50'
+effects:
+  62261ea1-b656-40f0-aa0d-92446989d76a:
+    uuid: 62261ea1-b656-40f0-aa0d-92446989d76a
+    id: image_scale
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      upscale: true

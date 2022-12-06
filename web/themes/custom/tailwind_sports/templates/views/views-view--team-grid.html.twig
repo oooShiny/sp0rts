@@ -33,7 +33,9 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'tw-flex'
+    'tw-flex',
+    'tw-flex-wrap',
+    'tw-gap-1'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

@@ -84,7 +84,7 @@ class RedditController extends ControllerBase {
                 ],
                 'field_post_link' => [
                   'uri' => $p->url,
-                  'title' => $p->url
+                  'title' => $post_title
                 ],
               ]);
 

@@ -1,0 +1,29 @@
+uuid: df819c25-51a8-4494-acf6-7965ec5254c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_header_image
+    - group.type.league
+    - media.type.image
+id: group.league.field_header_image
+field_name: field_header_image
+entity_type: group
+bundle: league
+label: 'Header Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

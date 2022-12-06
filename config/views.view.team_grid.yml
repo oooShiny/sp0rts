@@ -6,7 +6,7 @@ dependencies:
     - field.storage.group.field_conference_division
     - field.storage.group.field_logo
     - group.type.team
-    - image.style.thumbnail
+    - image.style.icon_50x50
   module:
     - group
     - image
@@ -79,7 +79,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: icon_50x50
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -133,7 +133,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: tw-text-center
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -175,7 +175,20 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        field_conference_division_target_id:
+          id: field_conference_division_target_id
+          table: group__field_conference_division
+          field: field_conference_division_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_parent_league_target_id:
           id: field_parent_league_target_id
@@ -246,12 +259,12 @@ display:
               rendered: true
               rendered_strip: false
           columns: 4
-          automatic_width: true
+          automatic_width: false
           alignment: horizontal
-          row_class_custom: ''
+          row_class_custom: tw-flex
           row_class_default: true
-          col_class_custom: ''
-          col_class_default: true
+          col_class_custom: tw-w-16
+          col_class_default: false
       row:
         type: fields
       query:

@@ -6,6 +6,7 @@ dependencies:
     - core.base_field_override.group.league.label
     - field.field.group.league.field_group_subreddit
     - field.field.group.league.field_group_youtube_channel
+    - field.field.group.league.field_header_image
     - field.field.group.league.field_logo
     - field.field.group.league.field_parent_sport
     - field.field.group.league.field_twitter_account
@@ -132,6 +133,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          8bf898a6-5365-4d01-91ee-ffb98f0d6104:
+            uuid: 8bf898a6-5365-4d01-91ee-ffb98f0d6104
+            region: content
+            configuration:
+              id: 'field_block:group:league:field_header_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
 id: group.league.default
 targetEntityType: group
@@ -153,6 +170,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_header_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_logo:
     type: image
