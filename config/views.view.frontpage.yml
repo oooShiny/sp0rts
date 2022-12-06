@@ -741,8 +741,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
-          reset_button: true
+          submit_button: Update
+          reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: false
@@ -801,9 +801,9 @@ display:
           plugin_id: standard
           order: DESC
           expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
+            label: Popularity
+            field_identifier: popularity
+          exposed: true
         created:
           id: created
           table: node_field_data
@@ -816,9 +816,9 @@ display:
           plugin_id: date
           order: DESC
           expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
+            label: Newest
+            field_identifier: created
+          exposed: true
           granularity: second
         comment_count:
           id: comment_count
@@ -962,6 +962,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1057,6 +1058,7 @@ display:
         - route
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1144,6 +1146,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1225,6 +1228,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.roles
       tags:
@@ -1398,6 +1402,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - user
         - 'user.node_grants:view'
         - user.roles
@@ -1437,6 +1442,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1464,6 +1470,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
         - 'user.node_grants:view'
         - user.roles
       tags:
