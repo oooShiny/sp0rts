@@ -2,6 +2,7 @@
 
 namespace Drupal\sports_importer\Controller;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
@@ -55,22 +56,24 @@ class RedditController extends ControllerBase {
               ->getStorage('node')
               ->loadByProperties(['field_reddit_id' => $p->id]);
             if (empty($nodes)) {
-              if (strlen($p->title) > 255) {
-                $post_title = substr($p->title, 0, 250) . '...';
-                $post_text = $post_title . "\n" . $p->selftext;
+              $title = Html::escape($p->title);
+              $body = Html::escape($p->selftext);
+              if (strlen($title) > 255) {
+                $post_title = substr($title, 0, 200) . '...';
+                $post_text = $title . "\n" . $body;
               }
               else {
-                $post_title = $p->title;
-                $post_text = $p->selftext;
+                $post_title = $title;
+                $post_text = $body;
               }
               // Create the reddit post and post it to the correct group.
               $node = Node::create([
                 'type' => 'reddit_post',
-                'title' => $post_title,
+                'title' => Html::escape($post_title),
                 'uid' => 1,
                 'body' => [
                   'summary' => '',
-                  'value' => $post_text,
+                  'value' => Html::escape($post_text),
                   'format' => 'full_html',
                 ],
                 'field_reddit_id' => $p->id,
@@ -84,7 +87,7 @@ class RedditController extends ControllerBase {
                 ],
                 'field_post_link' => [
                   'uri' => $p->url,
-                  'title' => $post_title
+                  'title' => Html::escape($post_title)
                 ],
               ]);
 

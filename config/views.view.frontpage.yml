@@ -913,7 +913,7 @@ display:
           admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
           entity_type: node
           plugin_id: standard
-          required: true
+          required: false
       use_ajax: true
       header: {  }
       footer: {  }
@@ -1109,7 +1109,7 @@ display:
           admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
           entity_type: node
           plugin_id: standard
-          required: true
+          required: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -1201,7 +1201,7 @@ display:
           admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
           entity_type: node
           plugin_id: standard
-          required: true
+          required: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -1383,7 +1383,7 @@ display:
           admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
           entity_type: node
           plugin_id: standard
-          required: true
+          required: false
       display_description: ''
       display_extenders: {  }
       allow:
