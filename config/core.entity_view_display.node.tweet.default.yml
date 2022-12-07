@@ -17,12 +17,8 @@ dependencies:
   module:
     - comment
     - field_layout
-    - image
     - layout_builder
-    - layout_discovery
-    - link
     - radioactivity
-    - text
     - user
 third_party_settings:
   field_layout:
@@ -30,101 +26,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          237cd28a-2b49-4321-9530-9ae32f0ed251:
-            uuid: 237cd28a-2b49-4321-9530-9ae32f0ed251
-            region: content
-            configuration:
-              id: 'field_block:node:tweet:field_tweet_author'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: link
-                label: hidden
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          424f9dda-6bdc-45dc-ab3d-d8a585fb0786:
-            uuid: 424f9dda-6bdc-45dc-ab3d-d8a585fb0786
-            region: content
-            configuration:
-              id: 'field_block:node:tweet:field_tweet_local_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: ''
-                  image_style: ''
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          6a26e4df-6379-4823-9bbb-29981f58dfa5:
-            uuid: 6a26e4df-6379-4823-9bbb-29981f58dfa5
-            region: content
-            configuration:
-              id: 'field_block:node:tweet:field_tweet_content'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          8e935586-b171-4193-8d63-d8b21bbfde53:
-            uuid: 8e935586-b171-4193-8d63-d8b21bbfde53
-            region: content
-            configuration:
-              id: 'field_block:node:tweet:comment'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: above
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-          dfb7296b-f9e6-41a0-872b-80508cc15d32:
-            uuid: dfb7296b-f9e6-41a0-872b-80508cc15d32
-            region: content
-            configuration:
-              id: 'field_block:node:tweet:field_popularity'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: radioactivity_reference_emitter
-                label: above
-                settings:
-                  energy: !!float 10
-                  display: false
-                  decimals: !!float 0
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: n1naCLJ95e-a4yGDpEVSm6f2HbsP9a6tOXnU_NUyPhI
 id: node.tweet.default
@@ -143,45 +46,30 @@ content:
     region: content
   field_popularity:
     type: radioactivity_reference_emitter
-    label: above
+    label: hidden
     settings:
       energy: !!float 10
       display: false
       decimals: !!float 0
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_tweet_author:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
     weight: 0
     region: content
-  field_tweet_content:
-    type: text_default
-    label: hidden
+  flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  field_tweet_local_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
+  rate_vote:
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
+  field_tweet_author: true
+  field_tweet_content: true
   field_tweet_external_image: true
   field_tweet_hashtags: true
   field_tweet_id: true
+  field_tweet_local_image: true
   field_tweet_mentions: true
   links: true

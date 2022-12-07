@@ -23,6 +23,7 @@ permissions:
   - 'create group_node:text_post entity'
   - 'create group_node:tweet content'
   - 'create group_node:tweet entity'
+  - 'create group_node:youtube_video entity'
   - 'delete any group_node:highlight content'
   - 'delete any group_node:highlight entity'
   - 'delete any group_node:link content'

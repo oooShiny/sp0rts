@@ -91,8 +91,9 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node-content') }}>
+    {{ content|without('comment') }}
     <blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/{{ tweet_id }}"></a></blockquote>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
-
+  {{ content.comment }}
 </article>

@@ -12,7 +12,6 @@ dependencies:
     - comment
     - field_layout
     - layout_builder
-    - layout_discovery
     - radioactivity
     - text
     - user
@@ -22,103 +21,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          ddebd0df-b7d4-4855-afa7-10567d19eb3f:
-            uuid: ddebd0df-b7d4-4855-afa7-10567d19eb3f
-            region: content
-            configuration:
-              id: 'extra_field_block:node:text_post:rate_vote'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          9bea2ad8-0458-445f-9b7f-c29e3cc213fe:
-            uuid: 9bea2ad8-0458-445f-9b7f-c29e3cc213fe
-            region: content
-            configuration:
-              id: 'field_block:node:text_post:field_popularity'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: radioactivity_reference_value
-                label: hidden
-                settings:
-                  decimals: !!float 0
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          ced0723f-767a-4d35-8774-497bea4b484f:
-            uuid: ced0723f-767a-4d35-8774-497bea4b484f
-            region: content
-            configuration:
-              id: 'field_block:node:text_post:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          b4b78737-2511-4816-934f-153ad0a50005:
-            uuid: b4b78737-2511-4816-934f-153ad0a50005
-            region: content
-            configuration:
-              id: 'extra_field_block:node:text_post:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 3
-            additional: {  }
-          6677193d-81c2-4915-bcbb-e730959ebf00:
-            uuid: 6677193d-81c2-4915-bcbb-e730959ebf00
-            region: content
-            configuration:
-              id: 'field_block:node:text_post:comment'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: above
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
-          52156aff-b135-45a7-a857-46d710859e48:
-            uuid: 52156aff-b135-45a7-a857-46d710859e48
-            region: content
-            configuration:
-              id: 'field_block:node:text_post:field_popularity'
-              label: Popularity
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: radioactivity_reference_emitter
-                label: hidden
-                settings:
-                  energy: !!float 10
-                  display: false
-                  decimals: !!float 0
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 id: node.text_post.default
 targetEntityType: node
 bundle: text_post
@@ -129,7 +33,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   comment:
     type: comment_default
@@ -138,20 +42,27 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_popularity:
-    type: radioactivity_reference_value
+    type: radioactivity_reference_emitter
     label: hidden
     settings:
+      energy: !!float 10
+      display: false
       decimals: !!float 0
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   rate_vote:
     settings: {  }

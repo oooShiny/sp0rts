@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.highlight
     - node.type.link
     - node.type.text_post
+    - node.type.youtube_video
   module:
     - comment
     - contact
@@ -15,7 +17,6 @@ dependencies:
     - node
     - rate
     - search
-    - shortcut
     - system
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -26,20 +27,35 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'cancel account'
+  - 'cast rate vote on comment on node of game'
   - 'cast rate vote on comment on node of link'
+  - 'cast rate vote on comment on node of reddit_post'
   - 'cast rate vote on comment on node of text_post'
+  - 'cast rate vote on comment on node of tweet'
+  - 'cast rate vote on node of game'
+  - 'cast rate vote on node of game_recap'
+  - 'cast rate vote on node of highlight'
   - 'cast rate vote on node of link'
+  - 'cast rate vote on node of reddit_post'
   - 'cast rate vote on node of text_post'
+  - 'cast rate vote on node of tweet'
+  - 'cast rate vote on node of youtube_video'
   - 'change own username'
+  - 'create highlight content'
   - 'create link content'
   - 'create text_post content'
+  - 'create youtube_video content'
+  - 'delete own highlight content'
   - 'delete own link content'
   - 'delete own text_post content'
+  - 'delete own youtube_video content'
   - 'edit own comments'
+  - 'edit own highlight content'
   - 'edit own link content'
   - 'edit own text_post content'
+  - 'edit own youtube_video content'
   - 'flag flag_inappropriate_comment_'
   - 'flag flag_inappropriate_content'
   - 'flag following'

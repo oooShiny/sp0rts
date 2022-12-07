@@ -1,4 +1,4 @@
-uuid: 1f8580d2-1069-4390-9286-126e742d559a
+uuid: e20a3575-61aa-456e-8465-e0fee404287e
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,10 @@ dependencies:
     - group.type.team
   enforced:
     config:
-      - user.role.content_editor
-id: team-111523d41
-label: 'Content editor'
-weight: 2
+      - user.role.moderator
+id: team-3f12549f7
+label: Moderator
+weight: 4
 internal: true
 audience: outsider
 group_type: team

@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: FGYrMvt5Li0Jm92wyoGSiFFNoI_WqcHTeNDMq4jHId0
+langcode: en
+status: true
+mapping:
+  type: simple
+  conditions: {  }
+  domain: sp0rts.b-cdn.net
+scheme: //
+farfuture:
+  status: true
+stream_wrappers:
+  - public

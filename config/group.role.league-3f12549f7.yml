@@ -1,4 +1,4 @@
-uuid: 86220648-72dd-43de-811e-a9adf14baa69
+uuid: 520340bf-7a7b-47c0-a6bf-9b52942c2481
 langcode: en
 status: true
 dependencies:
@@ -6,10 +6,10 @@ dependencies:
     - group.type.league
   enforced:
     config:
-      - user.role.content_editor
-id: league-111523d41
-label: 'Content editor'
-weight: 2
+      - user.role.moderator
+id: league-3f12549f7
+label: Moderator
+weight: 4
 internal: true
 audience: outsider
 group_type: league

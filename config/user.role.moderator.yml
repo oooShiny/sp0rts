@@ -1,0 +1,42 @@
+uuid: ca021c25-89e5-4e30-96f8-7c24c7c206b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.highlight
+    - node.type.link
+    - node.type.text_post
+    - node.type.youtube_video
+  module:
+    - comment
+    - flag
+    - node
+    - scheduler
+    - system
+    - toolbar
+id: moderator
+label: Moderator
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access toolbar'
+  - 'administer comments'
+  - 'create highlight content'
+  - 'create link content'
+  - 'create text_post content'
+  - 'create youtube_video content'
+  - 'delete own highlight content'
+  - 'delete own link content'
+  - 'delete own text_post content'
+  - 'delete own youtube_video content'
+  - 'edit own highlight content'
+  - 'edit own link content'
+  - 'edit own text_post content'
+  - 'edit own youtube_video content'
+  - 'flag ban_user'
+  - 'schedule publishing of nodes'
+  - 'unflag ban_user'
+  - 'view own unpublished content'
+  - 'view the administration theme'

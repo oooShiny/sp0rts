@@ -24,6 +24,7 @@ dependencies:
     - radioactivity
     - rate
     - user
+    - votingapi
 _core:
   default_config_hash: XEFoA1ECJzKZN4VpnDqqRQO-oltuYdmjjvGEYDKs8uU
 id: frontpage
@@ -558,66 +559,10 @@ display:
           entity_type: node
           plugin_id: rate_widget_field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: '{{ node_rate_widget_field }} '
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: tw-w-32
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          id_column: title
-          widgets: ''
-          widget_display: full
-          display_overrides:
-            hide_summary: hide_summary
-            hide_label: 0
-            hide_description: 0
-        field_popularity_1:
-          id: field_popularity_1
-          table: node__field_popularity
-          field: field_popularity
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -654,20 +599,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: radioactivity_reference_value
-          settings:
-            decimals: !!float 0
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          id_column: title
+          widgets: ''
+          widget_display: full
+          display_overrides:
+            hide_summary: hide_summary
+            hide_label: 0
+            hide_description: 0
         nothing:
           id: nothing
           table: views
@@ -680,7 +618,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ type }} {{ title }}</div>\r\n    <div class=\"tw-flex tw-gap-1 tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
+            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-flex tw-gap-1 tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -804,6 +742,21 @@ display:
             label: Popularity
             field_identifier: popularity
           exposed: true
+        value:
+          id: value
+          table: votingapi_result
+          field: value
+          relationship: node_vote_result_rate_count_up_updown
+          group_type: group
+          admin_label: ''
+          entity_type: vote_result
+          entity_field: value
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
@@ -951,6 +904,16 @@ display:
             'group_node:link': '0'
             'group_node:page': '0'
             'group_node:text_post': '0'
+        node_vote_result_rate_count_up_updown:
+          id: node_vote_result_rate_count_up_updown
+          table: node_field_data
+          field: node_vote_result_rate_count_up_updown
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
+          entity_type: node
+          plugin_id: standard
+          required: true
       use_ajax: true
       header: {  }
       footer: {  }
@@ -1137,6 +1100,16 @@ display:
           entity_field: uid
           plugin_id: standard
           required: true
+        node_vote_result_rate_count_up_updown:
+          id: node_vote_result_rate_count_up_updown
+          table: node_field_data
+          field: node_vote_result_rate_count_up_updown
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
+          entity_type: node
+          plugin_id: standard
+          required: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -1219,6 +1192,16 @@ display:
             'group_node:link': '0'
             'group_node:page': '0'
             'group_node:text_post': '0'
+        node_vote_result_rate_count_up_updown:
+          id: node_vote_result_rate_count_up_updown
+          table: node_field_data
+          field: node_vote_result_rate_count_up_updown
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
+          entity_type: node
+          plugin_id: standard
+          required: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -1391,6 +1374,16 @@ display:
           required: false
           flag: following
           user_scope: current
+        node_vote_result_rate_count_up_updown:
+          id: node_vote_result_rate_count_up_updown
+          table: node_field_data
+          field: node_vote_result_rate_count_up_updown
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Number of votes up" for content items: Up/Down'
+          entity_type: node
+          plugin_id: standard
+          required: true
       display_description: ''
       display_extenders: {  }
       allow:

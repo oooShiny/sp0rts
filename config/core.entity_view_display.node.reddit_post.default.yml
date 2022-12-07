@@ -15,22 +15,13 @@ dependencies:
     - node.type.reddit_post
   module:
     - comment
-    - link
     - radioactivity
-    - text
     - user
 id: node.reddit_post.default
 targetEntityType: node
 bundle: reddit_post
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
   comment:
     type: comment_default
     label: above
@@ -38,7 +29,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 9
+    weight: 4
     region: content
   field_popularity:
     type: radioactivity_reference_emitter
@@ -50,54 +41,10 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_post_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_reddit_author:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_reddit_image:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_reddit_url:
-    type: link_separate
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 3
     region: content
   links:
     settings: {  }
@@ -110,4 +57,9 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
+  field_post_link: true
+  field_reddit_author: true
   field_reddit_id: true
+  field_reddit_image: true
+  field_reddit_url: true

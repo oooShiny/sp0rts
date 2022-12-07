@@ -14,6 +14,7 @@ permissions_ui: true
 permissions:
   - 'create group_node:link entity'
   - 'create group_node:text_post entity'
+  - 'create group_node:youtube_video entity'
   - 'delete own group_node:link entity'
   - 'delete own group_node:text_post entity'
   - 'join group'
