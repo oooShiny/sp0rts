@@ -618,7 +618,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-flex tw-gap-1 tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
+            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
