@@ -4,7 +4,11 @@ langcode: en
 status: true
 mapping:
   type: simple
-  conditions: {  }
+  conditions:
+    not:
+      extensions:
+        - css
+        - js
   domain: sp0rts.b-cdn.net
 scheme: //
 farfuture:
