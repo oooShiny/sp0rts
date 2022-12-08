@@ -5,7 +5,7 @@ aside h2 {
 
 aside div.contextual-region,
 aside div.views-element-container {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 1em;
     margin: 0.5em 0;
 }

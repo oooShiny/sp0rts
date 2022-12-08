@@ -61,7 +61,7 @@ function tailwind_sports_preprocess_group(&$variables) {
 
 function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (str_contains($form['#id'], 'views-exposed-form-frontpage')) {
-    $form['#attributes']['class'][] = 'tw-bg-gray-300 tw-border-b tw-flex tw-gap-5 tw-justify-center tw-p-2';
+    $form['#attributes']['class'][] = 'tw-bg-gray-700 tw-border-b tw-flex tw-gap-5 tw-justify-center tw-p-2';
   }
   if (str_contains($form_id, 'updown_vote')) {
     $form['value']['#prefix'] = '<div class="thumbsupdown-rating-wrapper rate-enabled tw-flex tw-flex-wrap" can-edit="true">';
@@ -97,4 +97,11 @@ function tailwind_sports_preprocess_node(&$variables) {
     $variables['favorite'] = $node->get('field_favorite')->value;
     $variables['line'] = $node->get('field_line')->value;
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwind_sports_preprocess_html(&$variables) {
+  $variables['attributes']['class'][] = 'tw-bg-gray-800 tw-text-white';
 }

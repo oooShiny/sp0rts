@@ -11,7 +11,7 @@
  */
 #}
 {% apply spaceless %}
-  <select{{ attributes.addClass('tw-p-1 tw-rounded-md') }}>
+  <select{{ attributes.addClass('tw-p-1 tw-rounded-md tw-text-black') }}>
     {% for option in options %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}">
