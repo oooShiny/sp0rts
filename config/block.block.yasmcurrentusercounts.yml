@@ -10,7 +10,7 @@ dependencies:
 id: yasmcurrentusercounts
 theme: tailwind_sports
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: yasm_block_user
 settings:

@@ -48,7 +48,8 @@
         "tkijewski/reddit-php-sdk": "dev-master",
         "drupal/field_group": "^3.4",
         "drupal/cdn": "^3.5",
-        "drupal/webform": "^6.1"
+        "drupal/webform": "^6.1",
+        "drupal/formblock": "^2.0@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

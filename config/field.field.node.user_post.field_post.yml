@@ -1,0 +1,26 @@
+uuid: 60c1f294-4808-41e9-bbfb-76ff0ce6dc79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post
+    - node.type.user_post
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.user_post.field_post
+field_name: field_post
+entity_type: node
+bundle: user_post
+label: Post
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

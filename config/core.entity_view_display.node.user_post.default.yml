@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.user_post.body
-    - field.field.node.user_post.field_image
+    - field.field.node.user_post.field_post
+    - field.field.node.user_post.field_post_image
     - image.style.scaled_image
     - node.type.user_post
   module:
@@ -16,14 +16,14 @@ targetEntityType: node
 bundle: user_post
 mode: default
 content:
-  body:
+  field_post:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
-  field_image:
+  field_post_image:
     type: image
     label: hidden
     settings:

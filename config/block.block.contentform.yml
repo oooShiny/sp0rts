@@ -1,0 +1,28 @@
+uuid: cc8538a9-1e12-4175-a313-00a2be9d9ca4
+langcode: en
+status: true
+dependencies:
+  module:
+    - formblock
+    - system
+  theme:
+    - tailwind_sports
+id: contentform
+theme: tailwind_sports
+region: content
+weight: -4
+provider: null
+plugin: formblock_node
+settings:
+  id: formblock_node
+  label: 'Add a New Post'
+  label_display: visible
+  provider: formblock
+  type: user_post
+  form_mode: default
+  show_help: 0
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'

@@ -5,14 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.rss
     - field.storage.node.field_popularity
+    - field.storage.node.field_post
+    - field.storage.node.field_post_image
     - flag.flag.following
+    - image.style.medium
     - node.type.game
     - node.type.game_recap
     - node.type.highlight
+    - node.type.image
     - node.type.link
     - node.type.reddit_post
     - node.type.text_post
     - node.type.tweet
+    - node.type.user_post
     - node.type.youtube_video
     - user.role.anonymous
     - user.role.authenticated
@@ -20,9 +25,11 @@ dependencies:
     - comment
     - flag
     - group
+    - image
     - node
     - radioactivity
     - rate
+    - text
     - user
     - votingapi
 _core:
@@ -606,6 +613,134 @@ display:
             hide_summary: hide_summary
             hide_label: 0
             hide_description: 0
+        field_post:
+          id: field_post
+          table: node__field_post
+          field: field_post
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_post_image:
+          id: field_post_image
+          table: node__field_post_image
+          field: field_post_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: file
+            image_style: medium
+            image_loading:
+              attribute: lazy
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -618,7 +753,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
+            text: "<div class=\"tw-w-full tw-border-b tw-py-2\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    {{ field_post_image }}\r\n    {{ field_post }}\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -816,10 +951,12 @@ display:
             game: game
             game_recap: game_recap
             highlight: highlight
+            image: image
             link: link
             reddit_post: reddit_post
             text_post: text_post
             tweet: tweet
+            user_post: user_post
             youtube_video: youtube_video
           group: 1
           exposed: true
@@ -838,8 +975,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
               administrator: '0'
+              moderator: '0'
             reduce: true
           is_grouped: false
           group_info:
@@ -916,6 +1053,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   block_1:
     id: block_1
     display_title: 'Group Frontpage Block'
@@ -1012,6 +1151,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   block_2:
     id: block_2
     display_title: 'User Page Block'
@@ -1069,12 +1210,21 @@ display:
           admin_label: 'Content group content'
           entity_type: node
           plugin_id: group_content_to_entity_reverse
-          required: true
+          required: false
           group_content_plugins:
             'group_node:article': '0'
+            'group_node:game': '0'
+            'group_node:game_recap': '0'
+            'group_node:highlight': '0'
+            'group_node:image': '0'
             'group_node:link': '0'
             'group_node:page': '0'
+            'group_node:reddit_post': '0'
             'group_node:text_post': '0'
+            'group_node:tweet': '0'
+            'group_node:user_post': '0'
+            'group_node:webform': '0'
+            'group_node:youtube_video': '0'
         uid:
           id: uid
           table: node_field_data
@@ -1110,6 +1260,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   block_3:
     id: block_3
     display_title: 'Anon Frontpage Block'
@@ -1202,6 +1354,8 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   block_4:
     id: block_4
     display_title: 'Logged In Frontpage Block'
@@ -1387,6 +1541,8 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   feed_1:
     id: feed_1
     display_title: Feed
@@ -1426,6 +1582,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'
   page_1:
     id: page_1
     display_title: Page
@@ -1454,3 +1612,5 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_popularity'
+        - 'config:field.storage.node.field_post'
+        - 'config:field.storage.node.field_post_image'

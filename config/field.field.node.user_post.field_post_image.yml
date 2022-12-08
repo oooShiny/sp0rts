@@ -1,20 +1,20 @@
-uuid: 1e7941b1-a589-4917-8837-b1d8daa7f226
+uuid: 21c13d68-88f4-4154-855a-b0a3bb544586
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_post_image
     - node.type.user_post
   module:
     - image
-id: node.user_post.field_image
-field_name: field_image
+id: node.user_post.field_post_image
+field_name: field_post_image
 entity_type: node
 bundle: user_post
-label: Image
+label: 'Post Image'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

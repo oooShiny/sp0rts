@@ -11,7 +11,7 @@ _core:
 id: tailwind_sports_page_title
 theme: tailwind_sports
 region: content
-weight: -11
+weight: -12
 provider: null
 plugin: page_title_block
 settings:

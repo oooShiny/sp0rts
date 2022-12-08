@@ -36,6 +36,7 @@ module:
   flag: 0
   flag_count: 0
   flag_follower: 0
+  formblock: 0
   get_tweets: 0
   gin_login: 0
   gin_toolbar: 0
