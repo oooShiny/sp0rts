@@ -16,48 +16,65 @@ use Drupal\group\Entity\Group;
  */
 class SportsGroupTree extends BlockBase {
 
-    /**
-     * {@inheritdoc}
-     */
-    public function build() {
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
 
-        $ids = \Drupal::entityQuery('group')
-            ->execute();
+    $groups = [];
 
-        $group_objects = Group::loadMultiple($ids);
+    // Get all sports groups.
+    $sport_ids = \Drupal::entityQuery('group')
+      ->condition('type', 'sport')
+      ->execute();
 
-        $groups = [];
-        foreach ($group_objects as $g) {
-            switch ($g->getGroupType()->id()) {
-                case 'sport':
-                    $groups[strtolower($g->label())] = [
-                        'id' => $g->id(),
-                        'leagues' => []
-                    ];
-                    break;
-                case 'league':
-                    $sport = strtolower($g->get('field_parent_sport')->referencedEntities()[0]->label());
-                    $groups[$sport]['leagues'][$g->label()] = [
-                        'id' => $g->id(),
-                        'teams' => []
-                    ];
-                    break;
-                case 'team':
-                    $league = $g->get('field_parent_league')->referencedEntities()[0];
-                    $sport = strtolower($league->get('field_parent_sport')->referencedEntities()[0]->label());
-                    $groups[$sport]['leagues'][$league->label()]['teams'][$g->label()] = [
-                        'id' => $g->id(),
-                    ];
-                    break;
-            }
-        }
-
-
-        return [
-            '#theme' => 'sports_group_tree',
-            '#groups' => $groups
-        ];
+    $sports = Group::loadMultiple($sport_ids);
+    foreach ($sports as $g) {
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/group/'.$g->id());
+      $groups[strtolower($g->label())] = [
+        'url' => $alias,
+        'leagues' => [],
+      ];
     }
+
+    // Get all league groups.
+    $league_ids = \Drupal::entityQuery('group')
+      ->condition('type', 'league')
+      ->execute();
+
+    $leagues = Group::loadMultiple($league_ids);
+    foreach ($leagues as $g) {
+      $sport = strtolower($g->get('field_parent_sport')
+        ->referencedEntities()[0]->label());
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/group/'.$g->id());
+      $groups[$sport]['leagues'][$g->label()] = [
+        'url' => $alias,
+        'teams' => [],
+      ];
+    }
+
+    // Get all team groups.
+    $team_ids = \Drupal::entityQuery('group')
+      ->condition('type', 'team')
+      ->execute();
+
+    $teams = Group::loadMultiple($team_ids);
+    foreach ($teams as $g) {
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/group/'.$g->id());
+      $league = $g->get('field_parent_league')->referencedEntities()[0];
+      $sport = strtolower($league->get('field_parent_sport')
+        ->referencedEntities()[0]->label());
+      $groups[$sport]['leagues'][$league->label()]['teams'][$g->label()] = [
+        'url' => $alias,
+      ];
+    }
+
+
+    return [
+      '#theme' => 'sports_group_tree',
+      '#groups' => $groups,
+    ];
+  }
 
 
 }
