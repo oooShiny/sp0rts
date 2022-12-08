@@ -12,17 +12,20 @@ audience: member
 group_type: league
 permissions_ui: true
 permissions:
+  - 'create group_node:image entity'
   - 'create group_node:link content'
   - 'create group_node:link entity'
   - 'create group_node:text_post content'
   - 'create group_node:text_post entity'
   - 'create group_node:youtube_video entity'
+  - 'delete own group_node:image entity'
   - 'delete own group_node:link content'
   - 'delete own group_node:link entity'
   - 'delete own group_node:text_post content'
   - 'delete own group_node:text_post entity'
   - 'delete own group_node:youtube_video entity'
   - 'leave group'
+  - 'update own group_node:image entity'
   - 'update own group_node:link content'
   - 'update own group_node:link entity'
   - 'update own group_node:text_post content'
@@ -30,6 +33,7 @@ permissions:
   - 'update own group_node:youtube_video entity'
   - 'view group'
   - 'view group_membership content'
+  - 'view group_node:image entity'
   - 'view group_node:link entity'
   - 'view group_node:reddit_post content'
   - 'view group_node:reddit_post entity'

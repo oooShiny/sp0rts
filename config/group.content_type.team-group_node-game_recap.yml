@@ -1,0 +1,19 @@
+uuid: 48b21914-cbd8-4059-8ccb-60d1db1db12b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.game_recap
+  module:
+    - gnode
+    - node
+id: team-group_node-game_recap
+label: 'Team: Group node (Game Recap)'
+description: 'Adds <em class="placeholder">Game Recap</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:game_recap'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

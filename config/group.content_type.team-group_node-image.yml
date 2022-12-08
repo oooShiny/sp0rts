@@ -1,0 +1,19 @@
+uuid: 616859c3-8b45-48cf-9ed5-1c5f76e65292
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.image
+  module:
+    - gnode
+    - node
+id: team-group_node-image
+label: 'Team: Group node (Image)'
+description: 'Adds <em class="placeholder">Image</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:image'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

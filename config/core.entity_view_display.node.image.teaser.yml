@@ -1,0 +1,33 @@
+uuid: 1df07def-bf9a-4110-b65f-087a941941c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.image.comment
+    - field.field.node.image.field_caption
+    - field.field.node.image.field_image_upload
+    - field.field.node.image.field_popularity
+    - node.type.image
+  module:
+    - user
+id: node.image.teaser
+targetEntityType: node
+bundle: image
+mode: teaser
+content:
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment: true
+  field_caption: true
+  field_image_upload: true
+  field_popularity: true

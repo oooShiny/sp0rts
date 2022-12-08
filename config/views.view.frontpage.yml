@@ -739,8 +739,23 @@ display:
           plugin_id: standard
           order: DESC
           expose:
-            label: Popularity
+            label: Hot
             field_identifier: popularity
+          exposed: true
+        value:
+          id: value
+          table: votingapi_result
+          field: value
+          relationship: node_vote_result_rate_count_up_updown
+          group_type: group
+          admin_label: ''
+          entity_type: vote_result
+          entity_field: value
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: Popular
+            field_identifier: votes
           exposed: true
         created:
           id: created
@@ -758,21 +773,6 @@ display:
             field_identifier: created
           exposed: true
           granularity: second
-        value:
-          id: value
-          table: votingapi_result
-          field: value
-          relationship: node_vote_result_rate_count_up_updown
-          group_type: group
-          admin_label: ''
-          entity_type: vote_result
-          entity_field: value
-          plugin_id: standard
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
         comment_count:
           id: comment_count
           table: comment_entity_statistics
@@ -786,20 +786,6 @@ display:
             label: Comments
             field_identifier: comment_count
           exposed: true
-        last_comment_timestamp:
-          id: last_comment_timestamp
-          table: comment_entity_statistics
-          field: last_comment_timestamp
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: date
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
       arguments: {  }
       filters:
         status:
