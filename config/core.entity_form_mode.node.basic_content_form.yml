@@ -1,0 +1,10 @@
+uuid: ac1249d7-545a-4bbf-8509-7c7d9589b3ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.basic_content_form
+label: 'Basic Content Form'
+targetEntityType: node
+cache: true
