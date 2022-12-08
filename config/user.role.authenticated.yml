@@ -7,6 +7,7 @@ dependencies:
     - node.type.highlight
     - node.type.link
     - node.type.text_post
+    - node.type.user_post
     - node.type.youtube_video
   module:
     - comment
@@ -46,15 +47,18 @@ permissions:
   - 'create highlight content'
   - 'create link content'
   - 'create text_post content'
+  - 'create user_post content'
   - 'create youtube_video content'
   - 'delete own highlight content'
   - 'delete own link content'
   - 'delete own text_post content'
+  - 'delete own user_post content'
   - 'delete own youtube_video content'
   - 'edit own comments'
   - 'edit own highlight content'
   - 'edit own link content'
   - 'edit own text_post content'
+  - 'edit own user_post content'
   - 'edit own youtube_video content'
   - 'flag flag_inappropriate_comment_'
   - 'flag flag_inappropriate_content'
