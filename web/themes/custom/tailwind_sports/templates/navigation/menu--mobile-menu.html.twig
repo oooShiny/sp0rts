@@ -30,13 +30,13 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('tw-flex tw-justify-around tw-py-2') }}>
+      <ul{{ attributes.addClass('tw-flex tw-justify-around tw-py-6') }}>
     {% else %}
       <ul>
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
+        <a href="{{ item.url }}"><img class="tw-h-10" src="/themes/custom/tailwind_sports/icons/menu-{{ item.title|lower }}.svg" alt="{{ item.title }}"></a>
       </li>
     {% endfor %}
     </ul>
