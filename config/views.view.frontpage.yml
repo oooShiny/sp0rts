@@ -11,7 +11,7 @@ dependencies:
     - field.storage.node.field_tweet_local_image
     - flag.flag.following
     - image.style.medium
-    - image.style.thumbnail
+    - image.style.square_100x100
     - node.type.game
     - node.type.game_recap
     - node.type.highlight
@@ -787,7 +787,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: tw-my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -797,7 +797,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: square_100x100
             image_loading:
               attribute: lazy
           group_column: ''
@@ -853,7 +853,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: tw-my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -863,7 +863,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: square_100x100
             image_loading:
               attribute: lazy
           group_column: ''
@@ -919,7 +919,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: tw-my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -929,7 +929,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: thumbnail
+            image_style: square_100x100
             image_loading:
               attribute: lazy
           group_column: ''

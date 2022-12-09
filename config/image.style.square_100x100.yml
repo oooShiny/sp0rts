@@ -1,0 +1,15 @@
+uuid: 6ab2674a-3030-483d-8d97-dd61c8bedafb
+langcode: en
+status: true
+dependencies: {  }
+name: square_100x100
+label: 'Square 100x100'
+effects:
+  7e74b137-3cd0-4351-b90f-7f49a9034dee:
+    uuid: 7e74b137-3cd0-4351-b90f-7f49a9034dee
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 100
+      anchor: center-center
