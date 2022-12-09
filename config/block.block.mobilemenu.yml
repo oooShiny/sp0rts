@@ -1,0 +1,33 @@
+uuid: 00d6e494-a8b9-494b-92a1-a0e4a022f5b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mobile-menu
+  module:
+    - system
+    - user
+  theme:
+    - tailwind_sports
+id: mobilemenu
+theme: tailwind_sports
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:mobile-menu'
+settings:
+  id: 'system_menu_block:mobile-menu'
+  label: 'Mobile Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

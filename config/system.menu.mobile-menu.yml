@@ -1,0 +1,8 @@
+uuid: 33a8bc9e-b3be-47d2-ab35-800415fd11d1
+langcode: en
+status: true
+dependencies: {  }
+id: mobile-menu
+label: 'Mobile Menu'
+description: 'Menu that shows up at the bottom of the screen on mobile devices.'
+locked: false

@@ -10,8 +10,8 @@ dependencies:
     - field.storage.node.field_post_image
     - field.storage.node.field_tweet_local_image
     - flag.flag.following
-    - image.style.icon_50x50
     - image.style.medium
+    - image.style.thumbnail
     - node.type.game
     - node.type.game_recap
     - node.type.highlight
@@ -797,7 +797,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: icon_50x50
+            image_style: thumbnail
             image_loading:
               attribute: lazy
           group_column: ''
@@ -863,7 +863,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: icon_50x50
+            image_style: thumbnail
             image_loading:
               attribute: lazy
           group_column: ''
@@ -929,7 +929,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: icon_50x50
+            image_style: thumbnail
             image_loading:
               attribute: lazy
           group_column: ''
