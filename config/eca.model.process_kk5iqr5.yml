@@ -1,0 +1,55 @@
+uuid: fa4fcad0-9cc7-46d6-a737-ea0047a88dcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_kk5iqr5
+id: process_kk5iqr5
+label: 'Redirect to homepage on login'
+tags:
+  - untagged
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_kK5IqR5" name="Redirect to homepage on login" isExecutable="true">
+      <bpmn2:startEvent id="Event_1147t0z" camunda:modelerTemplate="org.drupal.event.user:login">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="user:login" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_18vs139</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_0vty5ut" camunda:modelerTemplate="org.drupal.action.action_goto_action">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_goto_action" />
+          </camunda:properties>
+          <camunda:field name="url">
+            <camunda:string>&lt;front&gt;</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_18vs139</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_18vs139" sourceRef="Event_1147t0z" targetRef="Activity_0vty5ut" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-6db9ee86-609c-4c56-b0e9-94e32e1aaee2">
+      <bpmndi:BPMNPlane id="sid-d5ece85c-1b32-463d-85a7-9902a6d26e9e" bpmnElement="Process_kK5IqR5">
+        <bpmndi:BPMNEdge id="Flow_18vs139_di" bpmnElement="Flow_18vs139">
+          <di:waypoint x="218" y="50" />
+          <di:waypoint x="270" y="50" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNShape id="Event_1147t0z_di" bpmnElement="Event_1147t0z">
+          <dc:Bounds x="182" y="32" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0vty5ut_di" bpmnElement="Activity_0vty5ut">
+          <dc:Bounds x="270" y="10" width="100" height="80" />
+        </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>
