@@ -82,9 +82,11 @@
 
   <div{{ content_attributes.addClass('node-content') }}>
     {{ content|without('comment') }}
-    <blockquote class="reddit-card" data-card-created="1490648549">
-      <a href="https://www.reddit.com/{{ reddit_id }}?ref=share&ref_source=embed"></a></blockquote>
-    <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+    <div class="tw-bg-gray-300">
+      <blockquote class="reddit-card" data-card-created="1490648549" data-card-theme="dark">
+        <a href="https://www.reddit.com/{{ reddit_id }}?ref=share&ref_source=embed"></a></blockquote>
+      <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+    </div>
   </div>
   {{ content.comment }}
 </article>
