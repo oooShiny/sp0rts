@@ -99,6 +99,17 @@ function tailwind_sports_preprocess_node(&$variables) {
     $variables['favorite'] = $node->get('field_favorite')->value;
     $variables['line'] = $node->get('field_line')->value;
   }
+
+  // Podcast episode overrides.
+  if ($node->bundle() == 'podcast_episode') {
+    $ep_link = parse_url($node->get('field_episode_link')->value);
+    $variables['host'] = $ep_link['host'];
+    $variables['path'] = $ep_link['path'];
+    $q = $ep_link['query'] ?? '';
+    $variables['full_link'] = $ep_link['host'] . $ep_link['path'] . $q;
+    $anchor_path = explode('/', $ep_link['path']);
+    $variables['anchor_link'] = $ep_link['scheme'] . '://' . $ep_link['host'] . '/' . $anchor_path[1] . '/embed/' . $anchor_path[2] . '/' . $anchor_path[3];
+  }
 }
 
 /**
