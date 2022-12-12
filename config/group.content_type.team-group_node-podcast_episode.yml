@@ -1,0 +1,19 @@
+uuid: b58875b3-4186-4bd5-9e6b-40d6b5d43921
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - node.type.podcast_episode
+  module:
+    - gnode
+    - node
+id: team-group_node-podcast_episode
+label: 'Team: Group node (Podcast episode)'
+description: 'Adds <em class="placeholder">Podcast episode</em> content to groups both publicly and privately.'
+group_type: team
+content_plugin: 'group_node:podcast_episode'
+plugin_config:
+  group_cardinality: 1
+  entity_cardinality: 1
+  use_creation_wizard: false

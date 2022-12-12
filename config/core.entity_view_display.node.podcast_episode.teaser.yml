@@ -1,0 +1,41 @@
+uuid: 359b61ed-04cc-4dee-94e2-7f00faf4a47b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.podcast_episode.body
+    - field.field.node.podcast_episode.comment
+    - field.field.node.podcast_episode.field_episode_link
+    - field.field.node.podcast_episode.field_popularity
+    - node.type.podcast_episode
+  module:
+    - text
+    - user
+id: node.podcast_episode.teaser
+targetEntityType: node
+bundle: podcast_episode
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment: true
+  field_episode_link: true
+  field_popularity: true

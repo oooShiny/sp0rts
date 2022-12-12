@@ -16,6 +16,7 @@ dependencies:
     - flag
     - media
     - node
+    - private_message
     - rate
     - search
     - system
@@ -29,6 +30,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'cancel account'
   - 'cast rate vote on comment on node of game'
   - 'cast rate vote on comment on node of link'
@@ -69,6 +71,7 @@ permissions:
   - 'unflag flag_inappropriate_comment_'
   - 'unflag flag_inappropriate_content'
   - 'unflag following'
+  - 'use private messaging system'
   - 'use text format basic_html'
   - 'view media'
   - 'view own unpublished content'

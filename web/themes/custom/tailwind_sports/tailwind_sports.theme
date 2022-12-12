@@ -5,6 +5,7 @@
  * Functions to support theming in the Tailwind CSS theme.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
@@ -109,6 +110,8 @@ function tailwind_sports_preprocess_node(&$variables) {
     $variables['full_link'] = $ep_link['host'] . $ep_link['path'] . $q;
     $anchor_path = explode('/', $ep_link['path']);
     $variables['anchor_link'] = $ep_link['scheme'] . '://' . $ep_link['host'] . '/' . $anchor_path[1] . '/embed/' . $anchor_path[2] . '/' . $anchor_path[3];
+    $acast_id = explode('/', $ep_link['path']);
+    $variables['acast_id'] = $acast_id[2] . '/' . $acast_id[3];
   }
 }
 
@@ -117,4 +120,8 @@ function tailwind_sports_preprocess_node(&$variables) {
  */
 function tailwind_sports_preprocess_html(&$variables) {
   $variables['attributes']['class'][] = 'tw-bg-gray-800 tw-text-white';
+}
+
+function tailwind_sports_preprocess_private_message(&$variables) {
+  $v = $variables;
 }

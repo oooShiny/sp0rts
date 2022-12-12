@@ -12,7 +12,7 @@ dependencies:
 id: tailwind_sports_views_block__sport_leagues_block_1
 theme: tailwind_sports
 region: sidebar_first
-weight: -10
+weight: -13
 provider: null
 plugin: 'views_block:sport_leagues-block_1'
 settings:

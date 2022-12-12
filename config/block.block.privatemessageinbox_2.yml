@@ -1,0 +1,36 @@
+uuid: ba0c8c0d-dff9-4491-8131-9277b7331137
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+    - system
+    - user
+  theme:
+    - tailwind_sports
+id: privatemessageinbox_2
+theme: tailwind_sports
+region: content
+weight: 0
+provider: null
+plugin: private_message_inbox_block
+settings:
+  id: private_message_inbox_block
+  label: Inbox
+  label_display: '0'
+  provider: private_message
+  thread_count: 10
+  ajax_load_count: 5
+  ajax_refresh_rate: 0
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /inbox
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

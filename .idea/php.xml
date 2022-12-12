@@ -154,6 +154,8 @@
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
       <path value="$PROJECT_DIR$/vendor/abraham/twitteroauth" />
       <path value="$PROJECT_DIR$/vendor/tkijewski/reddit-php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/mtownsend/xml-to-array" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

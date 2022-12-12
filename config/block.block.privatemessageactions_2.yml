@@ -1,0 +1,33 @@
+uuid: 1a6daa9b-99a9-4a89-b04c-0c6b0f963d22
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+    - system
+    - user
+  theme:
+    - tailwind_sports
+id: privatemessageactions_2
+theme: tailwind_sports
+region: sidebar_first
+weight: -8
+provider: null
+plugin: private_message_actions_block
+settings:
+  id: private_message_actions_block
+  label: 'Private Message Actions'
+  label_display: visible
+  provider: private_message
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/inbox\r\n/private-message\r\n/private-message/*"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

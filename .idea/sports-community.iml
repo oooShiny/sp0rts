@@ -144,6 +144,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extensions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/abraham/twitteroauth" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tkijewski/reddit-php-sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mtownsend/xml-to-array" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dragonmantank/cron-expression" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

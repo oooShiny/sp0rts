@@ -66,6 +66,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  private_message: 0
   radioactivity: 0
   rate: 0
   rdf: 0

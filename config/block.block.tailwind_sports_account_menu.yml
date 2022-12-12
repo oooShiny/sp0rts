@@ -13,7 +13,7 @@ _core:
 id: tailwind_sports_account_menu
 theme: tailwind_sports
 region: secondary_menu
-weight: 0
+weight: -15
 provider: null
 plugin: 'system_menu_block:account'
 settings:

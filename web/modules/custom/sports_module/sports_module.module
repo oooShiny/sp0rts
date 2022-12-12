@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -29,4 +30,16 @@ function sports_module_entity_field_access($operation, FieldDefinitionInterface 
     }
   }
   return $result->addCacheContexts(['user.roles:administrator']);
+}
+
+function sports_module_private_message_view_alter(array &$build, EntityInterface $privateMessage, $viewMode) {
+  // Create a new class specific to the author of the message.
+  $class = 'private-message-author-' . $privateMessage->getOwnerId();
+  // Add the class to the wrapper.
+  $build['wrapper']['#attributes']['class'][] = $class;
+  $build['wrapper']['#attributes']['class'][] = 'tw-p-10 tw-w-screen';
+  if (in_array('private-message-author-other', $build['wrapper']['#attributes']['class'])) {
+    $build['wrapper']['#attributes']['class'][] = 'tw-flex tw-gap-3 tw-justify-end';
+  }
+  $self_message_css = 'tw-flex tw-gap-3 tw-justify-end tw-w-screen';
 }

@@ -15,6 +15,7 @@ permissions:
   - 'view group'
   - 'view group_node:image entity'
   - 'view group_node:link entity'
+  - 'view group_node:podcast_episode entity'
   - 'view group_node:reddit_post content'
   - 'view group_node:reddit_post entity'
   - 'view group_node:text_post entity'

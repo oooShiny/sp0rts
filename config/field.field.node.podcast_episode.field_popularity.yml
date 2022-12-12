@@ -1,0 +1,29 @@
+uuid: b7c47180-2751-4809-9dd4-dce4860c5511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popularity
+    - node.type.podcast_episode
+  module:
+    - radioactivity
+id: node.podcast_episode.field_popularity
+field_name: field_popularity
+entity_type: node
+bundle: podcast_episode
+label: Popularity
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:radioactivity'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+  default_energy: !!float 50
+field_type: radioactivity_reference

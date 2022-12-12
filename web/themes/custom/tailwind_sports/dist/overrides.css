@@ -35,3 +35,6 @@ h1.tw-text-3xl.tw-text-center.tw-w-full {
     flex: 0 1 10%;
 }
 
+input {
+    color: black !important;
+}

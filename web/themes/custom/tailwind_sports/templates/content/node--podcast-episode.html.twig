@@ -125,6 +125,14 @@
                 scrolling="no">
         </iframe>
       {% endif %}
+
+        {% if host == 'play.acast.com' %}
+            <iframe src="https://embed.acast.com/{{ acast_id }}"
+                    frameBorder="0"
+                    width="100%"
+                    height="190px">
+            </iframe>
+        {% endif %}
     </div>
 
     <div>
@@ -132,4 +140,5 @@
     </div>
   </div>
 
+    {{ content|without('body', 'field_episode_link') }}
 </article>

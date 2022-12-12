@@ -1,0 +1,29 @@
+uuid: a09a1ebb-5264-487a-a70e-1023245a1450
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+    - user
+  theme:
+    - tailwind_sports
+id: privatemessagenotification_2
+theme: tailwind_sports
+region: secondary_menu
+weight: -14
+provider: null
+plugin: private_message_notification_block
+settings:
+  id: private_message_notification_block
+  label: 'Private Message Notification'
+  label_display: '0'
+  provider: private_message
+  ajax_refresh_rate: 30
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

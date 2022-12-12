@@ -235,6 +235,24 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      sorts:
+        label:
+          id: label
+          table: groups_field_data
+          field: label
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: group
+          entity_field: label
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      defaults:
+        sorts: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

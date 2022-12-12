@@ -1,0 +1,31 @@
+uuid: b0397a6b-0e46-4f28-965f-e8c75182ef62
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Podcast episode'
+type: podcast_episode
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

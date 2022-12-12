@@ -51,7 +51,8 @@
         "drupal/webform": "^6.1",
         "drupal/formblock": "^2.0@beta",
         "drupal/eca": "^1.0",
-        "drupal/bpmn_io": "^1.0"
+        "drupal/bpmn_io": "^1.0",
+        "drupal/private_message": "^3.0@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
