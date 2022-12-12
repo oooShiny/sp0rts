@@ -38,3 +38,19 @@ h1.tw-text-3xl.tw-text-center.tw-w-full {
 input {
     color: black !important;
 }
+
+li.dropbutton-toggle {
+    border-width: 1px;
+    border-left-width: 0;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    --bg-opacity: 1;
+    background-color: #4a5568;
+    background-color: rgba(74,85,104,var(--bg-opacity));
+}
+
+.dropbutton-action.group-leave {
+    --text-opacity: 1;
+    color: #fc8181;
+    color: rgba(252, 129, 129, var(--text-opacity));
+}
