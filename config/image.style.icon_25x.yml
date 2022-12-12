@@ -1,0 +1,15 @@
+uuid: 5aaedd52-a34c-4658-a786-72e7164b13ec
+langcode: en
+status: true
+dependencies: {  }
+name: icon_25x
+label: 'Icon 25x25'
+effects:
+  6b739c63-3032-4f9c-aa17-ee2fbfe7f439:
+    uuid: 6b739c63-3032-4f9c-aa17-ee2fbfe7f439
+    id: image_scale
+    weight: 1
+    data:
+      width: 25
+      height: 25
+      upscale: true
