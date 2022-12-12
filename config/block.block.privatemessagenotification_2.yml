@@ -1,6 +1,6 @@
 uuid: a09a1ebb-5264-487a-a70e-1023245a1450
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - private_message
