@@ -52,7 +52,10 @@
         "drupal/formblock": "^2.0@beta",
         "drupal/eca": "^1.0",
         "drupal/bpmn_io": "^1.0",
-        "drupal/private_message": "^3.0@beta"
+        "drupal/private_message": "^3.0@beta",
+        "drupal/menu_item_role_access": "^2.1",
+        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/content_access": "^1.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
