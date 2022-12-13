@@ -42,6 +42,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          056b39f1-19ac-482e-9a2c-4b5a5effa922:
+            uuid: 056b39f1-19ac-482e-9a2c-4b5a5effa922
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:media:remote_video:thumbnail'
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: '-Rhy5VOFbfUBJ2-X5RA_fw5NipHP2lhdMZU886jRlts'
@@ -56,6 +75,8 @@ content:
     settings:
       image_link: ''
       image_style: medium
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

@@ -76,6 +76,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          e85d8f27-0b6d-4e8a-8091-1c0cc94a2891:
+            uuid: e85d8f27-0b6d-4e8a-8091-1c0cc94a2891
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:sport:field_logo'
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: group.sport.default
 targetEntityType: group
@@ -97,6 +116,8 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: -3
     region: content

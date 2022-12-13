@@ -26,6 +26,16 @@ targetEntityType: user
 bundle: user
 mode: full
 content:
+  flag_ban_user:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_following:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   member_for:
     settings: {  }
     third_party_settings: {  }
@@ -37,7 +47,11 @@ content:
     settings:
       image_link: content
       image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  linked_username: true
+  private_message_link: true

@@ -106,6 +106,35 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
+          106e3ec9-eb28-40b0-94de-571a5a2b6a28:
+            uuid: 106e3ec9-eb28-40b0-94de-571a5a2b6a28
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:article:flag_flag_inappropriate_content'
+            weight: 5
+            additional: {  }
+          2097891f-d842-412d-91dd-1b8426ee78fd:
+            uuid: 2097891f-d842-412d-91dd-1b8426ee78fd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:article:field_image'
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: b4RQ-Nfz-gOoG_jjftd_qDIz4lf_-OzlxoLHkRXjfrE
@@ -136,6 +165,8 @@ content:
     settings:
       image_link: ''
       image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: -1
     region: content
@@ -147,9 +178,15 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  flag_flag_inappropriate_content:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  private_message_link: true

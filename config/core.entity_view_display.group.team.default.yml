@@ -169,6 +169,25 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 8
             additional: {  }
+          698fd0c0-85eb-464c-b615-780fd1ae65e2:
+            uuid: 698fd0c0-85eb-464c-b615-780fd1ae65e2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:team:field_logo'
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: thumbnail
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
         third_party_settings: {  }
 id: group.team.default
 targetEntityType: group
@@ -214,6 +233,8 @@ content:
     settings:
       image_link: ''
       image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 5
     region: content
