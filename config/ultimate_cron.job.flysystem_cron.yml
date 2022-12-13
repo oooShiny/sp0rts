@@ -1,0 +1,17 @@
+uuid: 1b571412-13b2-44a9-b738-2f852360d0fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - flysystem
+title: 'Default cron handler'
+id: flysystem_cron
+weight: 0
+module: flysystem
+callback: flysystem_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

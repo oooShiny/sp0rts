@@ -55,7 +55,10 @@
         "drupal/private_message": "^3.0@beta",
         "drupal/menu_item_role_access": "^2.1",
         "drupal/rabbit_hole": "^1.0@beta",
-        "drupal/content_access": "^1.0@alpha"
+        "drupal/content_access": "^1.0@alpha",
+        "drupal/flysystem": "^2.0@beta",
+        "platformcommunity/flysystem-bunnycdn": "*",
+        "drupal/sendgrid_integration": "^2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
