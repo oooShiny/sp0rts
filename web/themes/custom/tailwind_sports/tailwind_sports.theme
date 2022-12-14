@@ -59,7 +59,11 @@ function tailwind_sports_preprocess_group(&$variables) {
       $variables['header_bg'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
     }
     else {
-      $variables['header_bg'] = '';
+      $mid = $group->get('field_logo')->target_id;
+      $file = File::load($mid);
+
+      $uri = $file->getFileUri();
+      $variables['header_bg'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
     }
 }
 
