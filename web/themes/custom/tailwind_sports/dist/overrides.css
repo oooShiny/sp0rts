@@ -17,6 +17,13 @@ aside div.views-element-container {
     padding: .25rem!important;
     border-radius: .5rem!important;
     background-color: rgba(74,85,104,var(--bg-opacity))!important;
+    cursor: pointer;
+}
+
+.button:hover {
+    --bg-opacity: 1!important;
+    background-color: #2a4365!important;
+    background-color: rgba(42,67,101,var(--bg-opacity))!important;
 }
 
 a {
