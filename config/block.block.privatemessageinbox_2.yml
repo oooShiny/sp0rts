@@ -11,7 +11,7 @@ dependencies:
 id: privatemessageinbox_2
 theme: tailwind_sports
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: private_message_inbox_block
 settings:

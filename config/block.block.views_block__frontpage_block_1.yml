@@ -13,7 +13,7 @@ dependencies:
 id: views_block__frontpage_block_1
 theme: tailwind_sports
 region: content
-weight: -3
+weight: -6
 provider: null
 plugin: 'views_block:frontpage-block_1'
 settings:
@@ -37,4 +37,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '/group/*/members'
+    pages: "/group/*/members\r\n/group/*/join"
