@@ -1,6 +1,6 @@
 uuid: 9390103f-3820-4fa6-8ec0-b501a1eba6d7
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - eca_user
@@ -8,7 +8,7 @@ id: process_kk5iqr5
 modeller: bpmn_io
 label: 'Redirect to homepage on login'
 version: ''
-weight: null
+weight: -10
 events:
   Event_1147t0z:
     plugin: 'user:login'
