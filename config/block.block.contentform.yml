@@ -10,7 +10,7 @@ dependencies:
 id: contentform
 theme: tailwind_sports
 region: content
-weight: -7
+weight: -4
 provider: null
 plugin: formblock_node
 settings:

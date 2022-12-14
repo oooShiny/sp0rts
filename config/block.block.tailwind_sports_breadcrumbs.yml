@@ -11,7 +11,7 @@ _core:
 id: tailwind_sports_breadcrumbs
 theme: tailwind_sports
 region: breadcrumb
-weight: 0
+weight: -15
 provider: null
 plugin: system_breadcrumb_block
 settings:

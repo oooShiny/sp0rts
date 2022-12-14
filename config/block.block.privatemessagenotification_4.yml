@@ -1,32 +1,25 @@
-uuid: ba0c8c0d-dff9-4491-8131-9277b7331137
+uuid: 5bfccf30-c79c-42c2-9c24-bd9eefa0a8cb
 langcode: en
 status: true
 dependencies:
   module:
     - private_message
-    - system
     - user
   theme:
     - tailwind_sports
-id: privatemessageinbox_2
+id: privatemessagenotification_4
 theme: tailwind_sports
-region: content
-weight: 0
+region: breadcrumb
+weight: -13
 provider: null
-plugin: private_message_inbox_block
+plugin: private_message_notification_block
 settings:
-  id: private_message_inbox_block
-  label: Inbox
+  id: private_message_notification_block
+  label: 'Private Message Notification'
   label_display: '0'
   provider: private_message
-  thread_count: 10
-  ajax_load_count: 5
-  ajax_refresh_rate: 0
+  ajax_refresh_rate: 15
 visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: /inbox
   user_role:
     id: user_role
     negate: false

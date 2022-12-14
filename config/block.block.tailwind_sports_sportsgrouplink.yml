@@ -10,7 +10,7 @@ dependencies:
 id: tailwind_sports_sportsgrouplink
 theme: tailwind_sports
 region: breadcrumb
-weight: 0
+weight: -14
 provider: null
 plugin: sports_group_link
 settings:
