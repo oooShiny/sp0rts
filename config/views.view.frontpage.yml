@@ -1587,7 +1587,7 @@ display:
           plugin_id: text_custom
           label: ''
           empty: true
-          content: 'No front page content has been created yet for this group.<br/>Start posting content and you''ll see it show up here!'
+          content: 'It looks like you haven''t joined any groups yet. When you do, you''ll see their combined feeds show up here on the front page. To view all the available groups on the site, check out the <a href="/groups">Groups page</a>.'
           tokenize: false
         node_listing_empty:
           id: node_listing_empty
