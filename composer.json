@@ -58,7 +58,8 @@
         "drupal/content_access": "^1.0@alpha",
         "drupal/flysystem": "^2.0@beta",
         "platformcommunity/flysystem-bunnycdn": "*",
-        "drupal/sendgrid_integration": "^2.0"
+        "drupal/sendgrid_integration": "^2.0",
+        "drupal/google_tag": "^1.5"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

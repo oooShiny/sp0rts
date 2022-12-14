@@ -1,0 +1,115 @@
+uuid: 453785ff-8591-4b1a-bd61-f43370b33b73
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - node
+    - rules
+    - taxonomy
+    - webform
+id: google_analytics
+label: 'Google Analytics'
+weight: 0
+container_id: GTM-TGBWMT5
+data_layer: dataLayer
+include_classes: false
+whitelist_classes: |-
+  google
+  nonGooglePixels
+  nonGoogleScripts
+  nonGoogleIframes
+blacklist_classes: |-
+  customScripts
+  customPixels
+include_environment: false
+environment_id: ''
+environment_token: ''
+path_toggle: 'exclude listed'
+path_list: |-
+  /admin*
+  /batch*
+  /node/add*
+  /node/*/edit
+  /node/*/delete
+  /user/*/edit*
+  /user/*/cancel*
+role_toggle: 'exclude listed'
+role_list:
+  administrator: administrator
+status_toggle: 'exclude listed'
+status_list: |-
+  403
+  404
+conditions:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles: {  }
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+    bundles: {  }
+  group_type:
+    id: group_type
+    group_types: {  }
+    negate: 0
+    context_mapping:
+      group: '@group.group_route_context:group'
+  rules_data_comparison:
+    id: rules_data_comparison
+    negate: 0
+    context_mapping:
+      data: '@language.current_language_context:language_interface'
+      value: '@language.current_language_context:language_interface'
+  rules_data_is_empty:
+    id: rules_data_is_empty
+    negate: 0
+    context_mapping:
+      data: '@language.current_language_context:language_interface'
+  rules_entity_is_new:
+    id: rules_entity_is_new
+    negate: 0
+    context_mapping:
+      entity: '@group.group_route_context:group'
+  rules_node_is_promoted:
+    id: rules_node_is_promoted
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rules_node_is_published:
+    id: rules_node_is_published
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rules_node_is_sticky:
+    id: rules_node_is_sticky
+    negate: 0
+    context_mapping:
+      node: '@node.node_route_context:node'
+  rules_user_is_blocked:
+    id: rules_user_is_blocked
+    negate: 0
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  webform:
+    id: webform
+    negate: false
+    context_mapping: {  }
+    webforms: {  }

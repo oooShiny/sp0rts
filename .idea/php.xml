@@ -156,6 +156,16 @@
       <path value="$PROJECT_DIR$/vendor/tkijewski/reddit-php-sdk" />
       <path value="$PROJECT_DIR$/vendor/mtownsend/xml-to-array" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-replicate-adapter" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/twistor/flysystem-stream-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/twistor/stream-util" />
+      <path value="$PROJECT_DIR$/vendor/platformcommunity/bunnycdn-storage" />
+      <path value="$PROJECT_DIR$/vendor/platformcommunity/flysystem-bunnycdn" />
+      <path value="$PROJECT_DIR$/vendor/fastglass/sendgrid" />
+      <path value="$PROJECT_DIR$/vendor/starkbank/ecdsa" />
+      <path value="$PROJECT_DIR$/vendor/html2text/html2text" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

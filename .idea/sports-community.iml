@@ -146,6 +146,16 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tkijewski/reddit-php-sdk" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mtownsend/xml-to-array" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem-replicate-adapter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twistor/flysystem-stream-wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twistor/stream-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/platformcommunity/bunnycdn-storage" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/platformcommunity/flysystem-bunnycdn" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fastglass/sendgrid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/starkbank/ecdsa" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/html2text/html2text" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
