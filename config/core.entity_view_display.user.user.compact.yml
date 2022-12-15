@@ -46,30 +46,30 @@ third_party_settings:
             uuid: 4a5113de-72be-460e-a2c1-9d84b120e3f0
             region: content
             configuration:
+              id: 'extra_field_block:user:user:flag_ban_user'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:user:user:flag_ban_user'
             weight: 1
             additional: {  }
           5764c3f5-e9f6-4476-bbfd-ea770d229b8f:
             uuid: 5764c3f5-e9f6-4476-bbfd-ea770d229b8f
             region: content
             configuration:
+              id: 'extra_field_block:user:user:flag_following'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:user:user:flag_following'
             weight: 2
             additional: {  }
           d6f93979-2579-411f-89bc-46e9abd086c6:
             uuid: d6f93979-2579-411f-89bc-46e9abd086c6
             region: content
             configuration:
+              id: 'field_block:user:user:user_picture'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:user:user:user_picture'
               formatter:
                 type: image
                 label: hidden
@@ -90,14 +90,14 @@ bundle: user
 mode: compact
 content:
   flag_ban_user:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   flag_following:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   user_picture:
     type: image

@@ -11,7 +11,7 @@ dependencies:
 id: tailwind_sports_sportsgroupstreelist
 theme: tailwind_sports
 region: sidebar_first
-weight: -10
+weight: -9
 provider: null
 plugin: sports_group_tree
 settings:

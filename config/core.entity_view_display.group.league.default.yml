@@ -153,10 +153,10 @@ third_party_settings:
             uuid: 39979e52-633e-419b-a388-ffbbef4f02d8
             region: content
             configuration:
+              id: 'field_block:group:league:field_logo'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:league:field_logo'
               formatter:
                 type: image
                 label: hidden

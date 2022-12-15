@@ -173,10 +173,10 @@ third_party_settings:
             uuid: 698fd0c0-85eb-464c-b615-780fd1ae65e2
             region: content
             configuration:
+              id: 'field_block:group:team:field_logo'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:team:field_logo'
               formatter:
                 type: image
                 label: hidden

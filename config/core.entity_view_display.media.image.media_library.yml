@@ -46,10 +46,10 @@ third_party_settings:
             uuid: a217b0a8-89ee-470b-a8ab-c6de2fa6ff26
             region: content
             configuration:
+              id: 'field_block:media:image:thumbnail'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:media:image:thumbnail'
               formatter:
                 type: image
                 label: hidden

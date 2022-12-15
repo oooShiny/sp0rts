@@ -18,7 +18,12 @@ function sports_module_theme($existing, $type, $theme, $path) {
                 'url' => '',
                 'title' => ''
             ]
+        ],
+      'sports_group_mod_apply' => [
+        'variables' => [
+          'url' => ''
         ]
+      ]
     ];
 }
 

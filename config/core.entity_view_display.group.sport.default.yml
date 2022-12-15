@@ -80,10 +80,10 @@ third_party_settings:
             uuid: e85d8f27-0b6d-4e8a-8091-1c0cc94a2891
             region: content
             configuration:
+              id: 'field_block:group:sport:field_logo'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:group:sport:field_logo'
               formatter:
                 type: image
                 label: above

@@ -10,7 +10,7 @@ dependencies:
 id: yasmgroupscounts
 theme: tailwind_sports
 region: sidebar_first
-weight: -9
+weight: -8
 provider: null
 plugin: yasm_block_group
 settings:
