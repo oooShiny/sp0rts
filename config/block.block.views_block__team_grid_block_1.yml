@@ -12,7 +12,7 @@ dependencies:
 id: views_block__team_grid_block_1
 theme: tailwind_sports
 region: content
-weight: -5
+weight: -9
 provider: null
 plugin: 'views_block:team_grid-block_1'
 settings:

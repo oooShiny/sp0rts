@@ -12,7 +12,7 @@ dependencies:
 id: views_block__frontpage_block_2
 theme: tailwind_sports
 region: content
-weight: -2
+weight: -6
 provider: null
 plugin: 'views_block:frontpage-block_2'
 settings:
