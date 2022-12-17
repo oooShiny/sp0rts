@@ -11,7 +11,7 @@ dependencies:
 id: privatemessageactions_2
 theme: tailwind_sports
 region: sidebar_first
-weight: -7
+weight: -8
 provider: null
 plugin: private_message_actions_block
 settings:

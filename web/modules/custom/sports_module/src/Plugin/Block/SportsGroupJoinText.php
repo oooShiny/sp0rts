@@ -3,31 +3,29 @@
 namespace Drupal\sports_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\group\Entity\Group;
 
 /**
- * Provides a block that displays a button to apply for being a moderator.
+ * Provides a block that displays text above the Join Group form.
  *
  * @Block(
- *   id = "sports_group_mod_apply",
- *   admin_label = @Translation("Sports Group Mod Apply Button"),
+ *   id = "sports_group_join_text",
+ *   admin_label = @Translation("Sports Group Join Text"),
  *   category = @Translation("Sports"),
  *   context_definitions = {
  *     "group" = @ContextDefinition("entity:group")
  *   } * )
  */
-class SportsGroupModApply extends BlockBase {
+class SportsGroupJoinText extends BlockBase {
 
     /**
      * {@inheritdoc}
      */
     public function build() {
-
+        $group_name = $this->getContextValue('group')->label();
+        $text = 'To join the '.$group_name.' group, please click the button below.';
         return [
-            '#theme' => 'sports_group_mod_apply',
-            '#url' => '/form/moderator-application?requested_group='.$this->getContextValue('group')->id(),
+            '#markup' => $this->t($text),
         ];
     }
-
 
 }

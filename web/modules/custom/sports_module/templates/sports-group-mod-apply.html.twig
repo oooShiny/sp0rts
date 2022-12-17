@@ -1,1 +1,10 @@
+{% if mods is not empty %}
+    <h2>Moderators</h2>
+    <ul class="tw-py-2">
+        {% for id, mod in mods  %}
+            <li><a href="/user/{{ id }}">{{ mod }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <a class="button" href="{{ url }}">Apply to be a Moderator</a>

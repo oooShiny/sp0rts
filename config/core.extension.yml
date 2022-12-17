@@ -67,6 +67,11 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  nodejs: 0
+  nodejs_ajax: 0
+  nodejs_config: 0
+  nodejs_notify: 0
+  nodejs_watchdog: 0
   options: 0
   page_cache: 0
   path: 0
@@ -75,11 +80,13 @@ module:
   radioactivity: 0
   rate: 0
   rdf: 0
+  rest: 0
   rules: 0
   scheduler: 0
   search: 0
   sendgrid_integration: 0
   sendgrid_integration_reports: 0
+  serialization: 0
   shortcut: 0
   sports_importer: 0
   sports_module: 0

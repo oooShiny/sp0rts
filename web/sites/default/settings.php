@@ -1,5 +1,18 @@
 <?php
 
+$conf['nodejs_service_key'] = 'heyHowAreYa';
+
+$schemes = [
+  'bunnycdn' => [
+    'driver' => 'bunnycdn',
+    'config' => [
+      'token' => '#my-dropbox-token#',
+      'client_id' => '#my-dropbox-email-id#',
+    ],
+  ],
+];
+$settings['flysystem'] = $schemes;
+
 /**
  * Load services definition file.
  */

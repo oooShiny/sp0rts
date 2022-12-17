@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: _QO2D-6NK1XTO_QRQen8lqwC5SdH3xpA6YgHx4E3UZI
+service_key: heyHowAreYa
+log_http_errors: true
+auth_get_token_callback: nodejs_auth_get_token_callback
+auth_check_callback: nodejs_auth_check_callback
+enable_userchannel: true
+pages: '/game/*'
+authenticated_users_only: false
+nodejs:
+  scheme: http
+  host: localhost
+  port: '5000'
+client:
+  scheme: http
+  host: localhost
+  port: '5000'
+socket_io:
+  path: 'http://localhost:8080/socket.io/socket.io.js'
+  type: external

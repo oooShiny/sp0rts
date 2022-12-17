@@ -66,6 +66,7 @@ permissions:
   - 'flag flag_inappropriate_content'
   - 'flag following'
   - 'post comments'
+  - 'restful get comment'
   - 'search content'
   - 'skip comment approval'
   - 'unflag flag_inappropriate_comment_'

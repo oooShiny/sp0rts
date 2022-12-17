@@ -1,0 +1,41 @@
+uuid: 73df51f0-aba9-4e28-ab97-9348251eddde
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - sports_module
+  theme:
+    - tailwind_sports
+id: sportsgroupmodlistandapplybutton
+theme: tailwind_sports
+region: sidebar_first
+weight: -15
+provider: null
+plugin: sports_group_mod_list_apply
+settings:
+  id: sports_group_mod_list_apply
+  label: 'Sports Group Mod List and Apply Button'
+  label_display: '0'
+  provider: sports_module
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      league: league
+      sport: sport
+      team: team
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league
+      sport: sport
+      team: team

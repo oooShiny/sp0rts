@@ -11,7 +11,7 @@ _core:
 id: tailwind_sports_group_operations
 theme: tailwind_sports
 region: sidebar_first
-weight: -15
+weight: -16
 provider: null
 plugin: group_operations
 settings:

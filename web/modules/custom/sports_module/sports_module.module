@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\block\Entity\Block;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
@@ -21,7 +22,8 @@ function sports_module_theme($existing, $type, $theme, $path) {
         ],
       'sports_group_mod_apply' => [
         'variables' => [
-          'url' => ''
+          'url' => '',
+          'mods' => ''
         ]
       ]
     ];

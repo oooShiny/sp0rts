@@ -253,7 +253,20 @@ display:
           exposed: false
       defaults:
         sorts: false
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<h2 class="tw-border-b tw-font-hairline tw-mb-4 tw-py-4 tw-text-3xl tw-text-center">{{ arguments.uid }} Subscribed Groups</h2>'
+          tokenize: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1

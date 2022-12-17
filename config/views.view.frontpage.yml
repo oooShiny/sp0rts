@@ -1405,6 +1405,7 @@ display:
       defaults:
         relationships: false
         arguments: false
+        header: false
       relationships:
         group_content:
           id: group_content
@@ -1452,6 +1453,18 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<h2 class="tw-font-hairline tw-py-4 tw-text-3xl tw-text-center">Posts by {{ uid }}</h2>'
+          tokenize: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1
