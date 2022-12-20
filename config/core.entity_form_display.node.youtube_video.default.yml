@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.youtube_video.body
+    - field.field.node.youtube_video.comment
     - field.field.node.youtube_video.field_popularity
     - field.field.node.youtube_video.field_youtube_video_link
     - node.type.youtube_video
   module:
+    - comment
     - field_layout
     - layout_discovery
     - path
@@ -33,6 +35,12 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 27
+    region: content
+    settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp

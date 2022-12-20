@@ -1,0 +1,19 @@
+uuid: 65ad4018-6288-4050-8e45-3176b9acde09
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - comment
+    - serialization
+id: entity.comment
+plugin_id: 'entity:comment'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+  formats:
+    - json
+  authentication:
+    - basic_auth

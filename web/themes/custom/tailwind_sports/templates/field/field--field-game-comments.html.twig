@@ -26,14 +26,41 @@
  * @see comment_preprocess_field()
  */
 #}
-<section{{ attributes.addClass('tw-border-black tw-border-t tw-py-2 tw-my-2 tw-w-3/4 tw-m-auto') }}>
-  {% if comment_form and bundle is not same as('game') %}
-    {{ comment_form }}
-  {% endif %}
+
+<section>
+
+  <div class="flash-comments">
+    <div class="header">
+      <div class="text">Comments</div>
+    </div>
+{#    {% if comment_form %}#}
+{#      {{ comment_form }}#}
+{#    {% endif %}#}
+    <form class="pure-form" id="comment-form">
+      <div class="comment-form">
+        <div class="left-side">
+          <div class="row">
+            <textarea placeholder="enter comment text" required id="new_comment_text" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="right-side">
+          <button
+                  type="submit"
+                  class="button">Send Comment</button>
+        </div>
+      </div>
+    </form>
+    <div class="comments-list" id="comments-list">
+      <script id="comment-template" type="text/x-template">
+        <div class="comment-info">
+          <div class="row">
+            <div class="text">::comment::</div>
+          </div>
+        </div>
+      </script>
+    </div>
+  </div>
 </section>
-{% if comments and not label_hidden %}
-  {{ title_prefix }}
-  <h2{{ title_attributes.addClass(' tw-font-bold tw-text-xl') }}>{{ label }}</h2>
-  {{ title_suffix }}
-{% endif %}
-{{ comments }}
+
+<script type="text/javascript" src="https://js.pusher.com/3.2/pusher.min.js"></script>
+<script type="text/javascript" src="/themes/custom/tailwind_sports/src/comments.js"></script>

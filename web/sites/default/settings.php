@@ -2,6 +2,12 @@
 
 $conf['nodejs_service_key'] = 'heyHowAreYa';
 
+// Pusher API settings.
+$settings['pusher_api']['api_settings']['app_id'] = "1527192";
+$settings['pusher_api']['api_settings']['key'] = "c428b53f1cbc41e05ffe";
+$settings['pusher_api']['api_settings']['secret'] = "e75abd4a46bb4b293244";
+$settings['pusher_api']['api_settings']['cluster'] = "us2";
+
 $schemes = [
   'bunnycdn' => [
     'driver' => 'bunnycdn',

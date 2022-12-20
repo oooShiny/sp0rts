@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+
 <article{{ attributes.addClass('node') }}>
 
   {{ title_prefix }}
@@ -102,5 +103,7 @@
       <div>{{ favorite }} favored by {{ line }}</div>
     </div>
   </div>
+  <div>
+    <a href="https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ espn_id }}/competitions/{{ espn_id }}/plays?limit=400">https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ espn_id }}/competitions/{{ espn_id }}/plays?limit=400</a></div>
   {{ content.comment }}
 </article>

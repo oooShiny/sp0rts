@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.game.body
     - field.field.node.game.comment
+    - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
     - field.field.node.game.field_line
@@ -50,7 +51,7 @@ content:
     third_party_settings: {  }
   comment:
     type: comment_default
-    weight: 135
+    weight: 137
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -59,6 +60,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_espn_id:
+    type: string_textfield
+    weight: 136
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_favorite:
     type: string_textfield

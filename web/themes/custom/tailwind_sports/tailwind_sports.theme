@@ -22,6 +22,26 @@ function tailwind_sports_theme_suggestions_views_view_alter(array &$suggestions,
 }
 
 /**
+ * Get the active theme.
+ *
+ * @return string
+ *   The name of the active theme.
+ */
+function tailwind_sports_get_active_theme() {
+  return \Drupal::service('theme.manager')->getActiveTheme()->getName();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwind_sports_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'comment') {
+    $variables['bundle'] = $element['#bundle'];
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function tailwind_sports_preprocess_block(&$variables) {
@@ -36,17 +56,9 @@ function tailwind_sports_preprocess_block(&$variables) {
 
 }
 
-
 /**
- * Get the active theme.
- *
- * @return string
- *   The name of the active theme.
+ * Implements hook_preprocess_HOOK().
  */
-function tailwind_sports_get_active_theme() {
-  return \Drupal::service('theme.manager')->getActiveTheme()->getName();
-}
-
 function tailwind_sports_preprocess_group(&$variables) {
     $group = $variables['group'];
     if (isset($group->field_header_image) && !$group->field_header_image->isEmpty()) {
@@ -68,15 +80,6 @@ function tailwind_sports_preprocess_group(&$variables) {
     else {
       $variables['header_bg'] = '';
     }
-}
-
-function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (str_contains($form['#id'], 'views-exposed-form-frontpage')) {
-    $form['#attributes']['class'][] = 'tw-bg-gray-700 tw-border-b tw-border-t tw-flex tw-gap-5 tw-justify-center tw-p-2';
-  }
-  if (str_contains($form_id, 'updown_vote')) {
-    $form['value']['#prefix'] = '<div class="thumbsupdown-rating-wrapper rate-enabled tw-flex tw-flex-wrap" can-edit="true">';
-  }
 }
 
 /**
@@ -106,6 +109,7 @@ function tailwind_sports_preprocess_node(&$variables) {
     $variables['weather'] = $node->get('field_weather')->value;
     $variables['favorite'] = $node->get('field_favorite')->value;
     $variables['line'] = $node->get('field_line')->value;
+    $variables['espn_id'] = $node->get('field_espn_id')->value;
   }
 
   // Podcast episode overrides.
@@ -129,6 +133,18 @@ function tailwind_sports_preprocess_html(&$variables) {
   $variables['attributes']['class'][] = 'tw-bg-gray-900 tw-text-gray-200';
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function tailwind_sports_preprocess_private_message(&$variables) {
   $v = $variables;
+}
+
+function tailwind_sports_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (str_contains($form['#id'], 'views-exposed-form-frontpage')) {
+    $form['#attributes']['class'][] = 'tw-bg-gray-700 tw-border-b tw-border-t tw-flex tw-gap-5 tw-justify-center tw-p-2';
+  }
+  if (str_contains($form_id, 'updown_vote')) {
+    $form['value']['#prefix'] = '<div class="thumbsupdown-rating-wrapper rate-enabled tw-flex tw-flex-wrap" can-edit="true">';
+  }
 }

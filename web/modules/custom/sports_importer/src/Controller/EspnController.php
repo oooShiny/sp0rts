@@ -18,7 +18,7 @@ class EspnController extends ControllerBase {
    */
   public function get_data($sport = 'football', $league = 'nfl', $team_count = '32') {
     $client = new Client();
-    $teams = [];
+    $games = [];
 
     try {
       // Get all games from the scoreboard.
@@ -48,14 +48,21 @@ class EspnController extends ControllerBase {
           // Create the title text for the node.
           $week = 'Week ' . $g['week']['number'];
           $game_title = $g['season']['year'] . ' ' . $week . ': ' . $g['name'];
-
-          $odds = explode(' ', $g['competitions'][0]['odds'][0]['details']);
+          if (isset($g['competitions'][0]['odds'])) {
+            $odds = explode(' ', $g['competitions'][0]['odds'][0]['details']);
+          }
+          else {
+            $odds[] = '';
+          }
 
           if ($g["competitions"][0]["competitors"][0]["team"]["abbreviation"] == $odds[0]) {
             $favorite = $team1['name'];
           }
-          else {
+          elseif ($g["competitions"][0]["competitors"][1]["team"]["abbreviation"] == $odds[0]) {
             $favorite = $team2['name'];
+          }
+          else {
+            $favorite = '';
           }
           // Check to see if there's any content with this title already.
           $nodes = \Drupal::entityTypeManager()
@@ -88,6 +95,7 @@ class EspnController extends ControllerBase {
                   'value' => '<p>' . $text . '</p>',
                   'format' => 'full_html',
                 ],
+                'field_espn_id' => $g['id'],
                 'field_team_1' => $team1['name'],
                 'field_team_1_logo' => $team1['logo'],
                 'field_team_1_record' => $team1['record'],
@@ -105,7 +113,11 @@ class EspnController extends ControllerBase {
 
               $node->enforceIsNew();
               $node->save();
-
+              $games[] = [
+                'title' => $node->label(),
+                'url' => $node->toUrl()->toString(),
+                'group' => $gr->label()
+              ];
               $relation = $gr->getContentByEntityId('group_node:game', $node->id());
               if (!$relation) {
                 $gr->addContent($node, 'group_node:game');
@@ -115,45 +127,13 @@ class EspnController extends ControllerBase {
         }
       }
 
-          $response = $client->get('https://sports.core.api.espn.com/v2/sports/'.$sport.'/leagues/'.$league.'/teams?limit='.$team_count);
-          $result = json_decode($response->getBody(), TRUE);
-          foreach($result['items'] as $item) {
-
-            // Get initial team data.
-            $team_res = $client->get($item['$ref']);
-            $team_data = json_decode($team_res->getBody(), TRUE);
-
-            // Get team record.
-            $team_rec = $client->get($team_data['record']['$ref']);
-            $team_record = json_decode($team_rec->getBody(), TRUE);
-
-            // Get team schedule.
-//            $team_sched = $client->get($team_data['events']['$ref']);
-//            $team_sched_links = json_decode($team_sched->getBody(), TRUE);
-//            $games = [];
-//            foreach ($team_sched_links['items'] as $game_link) {
-//              $team_g = $client->get($game_link['$ref']);
-//              $team_game = json_decode($team_g->getBody(), TRUE);
-//              $games[] = $team_game;
-//            }
-            // Create team array from all the fetches.
-            $teams[$team_data['id']] = $team_data;
-            $teams[$team_data['id']]['record'] = $team_record['items'];
-//            $teams[$team_data['id']]['schedule'] = $games;
-
-          return [
-            '#theme' => 'sports_importer_admin',
-            '#teams' => $teams,
-          ];
-        }
+      return [
+        '#theme' => 'sports_importer_admin',
+        '#games' => $games,
+      ];
     }
     catch (RequestException $e) {
       $e->getMessage();
     }
   }
-
-  public function create_game_node() {
-
-  }
-
 }

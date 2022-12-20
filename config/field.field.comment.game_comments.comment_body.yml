@@ -1,0 +1,26 @@
+uuid: de085019-0134-48f9-8b14-be72eef22c54
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.game_comments
+    - field.storage.comment.comment_body
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: comment.game_comments.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: game_comments
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

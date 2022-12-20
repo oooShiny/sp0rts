@@ -1,19 +1,17 @@
+<h2>Created Games</h2>
+<p>See the <a href="/admin/content/scheduled">scheduled content admin page</a>.</p>
 <table>
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Team</th>
-            <th>Record</th>
-            <th>Win Pct</th>
+            <th>Game</th>
+            <th>Group</th>
         </tr>
     </thead>
     <tbody>
-{% for team in teams %}
+{% for game in games %}
     <tr>
-        <td>{{ team.id }}</td>
-        <td>{{ team.displayName }}</td>
-        <td>{{ team.record.0.displayValue }}</td>
-        <td>{{ team.record.0.value }}</td>
+        <td><a href="{{ game.url }}">{{ game.title }}</a></td>
+        <td>{{ game.group }}</td>
     </tr>
 {% endfor %}
     </tbody>

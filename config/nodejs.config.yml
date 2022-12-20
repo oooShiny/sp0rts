@@ -8,13 +8,13 @@ enable_userchannel: true
 pages: '/game/*'
 authenticated_users_only: false
 nodejs:
-  scheme: http
-  host: localhost
-  port: '5000'
+  scheme: https
+  host: sp0rts-nodejs.fly.dev
+  port: '8080'
 client:
-  scheme: http
-  host: localhost
-  port: '5000'
+  scheme: https
+  host: sp0rts-nodejs.fly.dev
+  port: '8080'
 socket_io:
   path: 'http://localhost:8080/socket.io/socket.io.js'
   type: external

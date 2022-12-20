@@ -1,0 +1,8 @@
+<?php
+
+// TODO: Create form that displays on Q&A posts.
+// TODO: Allow form to create Question paragraphs on post.
+// TODO: Allow users to up/down vote questions.
+// TODO: Allow node author to answer questions.
+// TODO: Show answered questions on post/remove from voting.
+// https://www.codimth.com/blog/web/drupal/how-attach-paragraphs-node-programmatically-drupal-8-9

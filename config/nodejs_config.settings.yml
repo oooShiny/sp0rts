@@ -1,8 +1,34 @@
-_core:
-  default_config_hash: KmjCyktsgtwTngHJq-7--sTNHsHpffehiEe6H9vDC1w
-js_suggestion: ''
-host: localhost
-port: 8080
+js_suggestion: |-
+  /**
+  * This configuration file was built using the 'Node.js server configuration builder'.
+  * For a more fully commented example see the file nodejs.config.js.example in the root of this module
+  */
+  backendSettings = {
+    "scheme":"http",
+    "host":"0.0.0.0",
+    "port":8080,
+    "key":"/path/to/key/file",
+    "cert":"/path/to/cert/file",
+    "publishUrl":"publish",
+    "serviceKey":null,
+    "backend":{
+    "port":80,
+    "host":"localhost",
+    "messagePath":"/nodejs/message"},
+    "clientsCanWriteToChannels":false,
+    "clientsCanWriteToClients":false,
+    "extensions":"",
+    "debug":false,
+    "transports":["websocket",
+    "flashsocket",
+    "htmlfile",
+    "xhr-polling",
+    "jsonp-polling"],
+    "jsMinification":true,
+    "jsEtag":true,
+    "logLevel":1};
+host: 0.0.0.0
+port: '8080'
 scheme: http
 key: /path/to/key/file
 cert: /path/to/cert/file
@@ -10,7 +36,9 @@ publish_url: publish
 write_channels: false
 write_clients: false
 backend_host: localhost
-backend_port: 80
+backend_port: '80'
 backend_message_path: /nodejs/message
 debug: false
 extensions: ''
+_core:
+  default_config_hash: KmjCyktsgtwTngHJq-7--sTNHsHpffehiEe6H9vDC1w

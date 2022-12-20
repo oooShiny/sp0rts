@@ -1,16 +1,16 @@
-uuid: bbee3f8f-fd76-4269-ab2e-95795b8697ef
+uuid: 8f7fd755-ac94-460f-bd78-bbf9bae5aedc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.comment
-    - node.type.game
+    - node.type.youtube_video
   module:
     - comment
-id: node.game.comment
+id: node.youtube_video.comment
 field_name: comment
 entity_type: node
-bundle: game
+bundle: youtube_video
 label: Comments
 description: ''
 required: false

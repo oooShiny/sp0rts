@@ -27,7 +27,7 @@ function sports_importer_theme($existing, $type, $theme, $path) {
   return [
     'sports_importer_admin' => [
       'variables' => [
-        'teams' => ''
+        'games' => ''
       ]
     ],
     'youtube_importer_admin' => [

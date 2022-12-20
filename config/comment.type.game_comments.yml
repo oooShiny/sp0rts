@@ -1,0 +1,8 @@
+uuid: 0d802569-e8b2-43b4-b328-3536f82aa4f7
+langcode: en
+status: true
+dependencies: {  }
+id: game_comments
+label: 'Game Comments'
+target_entity_type_id: node
+description: 'Special comments for game threads, probably overridden by some custom Node.js code'

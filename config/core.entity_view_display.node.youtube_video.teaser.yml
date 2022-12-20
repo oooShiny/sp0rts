@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.youtube_video.body
+    - field.field.node.youtube_video.comment
     - field.field.node.youtube_video.field_popularity
     - field.field.node.youtube_video.field_youtube_video_link
     - node.type.youtube_video
@@ -24,11 +25,23 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  flag_flag_inappropriate_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
+  comment: true
   field_popularity: true
   field_youtube_video_link: true
+  private_message_link: true

@@ -1,0 +1,240 @@
+uuid: 926cef47-2b3a-405a-b0bb-0b3b1c76afd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.game
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: node--game
+disabled: false
+path: node/game
+resourceType: node--game
+resourceFields:
+  nid:
+    disabled: false
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  vid:
+    disabled: false
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_timestamp:
+    disabled: false
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: false
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: false
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: false
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    disabled: false
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  created:
+    disabled: false
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  changed:
+    disabled: false
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  promote:
+    disabled: false
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: false
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: false
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: false
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  path:
+    disabled: false
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  publish_on:
+    disabled: false
+    fieldName: publish_on
+    publicName: publish_on
+    enhancer:
+      id: ''
+  unpublish_on:
+    disabled: false
+    fieldName: unpublish_on
+    publicName: unpublish_on
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: false
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  body:
+    disabled: false
+    fieldName: body
+    publicName: body
+    enhancer:
+      id: ''
+  comment:
+    disabled: false
+    fieldName: comment
+    publicName: comment
+    enhancer:
+      id: ''
+  field_favorite:
+    disabled: false
+    fieldName: field_favorite
+    publicName: field_favorite
+    enhancer:
+      id: ''
+  field_game_date:
+    disabled: true
+    fieldName: field_game_date
+    publicName: field_game_date
+    enhancer:
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sO'
+  field_line:
+    disabled: false
+    fieldName: field_line
+    publicName: field_line
+    enhancer:
+      id: ''
+  field_popularity:
+    disabled: false
+    fieldName: field_popularity
+    publicName: field_popularity
+    enhancer:
+      id: ''
+  field_team_1:
+    disabled: false
+    fieldName: field_team_1
+    publicName: field_team_1
+    enhancer:
+      id: ''
+  field_team_1_logo:
+    disabled: false
+    fieldName: field_team_1_logo
+    publicName: field_team_1_logo
+    enhancer:
+      id: ''
+  field_team_1_record:
+    disabled: false
+    fieldName: field_team_1_record
+    publicName: field_team_1_record
+    enhancer:
+      id: ''
+  field_team_2:
+    disabled: false
+    fieldName: field_team_2
+    publicName: field_team_2
+    enhancer:
+      id: ''
+  field_team_2_logo:
+    disabled: false
+    fieldName: field_team_2_logo
+    publicName: field_team_2_logo
+    enhancer:
+      id: ''
+  field_team_2_record:
+    disabled: false
+    fieldName: field_team_2_record
+    publicName: field_team_2_record
+    enhancer:
+      id: ''
+  field_temperature:
+    disabled: false
+    fieldName: field_temperature
+    publicName: field_temperature
+    enhancer:
+      id: ''
+  field_venue:
+    disabled: false
+    fieldName: field_venue
+    publicName: field_venue
+    enhancer:
+      id: ''
+  field_weather:
+    disabled: false
+    fieldName: field_weather
+    publicName: field_weather
+    enhancer:
+      id: ''
