@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.game.field_weather
     - node.type.game
   module:
+    - ajax_comments
     - comment
     - datetime
     - radioactivity
@@ -45,7 +46,9 @@ content:
     settings:
       view_mode: default
       pager_id: 0
-    third_party_settings: {  }
+    third_party_settings:
+      ajax_comments:
+        enable_ajax_comments: '0'
     weight: 117
     region: content
   field_espn_id:
