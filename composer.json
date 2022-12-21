@@ -64,7 +64,8 @@
         "drupal/jsonapi_extras": "^3.23",
         "drupal/restui": "^1.21",
         "drupal/pusher_api": "^2.0@alpha",
-        "drupal/ajax_comments": "^1.0@beta"
+        "drupal/ajax_comments": "^1.0@beta",
+        "drupal/comments_order": "^3.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

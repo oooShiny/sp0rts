@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_espn_id
+    - field.storage.node.field_team_1
+    - field.storage.node.field_team_1_logo
+    - field.storage.node.field_team_2
+    - field.storage.node.field_team_2_logo
     - node.type.game
   module:
     - node
@@ -155,10 +158,59 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_espn_id:
-          id: field_espn_id
-          table: node__field_espn_id
-          field: field_espn_id
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: url
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ field_espn_id }}/competitions/{{ field_espn_id }}/plays?limit=400'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        field_team_1:
+          id: field_team_1
+          table: node__field_team_1
+          field: field_team_1
           relationship: none
           group_type: group
           admin_label: ''
@@ -218,19 +270,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
+        field_team_1_logo:
+          id: field_team_1_logo
+          table: node__field_team_1_logo
+          field: field_team_1_logo
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: custom
-          label: url
+          plugin_id: field
+          label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ field_espn_id }}/competitions/{{ field_espn_id }}/plays?limit=400'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -266,7 +318,147 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_team_2:
+          id: field_team_2
+          table: node__field_team_2
+          field: field_team_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_team_2_logo:
+          id: field_team_2_logo
+          table: node__field_team_2_logo
+          field: field_team_2_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: mini
         options:
@@ -417,7 +609,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_espn_id'
+        - 'config:field.storage.node.field_team_1'
+        - 'config:field.storage.node.field_team_1_logo'
+        - 'config:field.storage.node.field_team_2'
+        - 'config:field.storage.node.field_team_2_logo'
   rest_export_1:
     id: rest_export_1
     display_title: 'REST export'
@@ -464,4 +659,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_espn_id'
+        - 'config:field.storage.node.field_team_1'
+        - 'config:field.storage.node.field_team_1_logo'
+        - 'config:field.storage.node.field_team_2'
+        - 'config:field.storage.node.field_team_2_logo'

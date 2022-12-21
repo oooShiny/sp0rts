@@ -7,6 +7,12 @@ dependencies:
     - node.type.game
   module:
     - comment
+    - comments_order
+third_party_settings:
+  comments_order:
+    order: DESC
+    children_natural_order: 0
+    created_order: 0
 id: node.game.comment
 field_name: comment
 entity_type: node
