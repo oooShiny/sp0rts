@@ -1,0 +1,5 @@
+name: Sports Q&A Module
+description: Functionality to add questions to Q&A posts.
+package: Sports
+type: module
+core_version_requirement: ^8|| ^9 || ^10

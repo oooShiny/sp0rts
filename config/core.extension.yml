@@ -38,6 +38,7 @@ module:
   eca_user: 0
   editor: 0
   entity: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_layout: 0
@@ -64,7 +65,9 @@ module:
   jsonapi_extras: 0
   layout_builder: 0
   layout_discovery: 0
+  layout_paragraphs: 0
   link: 0
+  login_destination: 0
   mailsystem: 0
   media: 0
   media_library: 0
@@ -80,6 +83,7 @@ module:
   nodejs_watchdog: 0
   options: 0
   page_cache: 0
+  paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
   private_message: 0
@@ -98,6 +102,7 @@ module:
   shortcut: 0
   sports_importer: 0
   sports_module: 0
+  sports_users: 0
   standard: 0
   system: 0
   taxonomy: 0
@@ -123,6 +128,7 @@ module:
   yasm_blocks: 0
   pathauto: 1
   views: 10
+  paragraphs: 11
 theme:
   bartik: 0
   seven: 0

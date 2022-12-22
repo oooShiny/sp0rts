@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.private_message_author
+    - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
   module:
     - user
@@ -15,21 +16,22 @@ bundle: user
 mode: private_message_author
 content:
   flag_ban_user:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   flag_following:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   linked_username:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
+  field_welcomed: true
   member_for: true
   private_message_link: true
   user_picture: true

@@ -1,0 +1,24 @@
+uuid: 7d3db55d-9c14-4a0e-bf67-e64ba10b0ea5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_welcomed
+  module:
+    - user
+id: user.user.field_welcomed
+field_name: field_welcomed
+entity_type: user
+bundle: user
+label: Welcomed
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -25,15 +26,25 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_welcomed:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
+    region: content
   flag_ban_user:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   flag_following:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
   member_for:
     settings: {  }
