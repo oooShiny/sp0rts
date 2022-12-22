@@ -93,7 +93,7 @@
   {# If this is the parent comment, it's about the game. Style special. #}
   {% else %}
     <div{{ content_attributes.addClass('tw-bg-blue-800 tw-p-4') }}>
-      <mark class="hidden tw-float-left" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
+      <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
       <div class="tw-text-center">{{ content.comment_body }}</div>
     </div>
     {{ content.links }}
