@@ -88,7 +88,9 @@
   {% if parent %}
     <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
     <div{{ content_attributes }}>
-      {{ content }}
+      <div class="tw-text-sm tw-text-gray-600">{{ submitted }}</div>
+      <div class="tw-p-2">{{ content.comment_body }}</div>
+      <div class="tw-flex tw-gap-3">{{ content|without('comment_body') }}</div>
     </div>
   {# If this is the parent comment, it's about the game. Style special. #}
   {% else %}

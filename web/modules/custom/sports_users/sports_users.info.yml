@@ -1,5 +1,5 @@
-name: Sports Q&A Module
-description: Functionality to add questions to Q&A posts.
+name: Sports Users Module
+description: Functionality surrounding users/logins/etc.
 package: Sports
 type: module
 core_version_requirement: ^8|| ^9 || ^10

@@ -65,7 +65,8 @@
         "drupal/restui": "^1.21",
         "drupal/pusher_api": "^2.0@alpha",
         "drupal/ajax_comments": "^1.0@beta",
-        "drupal/comments_order": "^3.0"
+        "drupal/comments_order": "^3.0",
+        "drupal/flexible_permissions": "^1.0@beta"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

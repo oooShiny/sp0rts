@@ -1,21 +1,2 @@
-sports_importer.espn:
-  path: '/admin/import_espn'
-  defaults:
-    _controller: '\Drupal\sports_importer\Controller\EspnController::get_data'
-    _title: 'Import ESPN data'
-  requirements:
-    _role: 'administrator'
-sports_importer.youtube:
-  path: '/admin/import_youtube'
-  defaults:
-    _controller: '\Drupal\sports_importer\Controller\YoutubeController::get_data'
-    _title: 'Import Youtube videos'
-  requirements:
-    _role: 'administrator'
-sports_importer.reddit:
-  path: '/admin/import_reddit'
-  defaults:
-    _controller: '\Drupal\sports_importer\Controller\RedditController::get_data'
-    _title: 'Import Reddit posts'
-  requirements:
-    _role: 'administrator'
+sports_users.welcome:
+  path: '/'

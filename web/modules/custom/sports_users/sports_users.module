@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_user_login().
+ */
+function sports_users_user_login($account) {
+  if (!$account->getLastAccessedTime()) {
+    \Drupal::messenger()->addStatus('This is your first login. Welcome!');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sports_users_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter user edit form and add own custom submit handler.
+  $form['#submit'][] = '_sports_users_user_login_form_submit';
+  $form['actions']['submit']['#submit'][] = '_sports_users_user_login_form_submit';
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function _sports_users_user_login_form_submit($form, FormStateInterface $form_state) {
+  // Set redirect to welcome page.
+  $user = User::load(\Drupal::currentUser()->id());
+  $welcomed = $user->get('field_welcomed')->value;
+  // If the user hasn't been welcomed, redirect them to the wizard.
+  if (is_null($welcomed)) {
+    $url = Url::fromUserInput('/welcome');
+    $form_state->setRedirectUrl($url);
+    $user->field_welcomed = 1;
+    $user->save();
+  }
+}

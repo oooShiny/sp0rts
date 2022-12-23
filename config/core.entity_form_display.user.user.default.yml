@@ -10,6 +10,7 @@ dependencies:
     - field_layout
     - image
     - layout_discovery
+    - path
     - user
 third_party_settings:
   field_layout:
@@ -38,6 +39,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   private_messages:
     weight: 2
     region: content
@@ -58,4 +65,3 @@ content:
     third_party_settings: {  }
 hidden:
   field_welcomed: true
-  path: true
