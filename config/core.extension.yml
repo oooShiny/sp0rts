@@ -48,6 +48,7 @@ module:
   flag: 0
   flag_count: 0
   flag_follower: 0
+  flexible_permissions: 0
   flysystem: 0
   formblock: 0
   get_tweets: 0
@@ -67,7 +68,6 @@ module:
   layout_discovery: 0
   layout_paragraphs: 0
   link: 0
-  login_destination: 0
   mailsystem: 0
   media: 0
   media_library: 0
