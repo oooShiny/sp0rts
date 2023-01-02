@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - tailwindcss
-id: 'tailwindcss_sportsgroupjointext'
+id: tailwindcss_sportsgroupjointext
 theme: tailwindcss
 region: content
 weight: -12

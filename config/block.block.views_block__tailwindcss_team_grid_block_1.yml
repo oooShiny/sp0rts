@@ -1,22 +1,22 @@
+uuid: ff95e152-a5ab-4180-9e79-81634484e59e
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.frontpage
+    - views.view.team_grid
   module:
     - group
-    - system
     - views
   theme:
     - tailwindcss
-id: views_block__tailwindcss_frontpage_block_1
+id: views_block__tailwindcss_team_grid_block_1
 theme: tailwindcss
 region: content
-weight: -7
+weight: -9
 provider: null
-plugin: 'views_block:frontpage-block_1'
+plugin: 'views_block:team_grid-block_1'
 settings:
-  id: 'views_block:frontpage-block_1'
+  id: 'views_block:team_grid-block_1'
   label: ''
   label_display: '0'
   provider: views
@@ -31,9 +31,3 @@ visibility:
       group: '@group.group_route_context:group'
     bundles:
       league: league
-      sport: sport
-      team: team
-  request_path:
-    id: request_path
-    negate: true
-    pages: "/group/*/members\r\n/group/*/join"

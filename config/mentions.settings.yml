@@ -1,0 +1,6 @@
+supported_entity_types:
+  comment: comment
+  node: node
+  taxonomy_term: taxonomy_term
+  user: user
+suggestions_amount: '5'

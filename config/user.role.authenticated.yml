@@ -9,6 +9,9 @@ dependencies:
     - node.type.text_post
     - node.type.user_post
     - node.type.youtube_video
+    - rest.resource.comment
+    - rest.resource.comments
+    - rest.resource.me
   module:
     - comment
     - contact
@@ -18,6 +21,7 @@ dependencies:
     - node
     - private_message
     - rate
+    - rest
     - search
     - system
 _core:
@@ -66,7 +70,13 @@ permissions:
   - 'flag flag_inappropriate_content'
   - 'flag following'
   - 'post comments'
+  - 'restful delete comment'
   - 'restful get comment'
+  - 'restful get comments'
+  - 'restful get me'
+  - 'restful patch comment'
+  - 'restful post comments'
+  - 'restful put comment'
   - 'search content'
   - 'skip comment approval'
   - 'unflag flag_inappropriate_comment_'

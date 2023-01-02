@@ -508,7 +508,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '<img class="tw-h-8" src="/themes/custom/tailwind_sports/icons/{{ type__target_id }}.svg" />'
+            text: '<img class="h-8" src="/themes/custom/tailwind_sports/icons/{{ type__target_id }}.svg" />'
             make_link: false
             path: ''
             absolute: false
@@ -787,7 +787,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: tw-my-auto
+          element_wrapper_class: my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -853,7 +853,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: tw-my-auto
+          element_wrapper_class: my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -919,7 +919,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: tw-my-auto
+          element_wrapper_class: my-auto
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -954,7 +954,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"tw-w-full tw-border-b tw-border-gray-700 tw-py-4\">\r\n    <div class=\"tw-flex tw-gap-1 tw-font-bold tw-text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"tw-text-gray-600 tw-text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    {{ field_post_image }}\r\n    {{ field_post }}\r\n    <div class=\"tw-flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
+            text: "<div class=\"w-full border-b border-gray-700 py-4\">\r\n    <div class=\"flex gap-1 font-bold text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"text-gray-600 text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    {{ field_post_image }}\r\n    {{ field_post }}\r\n    <div class=\"flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -985,7 +985,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: tw-w-full
+          element_wrapper_class: grow
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -1195,7 +1195,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: 'tw-flex tw-gap-2'
+          row_class: 'flex gap-2'
           default_row_class: true
       row:
         type: fields
@@ -1238,7 +1238,7 @@ display:
           entity_type: node
           plugin_id: standard
           required: false
-      use_ajax: true
+      use_ajax: false
       header: {  }
       footer: {  }
       display_extenders: {  }

@@ -7,7 +7,7 @@ dependencies:
     - sports_module
   theme:
     - tailwindcss
-id: 'tailwindcss_sportsgroupmodlistandapplybutton'
+id: tailwindcss_sportsgroupmodlistandapplybutton
 theme: tailwindcss
 region: sidebar_first
 weight: -15

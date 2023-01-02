@@ -1,3 +1,4 @@
+uuid: 1d8343a2-76a6-4437-ba86-612e5b68691b
 langcode: en
 status: true
 dependencies:
@@ -5,20 +6,22 @@ dependencies:
     - views.view.frontpage
   module:
     - system
+    - user
     - views
   theme:
     - tailwindcss
-id: views_block__tailwindcss_frontpage_block_4
+id: views_block__tailwindcss_frontpage_block_3
 theme: tailwindcss
 region: content
-weight: -4
+weight: -5
 provider: null
-plugin: 'views_block:frontpage-block_4'
+plugin: 'views_block:frontpage-block_3'
 settings:
-  id: 'views_block:frontpage-block_4'
+  id: 'views_block:frontpage-block_3'
   label: ''
   label_display: '0'
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: '24'
 visibility:
@@ -26,3 +29,10 @@ visibility:
     id: request_path
     negate: false
     pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

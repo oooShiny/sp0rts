@@ -37,4 +37,5 @@ settings:
       sports_group_link: sports_group_link
       sports_group_mod_list_apply: sports_group_mod_list_apply
       sports_group_tree: sports_group_tree
+      welcome_group_select_block: welcome_group_select_block
 field_type: block_field

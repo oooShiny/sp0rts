@@ -1,0 +1,25 @@
+uuid: b441fa02-7a4b-4138-bf90-17a32c65ff45
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mobile-menu
+  module:
+    - system
+  theme:
+    - tailwindcss
+id: mobilemenu_2
+theme: tailwindcss
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:mobile-menu'
+settings:
+  id: 'system_menu_block:mobile-menu'
+  label: 'Mobile Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

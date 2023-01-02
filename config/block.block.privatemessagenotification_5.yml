@@ -1,0 +1,29 @@
+uuid: 0c0d6879-08ed-462b-a8d6-d6ae4cf4d674
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+    - user
+  theme:
+    - tailwindcss
+id: privatemessagenotification_5
+theme: tailwindcss
+region: footer
+weight: 0
+provider: null
+plugin: private_message_notification_block
+settings:
+  id: private_message_notification_block
+  label: 'Private Message Notification'
+  label_display: '0'
+  provider: private_message
+  ajax_refresh_rate: 15
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

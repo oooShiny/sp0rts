@@ -1,27 +1,28 @@
+uuid: 5f447008-b802-487b-9d48-35becb5140f3
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.frontpage
+    - views.view.user_s_subscribed_groups
   module:
     - system
     - views
   theme:
     - tailwindcss
-id: views_block__tailwindcss_frontpage_block_2
+id: views_block__tailwindcss_user_s_subscribed_groups_block_1
 theme: tailwindcss
 region: content
-weight: -6
+weight: -11
 provider: null
-plugin: 'views_block:frontpage-block_2'
+plugin: 'views_block:user_s_subscribed_groups-block_1'
 settings:
-  id: 'views_block:frontpage-block_2'
+  id: 'views_block:user_s_subscribed_groups-block_1'
   label: ''
   label_display: '0'
   provider: views
   context_mapping: {  }
   views_label: ''
-  items_per_page: '24'
+  items_per_page: none
 visibility:
   request_path:
     id: request_path

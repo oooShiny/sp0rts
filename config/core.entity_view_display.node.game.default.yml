@@ -3,9 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.game.body
-    - field.field.node.game.comment
     - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
@@ -22,8 +20,6 @@ dependencies:
     - field.field.node.game.field_weather
     - node.type.game
   module:
-    - ajax_comments
-    - comment
     - datetime
     - radioactivity
     - text
@@ -38,18 +34,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  comment:
-    type: comment_default
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings:
-      ajax_comments:
-        enable_ajax_comments: '0'
-    weight: 117
+    weight: 3
     region: content
   field_espn_id:
     type: string
@@ -57,7 +42,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 116
+    weight: 17
     region: content
   field_favorite:
     type: string
@@ -65,7 +50,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 109
+    weight: 11
     region: content
   field_game_date:
     type: datetime_default
@@ -74,7 +59,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 6
     region: content
   field_line:
     type: number_decimal
@@ -85,7 +70,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 108
+    weight: 10
     region: content
   field_popularity:
     type: radioactivity_reference_emitter
@@ -95,7 +80,7 @@ content:
       display: false
       decimals: !!float 0
     third_party_settings: {  }
-    weight: 105
+    weight: 7
     region: content
   field_team_1:
     type: string
@@ -103,7 +88,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 4
     region: content
   field_team_1_logo:
     type: string
@@ -111,7 +96,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 110
+    weight: 12
     region: content
   field_team_1_record:
     type: string
@@ -119,7 +104,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 113
+    weight: 15
     region: content
   field_team_2:
     type: string
@@ -127,7 +112,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 5
     region: content
   field_team_2_logo:
     type: string
@@ -135,7 +120,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 111
+    weight: 13
     region: content
   field_team_2_record:
     type: string
@@ -143,7 +128,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 16
     region: content
   field_temperature:
     type: number_integer
@@ -152,7 +137,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 107
+    weight: 9
     region: content
   field_venue:
     type: string
@@ -160,7 +145,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 112
+    weight: 14
     region: content
   field_weather:
     type: string
@@ -168,22 +153,22 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 106
+    weight: 8
     region: content
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
   rate_vote:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   private_message_link: true

@@ -73,6 +73,7 @@ module:
   mailsystem: 0
   media: 0
   media_library: 0
+  mentions: 0
   menu_item_role_access: 0
   menu_link_content: 0
   menu_ui: 0
@@ -88,6 +89,7 @@ module:
   radioactivity: 0
   rate: 0
   rdf: 0
+  react_comments: 0
   rest: 0
   restui: 0
   rules: 0
@@ -118,7 +120,6 @@ module:
   views_ui: 0
   votingapi: 0
   webform: 0
-  webform_group: 0
   webform_node: 0
   webform_ui: 0
   yasm: 0
