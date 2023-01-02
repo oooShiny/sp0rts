@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: league-group_node-link
-label: 'League: Group node (Link)'
-description: 'Adds <em class="placeholder">Link</em> content to groups both publicly and privately.'
 group_type: league
 content_plugin: 'group_node:link'
 plugin_config:

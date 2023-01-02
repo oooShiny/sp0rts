@@ -6,8 +6,6 @@ dependencies:
     - system
   theme:
     - tailwindcss
-_core:
-  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
 id: tailwindcss_messages
 theme: tailwindcss
 region: highlighted

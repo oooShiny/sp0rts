@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: league-group_node-text_post
-label: 'League: Group node (Text Post)'
-description: 'Adds <em class="placeholder">Text Post</em> content to groups both publicly and privately.'
 group_type: league
 content_plugin: 'group_node:text_post'
 plugin_config:

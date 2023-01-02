@@ -12,6 +12,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_field: 0
   bpmn_io: 0
   breakpoint: 0
   cdn: 0
@@ -57,6 +58,7 @@ module:
   gnode: 0
   google_tag: 0
   group: 0
+  group_join_link: 0
   help: 0
   history: 0
   image: 0
@@ -76,11 +78,6 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
-  nodejs: 0
-  nodejs_ajax: 0
-  nodejs_config: 0
-  nodejs_notify: 0
-  nodejs_watchdog: 0
   options: 0
   page_cache: 0
   paragraphs_type_permissions: 0

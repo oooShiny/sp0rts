@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: sport-group_node-youtube_video
-label: 'Sport: Group node (Youtube Video)'
-description: 'Adds <em class="placeholder">Youtube Video</em> content to groups both publicly and privately.'
 group_type: sport
 content_plugin: 'group_node:youtube_video'
 plugin_config:

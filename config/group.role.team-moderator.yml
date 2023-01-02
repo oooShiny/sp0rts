@@ -7,10 +7,7 @@ dependencies:
 id: team-moderator
 label: Moderator
 weight: 6
-internal: false
-audience: member
 group_type: team
-permissions_ui: true
 permissions:
   - 'access group_node overview'
   - 'administer members'
@@ -95,3 +92,5 @@ permissions:
   - 'view unpublished group_node:page entity'
   - 'view unpublished group_node:text_post entity'
   - 'view unpublished group_node:tweet entity'
+admin: false
+scope: individual

@@ -4,6 +4,15 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 
+function sports_users_theme($existing, $type, $theme, $path) {
+  return [
+    'welcome_group_select_block' => [
+      'variables' => [
+        'groups' => ''
+      ]
+    ],
+  ];
+}
 /**
  * Implements hook_user_login().
  */

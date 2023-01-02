@@ -7,10 +7,7 @@ dependencies:
 id: sport-moderator
 label: Moderator
 weight: 5
-internal: false
-audience: member
 group_type: sport
-permissions_ui: true
 permissions:
   - 'access group_node overview'
   - 'create group_node:link entity'
@@ -58,3 +55,5 @@ permissions:
   - 'view unpublished group_node:page entity'
   - 'view unpublished group_node:text_post entity'
   - 'view unpublished group_node:tweet entity'
+admin: false
+scope: individual

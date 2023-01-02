@@ -2,14 +2,14 @@ uuid: e47f4cc3-7140-4443-86be-924ce44f4836
 langcode: en
 status: true
 dependencies:
+  module:
+    - group
   theme:
     - tailwindcss
-_core:
-  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
 id: tailwindcss_page_title
 theme: tailwindcss
 region: content
-weight: -8
+weight: -16
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +17,13 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: true
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league
+      sport: sport
+      team: team

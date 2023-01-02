@@ -7,10 +7,7 @@ dependencies:
 id: team-outsider
 label: Outsider
 weight: -101
-internal: true
-audience: outsider
 group_type: team
-permissions_ui: true
 permissions:
   - 'create group_node:highlight content'
   - 'create group_node:highlight entity'
@@ -49,3 +46,6 @@ permissions:
   - 'view group_node:tweet entity'
   - 'view group_node:youtube_video content'
   - 'view group_node:youtube_video entity'
+admin: false
+scope: outsider
+global_role: authenticated

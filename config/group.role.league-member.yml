@@ -7,10 +7,7 @@ dependencies:
 id: league-member
 label: Member
 weight: -100
-internal: true
-audience: member
 group_type: league
-permissions_ui: true
 permissions:
   - 'create group_node:image entity'
   - 'create group_node:link content'
@@ -45,3 +42,6 @@ permissions:
   - 'view group_node:tweet entity'
   - 'view group_node:youtube_video content'
   - 'view group_node:youtube_video entity'
+admin: false
+scope: insider
+global_role: authenticated

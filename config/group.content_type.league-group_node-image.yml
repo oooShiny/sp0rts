@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: league-group_node-image
-label: 'League: Group node (Image)'
-description: 'Adds <em class="placeholder">Image</em> content to groups both publicly and privately.'
 group_type: league
 content_plugin: 'group_node:image'
 plugin_config:

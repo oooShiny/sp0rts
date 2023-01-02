@@ -7,10 +7,7 @@ dependencies:
 id: sport-outsider
 label: Outsider
 weight: -101
-internal: true
-audience: outsider
 group_type: sport
-permissions_ui: true
 permissions:
   - 'create group_node:link entity'
   - 'create group_node:text_post entity'
@@ -24,3 +21,6 @@ permissions:
   - 'view group_node:link entity'
   - 'view group_node:text_post entity'
   - 'view group_node:tweet entity'
+admin: false
+scope: outsider
+global_role: authenticated

@@ -7,10 +7,7 @@ dependencies:
 id: team-member
 label: Member
 weight: -100
-internal: true
-audience: member
 group_type: team
-permissions_ui: true
 permissions:
   - 'create group_node:highlight content'
   - 'create group_node:highlight entity'
@@ -52,3 +49,6 @@ permissions:
   - 'view group_node:tweet entity'
   - 'view group_node:youtube_video content'
   - 'view group_node:youtube_video entity'
+admin: false
+scope: insider
+global_role: authenticated

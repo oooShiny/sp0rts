@@ -4,7 +4,7 @@ namespace Drupal\sports_module\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\group\Entity\Group;
-use Drupal\group\Entity\GroupContent;
+use Drupal\group\Entity\GroupRelationship;
 
 /**
  * Provides a block that displays a link on content to the associated Group.
@@ -25,7 +25,7 @@ class SportsGroupLink extends BlockBase {
     public function build() {
         $current_node = $this->getContextValue('node');
 
-        $group_contents = GroupContent::loadByEntity($current_node);
+        $group_contents = GroupRelationship::loadByEntity($current_node);
         if ($group_contents) {
           foreach ($group_contents as $group_content) {
             $group_id = $group_content->getGroup()->id();

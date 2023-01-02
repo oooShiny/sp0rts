@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-reddit_post
-label: 'Team: Group node (Reddit Post)'
-description: 'Adds <em class="placeholder">Reddit Post</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:reddit_post'
 plugin_config:

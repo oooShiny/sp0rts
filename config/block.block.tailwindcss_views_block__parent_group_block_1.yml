@@ -12,7 +12,7 @@ dependencies:
 id: tailwindcss_views_block__parent_group_block_1
 theme: tailwindcss
 region: sidebar_first
-weight: -8
+weight: -14
 provider: null
 plugin: 'views_block:parent_group-block_1'
 settings:

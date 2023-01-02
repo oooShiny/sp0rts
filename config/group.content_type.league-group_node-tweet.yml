@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: league-group_node-tweet
-label: 'League: Group node (Tweet)'
-description: 'Adds <em class="placeholder">Tweet</em> content to groups both publicly and privately.'
 group_type: league
 content_plugin: 'group_node:tweet'
 plugin_config:

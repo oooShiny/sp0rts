@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-tweet
-label: 'Team: Group node (Tweet)'
-description: 'Adds <em class="placeholder">Tweet</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:tweet'
 plugin_config:

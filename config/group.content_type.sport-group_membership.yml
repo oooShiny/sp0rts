@@ -7,8 +7,6 @@ dependencies:
   module:
     - user
 id: sport-group_membership
-label: 'Sport: Group membership'
-description: 'Adds users to groups as members.'
 group_type: sport
 content_plugin: group_membership
 plugin_config:

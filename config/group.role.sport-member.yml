@@ -7,10 +7,7 @@ dependencies:
 id: sport-member
 label: Member
 weight: -100
-internal: true
-audience: member
 group_type: sport
-permissions_ui: true
 permissions:
   - 'create group_node:link entity'
   - 'create group_node:text_post entity'
@@ -27,3 +24,6 @@ permissions:
   - 'view group_node:link entity'
   - 'view group_node:text_post entity'
   - 'view group_node:tweet entity'
+admin: false
+scope: insider
+global_role: authenticated

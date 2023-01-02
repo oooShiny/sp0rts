@@ -1,0 +1,5 @@
+name: Sports Comments Module
+description: A module for the custom live comments on game posts.
+package: Sports
+type: module
+core_version_requirement: ^8|| ^9 || ^10

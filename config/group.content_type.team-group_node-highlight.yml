@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-highlight
-label: 'Team: Group node (Highlight)'
-description: 'Adds <em class="placeholder">Highlight</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:highlight'
 plugin_config:

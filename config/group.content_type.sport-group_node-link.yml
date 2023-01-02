@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: sport-group_node-link
-label: 'Sport: Group node (Link)'
-description: 'Adds <em class="placeholder">Link</em> content to groups both publicly and privately.'
 group_type: sport
 content_plugin: 'group_node:link'
 plugin_config:

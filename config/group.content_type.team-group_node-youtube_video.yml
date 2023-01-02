@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-youtube_video
-label: 'Team: Group node (Youtube Video)'
-description: 'Adds <em class="placeholder">Youtube Video</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:youtube_video'
 plugin_config:

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.frontpage
+  module:
+    - system
+    - views
+  theme:
+    - tailwindcss
+id: views_block__tailwindcss_frontpage_block_4
+theme: tailwindcss
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:frontpage-block_4'
+settings:
+  id: 'views_block:frontpage-block_4'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: '24'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

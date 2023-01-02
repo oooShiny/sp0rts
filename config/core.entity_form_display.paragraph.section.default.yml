@@ -1,0 +1,22 @@
+uuid: f3dfb45b-9a8a-4911-acef-9d7bc7fd1e5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.section
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content: {  }
+hidden:
+  created: true
+  status: true

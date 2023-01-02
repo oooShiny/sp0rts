@@ -8,12 +8,10 @@ dependencies:
     - system
   theme:
     - tailwindcss
-_core:
-  default_config_hash: jzu74Q7R0QWgw8IniA9HZRSb_a8RPak1M0q5J-VGkZI
 id: tailwindcss_account_menu
 theme: tailwindcss
 region: secondary_menu
-weight: 0
+weight: -15
 provider: null
 plugin: 'system_menu_block:account'
 settings:

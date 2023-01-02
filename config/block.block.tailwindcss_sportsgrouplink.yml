@@ -10,7 +10,7 @@ dependencies:
 id: tailwindcss_sportsgrouplink
 theme: tailwindcss
 region: breadcrumb
-weight: 0
+weight: -14
 provider: null
 plugin: sports_group_link
 settings:
@@ -27,5 +27,11 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
+      game: game
+      game_recap: game_recap
+      highlight: highlight
       link: link
+      reddit_post: reddit_post
       text_post: text_post
+      tweet: tweet
+      youtube_video: youtube_video

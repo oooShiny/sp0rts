@@ -7,8 +7,6 @@ dependencies:
   module:
     - user
 id: league-group_membership
-label: 'League: Group membership'
-description: 'Adds users to groups as members.'
 group_type: league
 content_plugin: group_membership
 plugin_config:

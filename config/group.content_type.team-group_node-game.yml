@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-game
-label: 'Team: Group node (Game)'
-description: 'Adds <em class="placeholder">Game</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:game'
 plugin_config:

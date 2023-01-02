@@ -6,8 +6,6 @@ dependencies:
     - system
   theme:
     - tailwindcss
-_core:
-  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
 id: tailwindcss_branding
 theme: tailwindcss
 region: header
@@ -19,7 +17,7 @@ settings:
   label: 'Site branding'
   label_display: '0'
   provider: system
-  use_site_logo: true
+  use_site_logo: false
   use_site_name: true
   use_site_slogan: true
 visibility: {  }

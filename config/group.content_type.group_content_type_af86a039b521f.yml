@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: group_content_type_af86a039b521f
-label: 'League: Group node (Podcast episode)'
-description: 'Adds <em class="placeholder">Podcast episode</em> content to groups both publicly and privately.'
 group_type: league
 content_plugin: 'group_node:podcast_episode'
 plugin_config:

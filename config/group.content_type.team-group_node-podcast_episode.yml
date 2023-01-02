@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-podcast_episode
-label: 'Team: Group node (Podcast episode)'
-description: 'Adds <em class="placeholder">Podcast episode</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:podcast_episode'
 plugin_config:

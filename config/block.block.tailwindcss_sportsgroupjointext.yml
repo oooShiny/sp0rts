@@ -1,0 +1,27 @@
+uuid: 4992c5b6-491f-4d57-90b3-cb2690e31bd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - sports_module
+    - system
+  theme:
+    - tailwindcss
+id: 'tailwindcss_sportsgroupjointext'
+theme: tailwindcss
+region: content
+weight: -12
+provider: null
+plugin: sports_group_join_text
+settings:
+  id: sports_group_join_text
+  label: 'Sports Group Join Text'
+  label_display: '0'
+  provider: sports_module
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/group/*/join'

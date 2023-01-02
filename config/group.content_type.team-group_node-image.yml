@@ -9,8 +9,6 @@ dependencies:
     - gnode
     - node
 id: team-group_node-image
-label: 'Team: Group node (Image)'
-description: 'Adds <em class="placeholder">Image</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:image'
 plugin_config:

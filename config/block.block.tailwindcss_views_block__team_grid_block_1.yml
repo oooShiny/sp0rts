@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.team_grid
+  module:
+    - group
+    - views
+  theme:
+    - tailwindcss
+id: views_block__tailwindcss_team_grid_block_1
+theme: tailwindcss
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:team_grid-block_1'
+settings:
+  id: 'views_block:team_grid-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+    bundles:
+      league: league

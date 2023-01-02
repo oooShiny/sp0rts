@@ -6,12 +6,10 @@ dependencies:
     - group
   theme:
     - tailwindcss
-_core:
-  default_config_hash: MjMChFykEa-4UxdnGstVk1FcXqwUF3p_GBJLIFT3_XI
 id: tailwindcss_group_operations
 theme: tailwindcss
 region: sidebar_first
-weight: -9
+weight: -16
 provider: null
 plugin: group_operations
 settings:
@@ -21,4 +19,12 @@ settings:
   provider: group
   context_mapping:
     group: '@group.group_route_context:group'
-visibility: {  }
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      league: league
+      team: team
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

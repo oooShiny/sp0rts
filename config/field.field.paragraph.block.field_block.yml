@@ -1,0 +1,40 @@
+uuid: 50c179cb-84d6-431e-a9dc-a394e32056d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block
+    - paragraphs.paragraphs_type.block
+  module:
+    - block_field
+id: paragraph.block.field_block
+field_name: field_block
+entity_type: paragraph
+bundle: block
+label: Block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:flagged_comments-block_1': 'views_block:flagged_comments-block_1'
+      'views_block:flagged_content-block_1': 'views_block:flagged_content-block_1'
+      'views_block:group_members-block_1': 'views_block:group_members-block_1'
+      'views_block:league_teams-block_1': 'views_block:league_teams-block_1'
+      'views_block:rate_widgets_results-node_results_block': 'views_block:rate_widgets_results-node_results_block'
+      'views_block:rate_widgets_results-node_summary_block': 'views_block:rate_widgets_results-node_summary_block'
+      'views_block:sport_leagues-block_1': 'views_block:sport_leagues-block_1'
+      'views_block:team_grid-block_1': 'views_block:team_grid-block_1'
+      'views_block:welcome_groups-block_1': 'views_block:welcome_groups-block_1'
+      private_message_actions_block: private_message_actions_block
+      private_message_inbox_block: private_message_inbox_block
+      private_message_notification_block: private_message_notification_block
+      sports_group_join_text: sports_group_join_text
+      sports_group_link: sports_group_link
+      sports_group_mod_list_apply: sports_group_mod_list_apply
+      sports_group_tree: sports_group_tree
+field_type: block_field
