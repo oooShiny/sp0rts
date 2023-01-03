@@ -4,13 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
-    - rest.resource.comments
   module:
     - comment
     - contact
     - filter
     - media
-    - rest
     - search
     - system
 _core:
@@ -23,7 +21,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
-  - 'restful get comments'
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'

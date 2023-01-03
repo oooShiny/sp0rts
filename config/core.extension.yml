@@ -89,7 +89,6 @@ module:
   radioactivity: 0
   rate: 0
   rdf: 0
-  react_comments: 0
   rest: 0
   restui: 0
   rules: 0
@@ -99,6 +98,7 @@ module:
   sendgrid_integration_reports: 0
   serialization: 0
   shortcut: 0
+  sports_comments: 0
   sports_importer: 0
   sports_module: 0
   sports_users: 0
@@ -125,6 +125,7 @@ module:
   yasm: 0
   yasm_blocks: 0
   pathauto: 1
+  comment_notify: 10
   views: 10
   paragraphs: 11
 theme:
@@ -135,4 +136,5 @@ theme:
   stable: 0
   tailwindcss: 0
   tailwind_sports: 0
+  tailwind5: 0
 profile: standard

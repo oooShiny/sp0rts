@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a group.
+ *
+ * Available variables:
+ * - group: The group entity with limited access to object properties and
+ *   methods. Only "getter" methods (method names starting with "get", "has",
+ *   or "is") and a few common methods such as "id" and "label" are available.
+ *   Calling other methods (such as group.delete) will result in an exception.
+ * - label: The title of the group.
+ * - content: All group items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the
+ *   printing of a given child element.
+ * - url: Direct URL of the current group.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - group: The current template type (also known as a "theming hook").
+ *   - group--[type]: The current group type. For example, if the group is a
+ *     "Classroom" it would result in "group--classroom". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - group--[view_mode]: The View Mode of the group; for example, a
+ *     teaser would result in: "group--teaser", and full: "group--full".
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ *
+ * @see template_preprocess_group()
+ *
+ * @ingroup themeable
+ */
+#}
+{# This is needed to access the fields. #}
+{% set g = content._field_layout.content %}
+<div>
+    {% if header_bg %}
+    <div class="team-header flex h-48 items-center text-white uppercase" style="background-image: url('{{ header_bg }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <h1 class="font-extrabold font-serif text-3xl text-center w-full">{{ label }}</h1>
+    </div>
+    {% else %}
+        <div class="team-header flex h-48 items-center justify-center uppercase flex">
+            {{ g.field_logo }}<h1 class="text-3xl text-center">{{ label }}</h1>
+        </div>
+    {% endif %}
+{#    <div class="py-3 text-white">#}
+{#        <h1>PARENT LEAGUE: {{ g.field_parent_league }}</h1>#}
+{#        <a class="bg-blue-800 p-3" href="{{ g.field_twitter_account[0]['#plain_text'] }}">Twitter</a>#}
+{#        <a class="bg-red-600 p-3" href="{{ g.field_youtube_channel[0]['#plain_text'] }}">Youtube</a>#}
+{#    </div>#}
+
+</div>

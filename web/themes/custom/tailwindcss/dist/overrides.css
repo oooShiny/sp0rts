@@ -1,0 +1,67 @@
+aside h2 {
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+aside div.contextual-region,
+aside div.views-element-container {
+    border: 1px solid white;
+    padding: 1em;
+    margin: 0.5em 0;
+}
+
+.button {
+    --text-opacity: 1!important;
+    color: rgba(255,255,255,var(--text-opacity))!important;
+    --bg-opacity: 1!important;
+    padding: .25rem!important;
+    border-radius: .5rem!important;
+    background-color: rgba(74,85,104,var(--bg-opacity))!important;
+    cursor: pointer;
+}
+
+.button:hover {
+    --bg-opacity: 1!important;
+    background-color: #2a4365!important;
+    background-color: rgba(42,67,101,var(--bg-opacity))!important;
+}
+
+a {
+    font-weight: bold;
+}
+
+h1.tw-text-3xl.tw-text-center.tw-w-full {
+    -webkit-text-stroke: 1px black;
+}
+
+.indented {
+    padding-left: 2em;
+}
+
+.layout--twocol-section.layout--twocol-section--25-75 > .layout__region--first {
+    flex: 0 1 10%;
+}
+
+input {
+    color: black !important;
+}
+
+li.dropbutton-toggle {
+    border-width: 1px;
+    border-left-width: 0;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    --bg-opacity: 1;
+    background-color: #4a5568;
+    background-color: rgba(74,85,104,var(--bg-opacity));
+}
+
+.dropbutton-action.group-leave {
+    --text-opacity: 1;
+    color: #fc8181;
+    color: rgba(252, 129, 129, var(--text-opacity));
+}
+
+.rc_input-actions {
+    background: none !important;
+}

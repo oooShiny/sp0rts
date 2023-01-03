@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.game.body
+    - field.field.node.game.comment
     - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.game.field_weather
     - node.type.game
   module:
+    - comment
     - datetime
     - field_layout
     - layout_discovery
@@ -46,6 +48,12 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 137
+    region: content
+    settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp

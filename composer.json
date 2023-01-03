@@ -70,7 +70,7 @@
         "drupal/group_join_link": "^2.0",
         "drupal/block_field": "^1.0@RC",
         "drupal/mentions": "^1.0@alpha",
-        "drupal/react_comments": "^1.0@beta"
+        "drupal/comment_notify": "^1.3"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"

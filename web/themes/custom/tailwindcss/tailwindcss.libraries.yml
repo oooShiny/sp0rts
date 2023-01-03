@@ -1,0 +1,8 @@
+global-styling:
+  css:
+    base:
+      dist/tailwind.css: {}
+      dist/overrides.css: {}
+tailwind-full:
+  js:
+    https://cdn.tailwindcss.com/3.2.0: {}

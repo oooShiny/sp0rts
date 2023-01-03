@@ -1,0 +1,160 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Tailwind CSS theme.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views template suggestions.
+ *
+ * @inheritdoc
+ */
+function tailwindcss_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view__' . $variables['view']->id();
+}
+
+/**
+ * Implements hook_page_attachments_alter
+ */
+function tailwindcss_page_attachments_alter(array &$page) {
+  if (Settings::get('use_tailwind_cdn', false)) {
+    $page['#attached']['library']['js'] = 'tailwindcss/tailwind-full';
+  }
+}
+
+/**
+ * Get the active theme.
+ *
+ * @return string
+ *   The name of the active theme.
+ */
+function tailwindcss_get_active_theme() {
+  return \Drupal::service('theme.manager')->getActiveTheme()->getName();
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'comment') {
+    $variables['bundle'] = $element['#bundle'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_block(&$variables) {
+  if (tailwindcss_get_active_theme() == 'tailwindcss') {
+    if ($variables['base_plugin_id'] == 'system_branding_block') {
+      $variables['site_logo'] = '';
+      if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+        $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_group(&$variables) {
+    $group = $variables['group'];
+    if (isset($group->field_header_image) && !$group->field_header_image->isEmpty()) {
+      $mid = $group->get('field_header_image')->target_id;
+      $media = Media::load($mid);
+      $fid = $media->field_media_image->target_id;
+      $file = File::load($fid);
+
+      $uri = $file->getFileUri();
+      $variables['header_bg'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+    }
+    elseif (isset($group->field_logo) && !$group->field_logo->isEmpty()) {
+      $mid = $group->get('field_logo')->target_id;
+      $file = File::load($mid);
+
+      $uri = $file->getFileUri();
+      $variables['header_bg'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+    }
+    else {
+      $variables['header_bg'] = '';
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  // Tweet overrides.
+  if ($node->bundle() == 'tweet') {
+    $variables['tweet_id'] = $node->get('field_tweet_id')->value;
+  }
+
+  // Reddit post overrides.
+  if ($node->bundle() == 'reddit_post') {
+    $variables['reddit_id'] = $node->get('field_reddit_id')->value;
+  }
+
+
+  // Game overrides.
+  if ($node->bundle() == 'game') {
+    $variables['t1_logo'] = $node->get('field_team_1_logo')->value;
+    $variables['t2_logo'] = $node->get('field_team_2_logo')->value;
+    $variables['t1_record'] = $node->get('field_team_1_record')->value;
+    $variables['t2_record'] = $node->get('field_team_2_record')->value;
+    $variables['temp'] = $node->get('field_temperature')->value;
+    $variables['weather'] = $node->get('field_weather')->value;
+    $variables['favorite'] = $node->get('field_favorite')->value;
+    $variables['line'] = $node->get('field_line')->value;
+    $variables['espn_id'] = $node->get('field_espn_id')->value;
+  }
+
+  // Podcast episode overrides.
+  if ($node->bundle() == 'podcast_episode') {
+    $ep_link = parse_url($node->get('field_episode_link')->value);
+    $variables['host'] = $ep_link['host'];
+    $variables['path'] = $ep_link['path'];
+    $q = $ep_link['query'] ?? '';
+    $variables['full_link'] = $ep_link['host'] . $ep_link['path'] . $q;
+    $anchor_path = explode('/', $ep_link['path']);
+    $variables['anchor_link'] = $ep_link['scheme'] . '://' . $ep_link['host'] . '/' . $anchor_path[1] . '/embed/' . $anchor_path[2] . '/' . $anchor_path[3];
+    $acast_id = explode('/', $ep_link['path']);
+    $variables['acast_id'] = $acast_id[2] . '/' . $acast_id[3];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_html(&$variables) {
+  $variables['attributes']['class'][] = 'bg-red-900 text-gray-200';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tailwindcss_preprocess_private_message(&$variables) {
+  $v = $variables;
+}
+
+function tailwindcss_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (str_contains($form['#id'], 'views-exposed-form-frontpage')) {
+    $form['#attributes']['class'][] = 'bg-gray-700 border-b border-t flex gap-5 justify-center p-2';
+  }
+  if (str_contains($form_id, 'updown_vote')) {
+    $form['value']['#prefix'] = '<div class="thumbsupdown-rating-wrapper rate-enabled flex flex-wrap" can-edit="true">';
+  }
+}

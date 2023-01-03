@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.game.body
+    - field.field.node.game.comment
     - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
@@ -52,6 +53,7 @@ content:
     weight: 100
     region: content
 hidden:
+  comment: true
   field_espn_id: true
   field_favorite: true
   field_game_date: true
