@@ -64,7 +64,7 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -129,7 +129,7 @@ display:
           entity_field: gid
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -192,7 +192,7 @@ display:
           admin_label: ''
           plugin_id: numeric
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -251,7 +251,7 @@ display:
           entity_field: uid
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -316,7 +316,7 @@ display:
           entity_field: created
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -382,7 +382,7 @@ display:
           entity_type: node
           plugin_id: node_new_comments
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -440,7 +440,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -505,7 +505,7 @@ display:
           entity_field: type
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: true
             text: '<img class="h-8" src="/themes/custom/tailwind_sports/icons/{{ type__target_id }}.svg" />'
@@ -569,7 +569,7 @@ display:
           entity_type: node
           plugin_id: rate_widget_field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: '{{ node_rate_widget_field }} '
@@ -625,7 +625,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -687,7 +687,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
