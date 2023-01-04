@@ -954,7 +954,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"w-full border-b border-gray-700 py-4\">\r\n    <div class=\"flex gap-1 font-bold text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"text-gray-600 text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    {{ field_post_image }}\r\n    {{ field_post }}\r\n    <div class=\"flex\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }} %nbsp; new){% endif %}\r\n    </div>\r\n</div>"
+            text: "<div class=\"w-full border-b border-gray-700 py-4\">\r\n    <div class=\"flex gap-1 font-bold text-lg\">{{ field_popularity }} {{ type }} {{ title }}</div>\r\n    <div class=\"text-gray-600 text-sm\">Posted in {{ gid }} by {{ uid }} at {{ created }}</div>\r\n    {{ field_post_image }}\r\n    {{ field_post }}\r\n    <div class=\"\">\r\n        {{ comment_count }} comments {% if new_comments %}({{ new_comments }}   new){% endif %}\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1238,7 +1238,9 @@ display:
           entity_type: node
           plugin_id: standard
           required: false
-      use_ajax: false
+      use_ajax: true
+      link_display: page_1
+      link_url: '#'
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1747,6 +1749,7 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
+      exposed_block: false
       display_extenders: {  }
       allow:
         items_per_page: false

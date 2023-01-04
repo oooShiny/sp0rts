@@ -6,3 +6,6 @@ global-styling:
 tailwind-full:
   js:
     https://cdn.tailwindcss.com/3.2.0: {}
+game-comment:
+  js:
+    https://js.pusher.com/7.2.0/pusher.min.js: { minified: true }
