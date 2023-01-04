@@ -4,26 +4,35 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 
-function sports_users_theme($existing, $type, $theme, $path) {
-  return [
-    'welcome_group_select_block' => [
-      'variables' => [
-        'groups' => ''
-      ]
-    ],
-  ];
-}
 /**
- * Implements hook_user_login().
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds required checkbox(es) to user registration form.
  */
-function sports_users_user_login($account) {
-  if (!$account->getLastAccessedTime()) {
-    \Drupal::messenger()->addStatus('This is your first login. Welcome!');
-  }
+function sports_users_form_user_register_form_alter(&$form, &$form_state) {
+  $form['terms_of_use'] = [
+    '#type' => 'details',
+    '#title' => t('Terms of Use'),
+    '#weight' => 10,
+    '#open' => TRUE
+  ];
+  $form['terms_of_use']['terms_of_use_data'] = [
+    '#type' => 'markup',
+    '#markup' => "",
+  ];
+  $form['terms_of_use']['terms_of_use_checkbox'] = [
+    '#type' => 'checkbox',
+    '#title' => t('I promise to not be a jerk to others, and understand
+    that my account will be banned if I break this promise.'),
+    '#required' => TRUE,
+  ];
+
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds a submit handler to the login form to process welcome redirect.
  */
 function sports_users_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Alter user edit form and add own custom submit handler.
@@ -32,7 +41,8 @@ function sports_users_form_user_form_alter(&$form, FormStateInterface $form_stat
 }
 
 /**
- * Custom submit handler for login form.
+ * Custom submit handler for login form to redirect users to the welcome wizard
+ * if they haven't seen it before.
  */
 function _sports_users_user_login_form_submit($form, FormStateInterface $form_state) {
   // Set redirect to welcome page.
@@ -44,5 +54,51 @@ function _sports_users_user_login_form_submit($form, FormStateInterface $form_st
     $form_state->setRedirectUrl($url);
     $user->field_welcomed = 1;
     $user->save();
+  }
+}
+
+function sports_users_theme($existing, $type, $theme, $path) {
+  return [
+    'welcome_group_select_block' => [
+      'variables' => [
+        'groups' => '',
+        'user' => ''
+      ]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Styles the labels on welcome page to look like cards.
+ */
+function sports_users_preprocess_form_element_label(&$variables) {
+  if (str_contains($variables['element']['#id'], 'edit-groups')) {
+    $variables['attributes']['class'] = 'inline-block justify-between items-center p-5 h-48 w-48 text-gray-500 bg-white rounded-lg border-2 border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 peer-checked:bg-sky-100 hover:text-gray-600 dark:peer-checked:text-gray-600 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700';
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Hides actual checkboxes on welcome page.
+ */
+function sports_users_preprocess_input(&$variables) {
+  if ($variables['theme_hook_original'] == 'input__checkbox' &&
+    isset($variables['attributes']['id']) &&
+    str_contains($variables['attributes']['id'], 'edit-groups')) {
+    $variables['attributes']['class'][] = 'hidden peer';
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Adds layout styling to checkboxes on welcome page.
+ */
+function sports_users_preprocess_checkboxes(&$variables) {
+  if ($variables['element']['#id'] == 'edit-groups') {
+    $variables["attributes"]['class'] = 'flex flex-wrap form-checkboxes gap-4';
   }
 }

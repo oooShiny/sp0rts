@@ -1,2 +1,7 @@
 sports_users.welcome:
-  path: '/'
+  path: '/welcome'
+  defaults:
+    _form: '\Drupal\sports_users\Form\WelcomeForm'
+    _title: 'Welcome!'
+  requirements:
+    _role: 'authenticated'

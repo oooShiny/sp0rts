@@ -1,3 +1,11 @@
 <?php
 
-
+/**
+ * Implements hook_page_attachments().
+ */
+function sports_comments_page_attachments(array &$attachments) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $attachments['#attached']['drupalSettings']['sports_comments'] = [
+    'nid' => $node->id(),
+  ];
+}
