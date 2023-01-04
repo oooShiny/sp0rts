@@ -8,4 +8,10 @@ tailwind-full:
     https://cdn.tailwindcss.com/3.2.0: {}
 game-comment:
   js:
+    dist/js/live-comments.js: {}
+  dependencies:
+    - tailwindcss/pusher-js
+    - core/drupalSettings
+pusher-js:
+  js:
     https://js.pusher.com/7.2.0/pusher.min.js: { minified: true }

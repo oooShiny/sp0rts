@@ -71,6 +71,8 @@
  */
 #}
 
+{{ attach_library('tailwindcss/game-comment') }}
+
 <article{{ attributes.addClass('node') }}>
 
   {{ title_prefix }}
@@ -112,6 +114,7 @@
     </ul>
   </div>
   {% endif %}
+
   {{ content.comment }}
   <div class="comments-list" id="comments-list">
     {# Comment template for plays. #}
