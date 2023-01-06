@@ -10,7 +10,8 @@ aside div.views-element-container {
     margin: 0.5em 0;
 }
 
-.button {
+.button,
+.private_message_link_wrapper {
     --text-opacity: 1!important;
     color: rgba(255,255,255,var(--text-opacity))!important;
     --bg-opacity: 1!important;
@@ -64,4 +65,8 @@ li.dropbutton-toggle {
 
 .rc_input-actions {
     background: none !important;
+}
+
+.embedly-card-hug {
+    background: white;
 }

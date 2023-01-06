@@ -1,0 +1,23 @@
+uuid: 79fb34d9-d1ae-4e24-94c8-1f0fa2fb5081
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_game_link
+    - node.type.highlight
+  module:
+    - link
+id: node.highlight.field_game_link
+field_name: field_game_link
+entity_type: node
+bundle: highlight
+label: 'Game Link'
+description: "Add the link to this game from the relevant sports-reference.com website:\r\n<ul>\r\n    <li><a href=\"https://www.baseball-reference.com/boxes/\" target=\"_blank\">Baseball</a></li>\r\n    <li><a href=\"https://www.basketball-reference.com/boxscores/\" target=\"_blank\">Basketball</a> (<a href=\"https://www.sports-reference.com/cbb/boxscores/\" target=\"_blank\">College</a>)</li>\r\n    <li><a href=\"https://www.pro-football-reference.com/boxscores/\" target=\"_blank\">Football</a> (<a href=\"https://www.sports-reference.com/cfb/boxscores/\" target=\"_blank\">College</a>)</li>\r\n    <li><a href=\"https://www.hockey-reference.com/boxscores/\" target=\"_blank\">Hockey</a></li>\r\n    <li><a href=\"https://fbref.com/en/\" target=\"_blank\">Soccer</a></li>\r\n</ul>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

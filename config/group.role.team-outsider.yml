@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - group.type.team
+    - user.role.authenticated
 id: team-outsider
 label: Outsider
 weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
 group_type: team
 permissions:
   - 'create group_node:highlight content'
@@ -14,13 +18,16 @@ permissions:
   - 'create group_node:image entity'
   - 'create group_node:link content'
   - 'create group_node:link entity'
+  - 'create group_node:podcast_episode entity'
   - 'create group_node:text_post entity'
+  - 'create group_node:tweet entity'
   - 'create group_node:youtube_video entity'
   - 'delete own group_node:highlight content'
   - 'delete own group_node:highlight entity'
   - 'delete own group_node:image entity'
   - 'delete own group_node:link content'
   - 'delete own group_node:link entity'
+  - 'delete own group_node:podcast_episode entity'
   - 'delete own group_node:text_post entity'
   - 'delete own group_node:youtube_video entity'
   - 'join group'
@@ -29,6 +36,7 @@ permissions:
   - 'update own group_node:image entity'
   - 'update own group_node:link content'
   - 'update own group_node:link entity'
+  - 'update own group_node:podcast_episode entity'
   - 'update own group_node:text_post entity'
   - 'update own group_node:youtube_video entity'
   - 'view group'
@@ -40,12 +48,10 @@ permissions:
   - 'view group_node:image entity'
   - 'view group_node:link content'
   - 'view group_node:link entity'
+  - 'view group_node:podcast_episode entity'
   - 'view group_node:reddit_post content'
   - 'view group_node:reddit_post entity'
   - 'view group_node:text_post entity'
   - 'view group_node:tweet entity'
   - 'view group_node:youtube_video content'
   - 'view group_node:youtube_video entity'
-admin: false
-scope: outsider
-global_role: authenticated

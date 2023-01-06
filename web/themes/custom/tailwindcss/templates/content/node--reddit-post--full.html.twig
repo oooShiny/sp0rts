@@ -81,12 +81,18 @@
   {{ title_suffix }}
 
   <div{{ content_attributes.addClass('node-content') }}>
-    {{ content|without('comment') }}
-    <div class="bg-gray-300">
+    {{ content|without('comment', 'flag_flag_inappropriate_content', 'rate_vote') }}
+    <div>
       <blockquote class="reddit-card" data-card-created="1490648549" data-card-theme="dark">
         <a href="https://www.reddit.com/{{ reddit_id }}?ref=share&ref_source=embed"></a></blockquote>
       <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
     </div>
   </div>
+
+  <footer class="border-b border-t py-3 bg-gray-700">
+    <div class="flex gap-1">
+      {{ content.rate_vote }} {{ content.flag_flag_inappropriate_content }}
+    </div>
+  </footer>
   {{ content.comment }}
 </article>

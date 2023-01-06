@@ -1,0 +1,13 @@
+uuid: 66cb9e91-743c-483d-875d-a2537204c53f
+langcode: en
+status: true
+dependencies: {  }
+id: highlight
+label: Highlight
+description: ''
+providers:
+  - Gfycat
+  - Streamable
+  - Twitter
+  - Vimeo
+  - YouTube

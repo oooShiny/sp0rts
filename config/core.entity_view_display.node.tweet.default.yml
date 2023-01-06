@@ -57,12 +57,12 @@ content:
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   rate_vote:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   field_tweet_author: true
@@ -73,3 +73,4 @@ hidden:
   field_tweet_local_image: true
   field_tweet_mentions: true
   links: true
+  private_message_link: true

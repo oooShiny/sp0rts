@@ -1,0 +1,28 @@
+uuid: 4227c2fe-0548-462e-9545-f7d10534d088
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.highlight.field_media_oembed_highlight
+    - media.type.highlight
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.highlight.media_library
+targetEntityType: media
+bundle: highlight
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_oembed_highlight: true
+  name: true
+  path: true
+  status: true
+  uid: true

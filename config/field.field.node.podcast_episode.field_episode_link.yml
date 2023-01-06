@@ -10,7 +10,7 @@ field_name: field_episode_link
 entity_type: node
 bundle: podcast_episode
 label: 'Episode link'
-description: ''
+description: "This field should be a link to your podcast episode from one of the following podcast hosts:\r\n<ul>\r\n<li>Apple (podcasts.apple.com)</li>\r\n<li>Spotify (open.spotify.com)</li>\r\n<li>Anchor (anchor.fm)</li>\r\n<li>Acast (play.acast.com)</li>\r\n</ul>"
 required: true
 translatable: false
 default_value: {  }

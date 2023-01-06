@@ -81,19 +81,25 @@
   {{ title_suffix }}
 
 
-  <div{{ content_attributes.addClass('node-content') }}>
-    {{ content|without('comment', 'flag_flag_inappropriate_content', 'rate_vote') }}
-    <div class="mx-auto max-w-4xl">
-      <blockquote class="twitter-tweet" data-theme="dark"><a href="https://twitter.com/x/status/{{ tweet_id }}"></a></blockquote>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div{{ content_attributes.addClass('node-content max-w-4xl mx-auto py-4') }}>
+    {{ content.field_highlight_video }}
+    <div class="pt-2">
+      <a href="{{ pfr_link }}" class="button">Game Info</a>
     </div>
   </div>
 
   <footer class="border-b border-t py-3 bg-gray-700">
+    {{ author_picture }}
     <div class="flex gap-1">
-      {{ content.rate_vote }} {{ content.flag_flag_inappropriate_content }}
+      {{ content.rate_vote }}
+      Submitted by {{ author_name }} <img src="/themes/custom/tailwindcss/icons/more-options.svg" alt="more options" class="h-6 cursor-pointer" onclick="showUserActions()"> on {{ date }}
+      {{ metadata }}
+      {{ content.flag_flag_inappropriate_content }}
     </div>
   </footer>
 
-  {{ content.comment }}
+  <div>
+    {{ content.comment }}
+  </div>
+
 </article>

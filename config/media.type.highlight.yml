@@ -1,0 +1,21 @@
+uuid: 11b54470-0890-4b48-b0e8-01f0c27269cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.bucket.highlight
+  module:
+    - oembed_providers
+id: highlight
+label: Highlight
+description: ''
+source: 'oembed:highlight'
+queue_thumbnail_downloads: true
+new_revision: false
+source_configuration:
+  source_field: field_media_oembed_highlight
+  thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
+  providers: {  }
+field_map:
+  title: name
+  default_name: name

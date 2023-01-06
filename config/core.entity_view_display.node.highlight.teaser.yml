@@ -4,14 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.highlight.body
+    - field.field.node.highlight.field_game_link
+    - field.field.node.highlight.field_highlight_video
     - field.field.node.highlight.field_popularity
     - node.type.highlight
   module:
     - field_layout
     - layout_builder
     - layout_discovery
-    - text
     - user
 third_party_settings:
   field_layout:
@@ -35,22 +35,6 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             weight: 0
-            additional: {  }
-          482183a8-eb19-4f4a-b18d-bb91f9f11e99:
-            uuid: 482183a8-eb19-4f4a-b18d-bb91f9f11e99
-            region: content
-            configuration:
-              id: 'field_block:node:highlight:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_summary_or_trimmed
-                label: hidden
-                settings:
-                  trim_length: 600
-                third_party_settings: {  }
-            weight: 1
             additional: {  }
           03c45eb5-60f0-41f8-8e90-b63ac7a48bbf:
             uuid: 03c45eb5-60f0-41f8-8e90-b63ac7a48bbf
@@ -78,14 +62,6 @@ targetEntityType: node
 bundle: highlight
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
@@ -102,4 +78,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_game_link: true
+  field_highlight_video: true
   field_popularity: true
+  private_message_link: true

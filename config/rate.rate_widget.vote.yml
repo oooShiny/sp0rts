@@ -10,19 +10,25 @@ entity_types:
   - node.game
   - node.game_recap
   - node.highlight
+  - node.image
   - node.link
+  - node.podcast_episode
   - node.reddit_post
   - node.text_post
   - node.tweet
+  - node.user_post
   - node.youtube_video
 comment_types:
   - node.game
   - node.game_recap
   - node.highlight
+  - node.image
   - node.link
+  - node.podcast_episode
   - node.reddit_post
   - node.text_post
   - node.tweet
+  - node.user_post
   - node.youtube_video
 options:
   -

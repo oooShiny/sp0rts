@@ -23,6 +23,22 @@ function tailwindcss_theme_suggestions_views_view_alter(array &$suggestions, arr
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function tailwindcss_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+
+  $mode = $variables['elements']['#view_mode'];
+  $suggestions[] = 'user__' . $mode;
+
+  // Add suggestion per role.
+  $current_user = $variables['elements']['#user'];
+  $roles = $current_user->getRoles();
+  foreach ($roles as $role) {
+    $suggestions[] = 'user__' . $mode . '__' . $role;
+  }
+}
+
+/**
  * Implements hook_page_attachments_alter
  */
 function tailwindcss_page_attachments_alter(array &$page) {
@@ -46,8 +62,16 @@ function tailwindcss_get_active_theme() {
  */
 function tailwindcss_preprocess_field(&$variables, $hook) {
   $element = $variables['element'];
-  if ($element['#field_name'] == 'comment') {
+  $field = $element['#field_name'];
+  if ($field == 'comment') {
     $variables['bundle'] = $element['#bundle'];
+  }
+  $centered_fields = [
+    'field_image_upload',
+    'field_caption'
+  ];
+  if (in_array($field, $centered_fields)) {
+    $variables['attributes']['class'][] = 'flex justify-center';
   }
 }
 
@@ -133,6 +157,11 @@ function tailwindcss_preprocess_node(&$variables) {
     $variables['anchor_link'] = $ep_link['scheme'] . '://' . $ep_link['host'] . '/' . $anchor_path[1] . '/embed/' . $anchor_path[2] . '/' . $anchor_path[3];
     $acast_id = explode('/', $ep_link['path']);
     $variables['acast_id'] = $acast_id[2] . '/' . $acast_id[3];
+  }
+
+  // Highlight overrides.
+  if ($node->bundle() == 'highlight') {
+    $variables['pfr_link'] = $node->get('field_game_link')->uri;
   }
 }
 

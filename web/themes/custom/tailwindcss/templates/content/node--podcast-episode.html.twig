@@ -80,19 +80,9 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+  <div{{ content_attributes.addClass('node-content gap-10 md:flex justify-center py-6') }}>
 
-  <div{{ content_attributes.addClass('node-content md:flex justify-evenly') }}>
-
-    <div>
+    <div class="md:w-1/4">
       {% if host == 'podcasts.apple.com' %}
         <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                 frameborder="0"
@@ -135,10 +125,24 @@
         {% endif %}
     </div>
 
-    <div>
+    <div class="md:w-1/2">
       {{ content.body }}
     </div>
   </div>
 
-    {{ content|without('body', 'field_episode_link') }}
+    {{ content|without('body', 'field_episode_link', 'comment', 'flag_flag_inappropriate_content', 'rate_vote') }}
+
+    <footer class="border-b border-t py-3 bg-gray-700">
+        {{ author_picture }}
+        <div class="flex gap-1">
+            {{ content.rate_vote }}
+            Submitted by {{ author_name }} <img src="/themes/custom/tailwindcss/icons/more-options.svg" alt="more options" class="h-6 cursor-pointer" onclick="showUserActions()"> on {{ date }}
+            {{ metadata }}
+            {{ content.flag_flag_inappropriate_content }}
+        </div>
+    </footer>
+
+    <div>
+        {{ content.comment }}
+    </div>
 </article>

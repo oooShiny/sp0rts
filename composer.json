@@ -69,7 +69,8 @@
         "drupal/group_join_link": "^2.0",
         "drupal/block_field": "^1.0@RC",
         "drupal/mentions": "^1.0@alpha",
-        "drupal/comment_notify": "^1.3"
+        "drupal/comment_notify": "^1.3",
+        "drupal/oembed_providers": "^2.1"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -112,6 +113,9 @@
         },
         "enable-patching": "true",
         "patches": {
+            "drupal/core": {
+                "3111991: oEmbeds without thumbnails": "https://www.drupal.org/files/issues/2022-12-05/supports-oembed-providers-without-thumbnails-dimensions-3111991-9.patch"
+            },
             "drupal/nodejs": {
                 "3257036: Drupal 9 non-existent service 'entity.manager'": "https://www.drupal.org/files/issues/2022-01-05/d9_enitity_manager.patch",
                 "3327286: Undefined array key 'type' in nodejs_library_info_build": "https://www.drupal.org/files/issues/2022-12-17/undefined-array-key-3327286-1.patch"

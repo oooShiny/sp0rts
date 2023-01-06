@@ -30,7 +30,9 @@ visibility:
       game: game
       game_recap: game_recap
       highlight: highlight
+      image: image
       link: link
+      podcast_episode: podcast_episode
       reddit_post: reddit_post
       text_post: text_post
       tweet: tweet

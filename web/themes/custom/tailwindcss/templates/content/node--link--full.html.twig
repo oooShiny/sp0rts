@@ -80,18 +80,23 @@
   {% endif %}
   {{ title_suffix }}
 
-  <div{{ content_attributes.addClass('node-content') }}>
-    {{ content }}
+
+  <div{{ content_attributes.addClass('node-content py-6 text-center') }}>
+    {{ content|without('comment', 'flag_flag_inappropriate_content', 'rate_vote') }}
   </div>
 
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+  <footer class="border-b border-t py-3 bg-gray-700">
+    {{ author_picture }}
+    <div class="flex gap-1">
+      {{ content.rate_vote }}
+      Submitted by {{ author_name }} <img src="/themes/custom/tailwindcss/icons/more-options.svg" alt="more options" class="h-6 cursor-pointer" onclick="showUserActions()"> on {{ date }}
+      {{ metadata }}
+      {{ content.flag_flag_inappropriate_content }}
+    </div>
+  </footer>
+
+  <div>
+    {{ content.comment }}
+  </div>
 
 </article>

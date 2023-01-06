@@ -7,6 +7,9 @@ dependencies:
 id: team-moderator
 label: Moderator
 weight: 6
+admin: false
+scope: individual
+global_role: null
 group_type: team
 permissions:
   - 'access group_node overview'
@@ -17,6 +20,8 @@ permissions:
   - 'create group_node:link content'
   - 'create group_node:link entity'
   - 'create group_node:page entity'
+  - 'create group_node:podcast_episode entity'
+  - 'create group_node:podcast_episode relationship'
   - 'create group_node:text_post content'
   - 'create group_node:text_post entity'
   - 'create group_node:tweet content'
@@ -28,6 +33,8 @@ permissions:
   - 'delete any group_node:link content'
   - 'delete any group_node:link entity'
   - 'delete any group_node:page entity'
+  - 'delete any group_node:podcast_episode entity'
+  - 'delete any group_node:podcast_episode relationship'
   - 'delete any group_node:text_post content'
   - 'delete any group_node:text_post entity'
   - 'delete any group_node:tweet content'
@@ -39,6 +46,8 @@ permissions:
   - 'delete own group_node:link content'
   - 'delete own group_node:link entity'
   - 'delete own group_node:page entity'
+  - 'delete own group_node:podcast_episode entity'
+  - 'delete own group_node:podcast_episode relationship'
   - 'delete own group_node:text_post content'
   - 'delete own group_node:text_post entity'
   - 'delete own group_node:tweet content'
@@ -51,6 +60,8 @@ permissions:
   - 'update any group_node:link content'
   - 'update any group_node:link entity'
   - 'update any group_node:page entity'
+  - 'update any group_node:podcast_episode entity'
+  - 'update any group_node:podcast_episode relationship'
   - 'update any group_node:text_post content'
   - 'update any group_node:text_post entity'
   - 'update any group_node:tweet content'
@@ -63,6 +74,8 @@ permissions:
   - 'update own group_node:link content'
   - 'update own group_node:link entity'
   - 'update own group_node:page entity'
+  - 'update own group_node:podcast_episode entity'
+  - 'update own group_node:podcast_episode relationship'
   - 'update own group_node:text_post content'
   - 'update own group_node:text_post entity'
   - 'update own group_node:tweet content'
@@ -78,6 +91,8 @@ permissions:
   - 'view group_node:link content'
   - 'view group_node:link entity'
   - 'view group_node:page entity'
+  - 'view group_node:podcast_episode entity'
+  - 'view group_node:podcast_episode relationship'
   - 'view group_node:reddit_post content'
   - 'view group_node:reddit_post entity'
   - 'view group_node:text_post content'
@@ -90,7 +105,6 @@ permissions:
   - 'view unpublished group_node:image entity'
   - 'view unpublished group_node:link entity'
   - 'view unpublished group_node:page entity'
+  - 'view unpublished group_node:podcast_episode entity'
   - 'view unpublished group_node:text_post entity'
   - 'view unpublished group_node:tweet entity'
-admin: false
-scope: individual

@@ -1,0 +1,28 @@
+uuid: bd4882b5-6766-44d5-8087-44ffcad3e629
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.highlight.field_media_oembed_highlight
+    - media.type.highlight
+  module:
+    - media
+id: media.highlight.default
+targetEntityType: media
+bundle: highlight
+mode: default
+content:
+  field_media_oembed_highlight:
+    type: oembed
+    label: visually_hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true
