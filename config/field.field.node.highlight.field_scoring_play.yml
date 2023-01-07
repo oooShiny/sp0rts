@@ -1,0 +1,23 @@
+uuid: 4899fcd5-fbc8-422c-a8e7-8a7bee197fdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scoring_play
+    - node.type.highlight
+id: node.highlight.field_scoring_play
+field_name: field_scoring_play
+entity_type: node
+bundle: highlight
+label: 'Scoring Play'
+description: 'Were points scored on this play?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

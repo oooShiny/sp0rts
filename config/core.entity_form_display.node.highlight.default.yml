@@ -5,9 +5,14 @@ dependencies:
   config:
     - field.field.node.highlight.field_game_link
     - field.field.node.highlight.field_highlight_video
+    - field.field.node.highlight.field_period
+    - field.field.node.highlight.field_play_type
     - field.field.node.highlight.field_popularity
+    - field.field.node.highlight.field_scoring_play
+    - field.field.node.highlight.field_yards_gained
     - node.type.highlight
   module:
+    - field_group
     - field_layout
     - layout_discovery
     - link
@@ -20,6 +25,25 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  field_group:
+    group_play_data:
+      children:
+        - field_play_type
+        - field_scoring_play
+        - field_period
+        - field_yards_gained
+      label: 'Play Data'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: 'Add any extra data about this play below. This will help in categorizing the play in other places, but is not required.'
+        required_fields: true
 id: node.highlight.default
 targetEntityType: node
 bundle: highlight
@@ -33,7 +57,7 @@ content:
     third_party_settings: {  }
   field_game_link:
     type: link_default
-    weight: 12
+    weight: 10
     region: content
     settings:
       placeholder_url: ''
@@ -41,16 +65,46 @@ content:
     third_party_settings: {  }
   field_highlight_video:
     type: media_library_widget
-    weight: 26
+    weight: 11
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_period:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_play_type:
+    type: entity_reference_autocomplete_tags
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_popularity:
     type: radioactivity_reference
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_scoring_play:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_yards_gained:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

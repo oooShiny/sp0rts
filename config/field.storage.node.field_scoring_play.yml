@@ -1,0 +1,18 @@
+uuid: fb526c07-8ac3-4da0-be1a-e7e0e99e93b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_scoring_play
+field_name: field_scoring_play
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

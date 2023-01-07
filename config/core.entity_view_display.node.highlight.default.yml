@@ -5,12 +5,17 @@ dependencies:
   config:
     - field.field.node.highlight.field_game_link
     - field.field.node.highlight.field_highlight_video
+    - field.field.node.highlight.field_period
+    - field.field.node.highlight.field_play_type
     - field.field.node.highlight.field_popularity
+    - field.field.node.highlight.field_scoring_play
+    - field.field.node.highlight.field_yards_gained
     - node.type.highlight
   module:
     - field_layout
     - layout_builder
     - link
+    - options
     - radioactivity
     - user
 third_party_settings:
@@ -47,6 +52,21 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_period:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_play_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_popularity:
     type: radioactivity_reference_emitter
     label: above
@@ -56,6 +76,25 @@ content:
       decimals: !!float 0
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_scoring_play:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_yards_gained:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   flag_flag_inappropriate_content:
     settings: {  }

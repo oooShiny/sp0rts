@@ -1,0 +1,21 @@
+uuid: a1094ca2-70f8-485c-867a-28e4c7092350
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_period
+    - node.type.highlight
+  module:
+    - options
+id: node.highlight.field_period
+field_name: field_period
+entity_type: node
+bundle: highlight
+label: Period
+description: 'Which period/quarter/half this play took place.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

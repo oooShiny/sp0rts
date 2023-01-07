@@ -15,7 +15,11 @@ new_revision: false
 source_configuration:
   source_field: field_media_oembed_highlight
   thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
-  providers: {  }
+  providers:
+    - Gfycat
+    - Streamable
+    - Vimeo
+    - YouTube
 field_map:
   title: name
   default_name: name

@@ -6,7 +6,11 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.highlight.field_game_link
     - field.field.node.highlight.field_highlight_video
+    - field.field.node.highlight.field_period
+    - field.field.node.highlight.field_play_type
     - field.field.node.highlight.field_popularity
+    - field.field.node.highlight.field_scoring_play
+    - field.field.node.highlight.field_yards_gained
     - node.type.highlight
   module:
     - field_layout
@@ -80,5 +84,9 @@ content:
 hidden:
   field_game_link: true
   field_highlight_video: true
+  field_period: true
+  field_play_type: true
   field_popularity: true
+  field_scoring_play: true
+  field_yards_gained: true
   private_message_link: true
