@@ -80,9 +80,9 @@ class YoutubeController extends ControllerBase {
             $node->enforceIsNew();
             $node->save();
 
-            $relation = $group->getContentByEntityId('group_node:youtube_video', $node->id());
+            $relation = $group->getRelationshipsByEntity($node, 'group_node:youtube_video');
             if (!$relation) {
-              $group->addContent($node, 'group_node:youtube_video');
+              $group->addRelationship($node, 'group_node:youtube_video');
             }
 
             // Add videos to an array for display on admin page.

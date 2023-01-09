@@ -27,6 +27,11 @@ aside div.views-element-container {
     background-color: rgba(42,67,101,var(--bg-opacity))!important;
 }
 
+.scored-true {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(21 128 61 / var(--tw-bg-opacity)) !important;
+}
+
 a {
     font-weight: bold;
 }
@@ -70,3 +75,5 @@ li.dropbutton-toggle {
 .embedly-card-hug {
     background: white;
 }
+
+

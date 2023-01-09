@@ -118,6 +118,9 @@
                 "3111991: oEmbeds without thumbnails": "https://www.drupal.org/files/issues/2022-12-05/supports-oembed-providers-without-thumbnails-dimensions-3111991-9.patch",
                 "3331771: Check for thumbnail before creating OEmbed resource": "https://www.drupal.org/files/issues/2023-01-07/oembed-fails-to-save-if-thumbnail-fails-to-download-3331771-1.patch"
             },
+            "drupal/mentions": {
+                "3331783: Fix error when text field has no value": "https://www.drupal.org/files/issues/2023-01-07/check-for-empty-value-3331783-2.patch"
+            },
             "drupal/nodejs": {
                 "3257036: Drupal 9 non-existent service 'entity.manager'": "https://www.drupal.org/files/issues/2022-01-05/d9_enitity_manager.patch",
                 "3327286: Undefined array key 'type' in nodejs_library_info_build": "https://www.drupal.org/files/issues/2022-12-17/undefined-array-key-3327286-1.patch"

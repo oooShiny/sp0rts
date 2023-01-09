@@ -12,6 +12,7 @@ game-comment:
   dependencies:
     - tailwindcss/pusher-js
     - core/drupalSettings
+    - core/once
 pusher-js:
   js:
     https://js.pusher.com/7.2.0/pusher.min.js: { minified: true }

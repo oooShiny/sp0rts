@@ -3,6 +3,7 @@
 namespace Drupal\sports_importer\Controller;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
@@ -56,8 +57,8 @@ class RedditController extends ControllerBase {
               ->getStorage('node')
               ->loadByProperties(['field_reddit_id' => $p->id]);
             if (empty($nodes)) {
-              $title = Html::escape($p->title);
-              $body = Html::escape($p->selftext);
+              $title = Xss::filter($p->title);
+              $body = Xss::filter($p->selftext);
               if (strlen($title) > 255) {
                 $post_title = substr($title, 0, 200) . '...';
                 $post_text = $title . "\n" . $body;
@@ -67,13 +68,16 @@ class RedditController extends ControllerBase {
                 $post_text = $body;
               }
               // Create the reddit post and post it to the correct group.
+              if (is_null($post_title)) {
+                continue;
+              }
               $node = Node::create([
                 'type' => 'reddit_post',
-                'title' => Html::escape($post_title),
+                'title' => $post_title,
                 'uid' => 1,
                 'body' => [
                   'summary' => '',
-                  'value' => Html::escape($post_text),
+                  'value' => $post_text,
                   'format' => 'full_html',
                 ],
                 'field_reddit_id' => $p->id,
@@ -87,16 +91,16 @@ class RedditController extends ControllerBase {
                 ],
                 'field_post_link' => [
                   'uri' => $p->url,
-                  'title' => Html::escape($post_title)
+                  'title' => $post_title
                 ],
               ]);
 
               $node->enforceIsNew();
               $node->save();
 
-              $relation = $group->getContentByEntityId('group_node:reddit_post', $node->id());
+              $relation = $group->getRelationshipsByEntity($node, 'group_node:reddit_post');
               if (!$relation) {
-                $group->addContent($node, 'group_node:reddit_post');
+                $group->addRelationship($node, 'group_node:reddit_post');
               }
             }
           }

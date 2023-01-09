@@ -1,25 +1,29 @@
-(function (Pusher, Drupal, drupalSettings) {
+(function (Pusher, Drupal, drupalSettings, once) {
     Drupal.behaviors.liveComments = {
         attach: function (context) {
-            // Enable pusher logging - don't include this in production
-            Pusher.logToConsole = true;
-            const nid = drupalSettings.sports_comments.nid;
-            console.log(drupalSettings.sports_comments.nid);
-            const serverUrl = "/",
-                comments = [],
-                pusher = new Pusher('c428b53f1cbc41e05ffe', {
-                    cluster: 'us2',
-                    encrypted: true
-                }),
-                // Subscribing to the 'sp0rts-comments' Channel
-                channel = pusher.subscribe('sp0rts-comments'),
-                commentForm = document.getElementById('comment-form'),
-                commentsList = document.getElementById('comments-list'),
-                playCommentTemplate = document.getElementById('play-comment-template');
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comments-list');
+            const playCommentTemplate = document.getElementById('play-comment-template');
+            once('liveComments', document.querySelector('#comments-list'), context).forEach(function () {
+                // Enable pusher logging - don't include this in production
+                Pusher.logToConsole = true;
+                const nid = drupalSettings.sports_comments.nid;
+                const serverUrl = "/",
+                    comments = [],
+                    pusher = new Pusher('c428b53f1cbc41e05ffe', {
+                        cluster: 'us2',
+                        encrypted: true
+                    }),
+                    // Subscribing to the 'sp0rts-comments' Channel.
+                    channel = pusher.subscribe('sp0rts-comments');
 
-            // Binding to Pusher Event on our 'sp0rts-comments' Channel
-            let pusherEvent = 'new_play_' + nid;
-            channel.bind(pusherEvent, newCommentReceived);
+
+                // Binding to Pusher Event on our 'sp0rts-comments' Channel.
+                let pusherEvent = 'new_play_' + nid;
+                console.log(pusherEvent);
+                channel.bind(pusherEvent, newCommentReceived);
+            });
+
 
             // Adding to Comment Form Submit Event
             // commentForm.addEventListener("submit", addNewComment);
@@ -27,20 +31,24 @@
             // New Comment Receive Event Handler
             // We will take the Comment Template, replace placeholders & append to commentsList
             function newCommentReceived(data) {
+
                 // If data has a play_title property, this is a play comment.
+                console.log(data);
                 if (data.play_title) {
-                    let newCommentHtml = playCommentTemplate.innerHTML.replace('{{ play_title }}', data.play_title);
-                    newCommentHtml = newCommentHtml.replace('{{ play_quarter }}', data.play_quarter);
-                    newCommentHtml = newCommentHtml.replace('{{ play_time }}', data.play_time);
-                    newCommentHtml = newCommentHtml.replace('{{ play_t1_logo }}', data.play_t1_logo);
-                    newCommentHtml = newCommentHtml.replace('{{ play_t2_logo }}', data.play_t2_logo);
-                    newCommentHtml = newCommentHtml.replace('{{ play_score }}', data.play_score);
-                    newCommentHtml = newCommentHtml.replace('{{ play_down }}', data.play_down);
-                    newCommentHtml = newCommentHtml.replace('{{ play_distance }}', data.play_distance);
+                    let newCommentHtml = playCommentTemplate.innerHTML.replace('[[play_title]]', data.play_title);
+                    newCommentHtml = newCommentHtml.replace('[[play_quarter]]', data.play_quarter);
+                    newCommentHtml = newCommentHtml.replace('[[play_time]]', data.play_time);
+                    newCommentHtml = newCommentHtml.replace('[[play_t1_logo]]', data.play_t1_logo);
+                    newCommentHtml = newCommentHtml.replace('[[play_t2_logo]]', data.play_t2_logo);
+                    newCommentHtml = newCommentHtml.replace('[[play_score]]', data.play_score);
+                    newCommentHtml = newCommentHtml.replace('[[play_down]]', data.play_down);
+                    newCommentHtml = newCommentHtml.replace('[[play_distance]]', data.play_distance);
+                    newCommentHtml = newCommentHtml.replace('[[play_scored]]', data.play_scored);
                     const newCommentNode = document.createElement('div');
                     newCommentNode.classList.add('comment');
                     newCommentNode.innerHTML = newCommentHtml;
-                    commentsList.appendChild(newCommentNode);
+                    let firstComment = commentsList.firstChild;
+                    commentsList.insertBefore(newCommentNode, firstComment);
                 }
             }
 
@@ -65,4 +73,4 @@
             }
         }
     }
-})(Pusher, Drupal, drupalSettings);
+})(Pusher, Drupal, drupalSettings, once);

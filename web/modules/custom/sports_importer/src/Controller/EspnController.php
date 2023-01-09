@@ -118,9 +118,9 @@ class EspnController extends ControllerBase {
                 'url' => $node->toUrl()->toString(),
                 'group' => $gr->label()
               ];
-              $relation = $gr->getContentByEntityId('group_node:game', $node->id());
+              $relation = $gr->getRelationshipsByEntity($node, 'group_node:game');
               if (!$relation) {
-                $gr->addContent($node, 'group_node:game');
+                $gr->addRelationship($node, 'group_node:game');
               }
             }
           }

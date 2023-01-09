@@ -115,24 +115,25 @@
   </div>
   {% endif %}
 
-  {{ content.comment }}
   <div class="comments-list" id="comments-list">
     {# Comment template for plays. #}
     <script id="play-comment-template" type="text/x-template">
-      <div class="text-center">
-        <div property="schema:text"><h4>{{ play_title }}</h4>
+      <div class="text-center bg-sky-800 scored-[[play_scored]]">
+        <div property="schema:text"><h4>[[play_title]]</h4>
           <p>
-            <span class="play-quarter border p-1">{{ play_quarter }}</span>
-            <span class="play-time border p-1">{{ play_time }}</span>
+            <span class="play-quarter border p-1">[[play_quarter]]</span>
+            <span class="play-time border p-1">[[play_time]]</span>
           </p>
           <div class="gap-10 flex gap-5 justify-center">
-            <img class="h-20" src="{{ play_t1_logo }}" alt="">
-            <span class="pt-0 text-3xl">{{ play_score }}</span>
-            <img class="h-20" src="{{ play_t2_logo }}" alt="">
+            <img class="h-20" src="[[play_t1_logo]]" alt="">
+            <span class="pt-0 text-3xl">[[play_score]]</span>
+            <img class="h-20" src="[[play_t2_logo]]" alt="">
           </div>
           <p>
-            {# play_down|format_ordinal_number #}
-            <span class="play-down">{{ play_down }}</span> and <span class="play-distance">{{ play_distance }}</span>
+            <span class="play-down">[[play_down]]</span> and <span class="play-distance">[[play_distance]]</span>
+          </p>
+          <p>
+            <a href="/node/add/highlight" class="button">Submit a highlight for this play</a>
           </p>
         </div>
       </div>
