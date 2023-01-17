@@ -1,0 +1,6 @@
+{
+  "name": "sports_filesystem/flysystem_bunnycdn",
+  "require": {
+    "platformcommunity/flysystem-bunnycdn": "2.3.1"
+  }
+}

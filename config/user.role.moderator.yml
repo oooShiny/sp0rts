@@ -10,6 +10,7 @@ dependencies:
   module:
     - comment
     - flag
+    - form_mode_control
     - node
     - paragraphs_type_permissions
     - scheduler
@@ -42,6 +43,7 @@ permissions:
   - 'schedule publishing of nodes'
   - 'unflag ban_user'
   - 'update paragraph content group_automod_filter'
+  - 'use  The form mode moderator linked to  user entity( user )'
   - 'view own unpublished content'
   - 'view paragraph content group_automod_filter'
   - 'view the administration theme'

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffbd22ede174b89018c8f779d13e01ef",
+    "content-hash": "b8cfcf099255e5fbdb8de06cc708000c",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3217,6 +3217,78 @@
             "homepage": "https://www.drupal.org/project/flysystem",
             "support": {
                 "source": "https://git.drupalcode.org/project/flysystem"
+            }
+        },
+        {
+            "name": "drupal/form_mode_control",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/form_mode_control.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/form_mode_control-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "5b6ee8cbc795ae269f615de6f8d13f4c33eda2b8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1659299482",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dakwamine",
+                    "homepage": "https://www.drupal.org/user/3517785"
+                },
+                {
+                    "name": "eme",
+                    "homepage": "https://www.drupal.org/user/542492"
+                },
+                {
+                    "name": "Flodevelop",
+                    "homepage": "https://www.drupal.org/user/735818"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "mh.marouan",
+                    "homepage": "https://www.drupal.org/user/3203501"
+                },
+                {
+                    "name": "MichaelB",
+                    "homepage": "https://www.drupal.org/user/2309046"
+                },
+                {
+                    "name": "snake_plissken",
+                    "homepage": "https://www.drupal.org/user/3624793"
+                }
+            ],
+            "description": "Allow you to use the form modes per role and per bundle / Entity.",
+            "homepage": "https://www.drupal.org/project/form_mode_control",
+            "support": {
+                "source": "https://git.drupalcode.org/project/form_mode_control"
             }
         },
         {

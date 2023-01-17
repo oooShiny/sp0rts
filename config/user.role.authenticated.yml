@@ -16,6 +16,7 @@ dependencies:
     - content_moderation
     - filter
     - flag
+    - form_mode_control
     - media
     - node
     - private_message
@@ -79,6 +80,7 @@ permissions:
   - 'unflag flag_inappropriate_comment_'
   - 'unflag flag_inappropriate_content'
   - 'unflag following'
+  - 'use  The form mode user linked to  user entity( user )'
   - 'use group_moderation transition flagged'
   - 'use group_moderation transition publish'
   - 'use group_moderation transition removed'

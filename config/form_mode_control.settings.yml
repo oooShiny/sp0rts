@@ -1,0 +1,67 @@
+'use  The form mode default linked to  block_content entity( basic )': block_content.basic.default
+'use  The form mode default linked to  comment entity( comment )': comment.comment.default
+'use  The form mode default linked to  group entity( league )': group.league.default
+'use  The form mode default linked to  group entity( sport )': group.sport.default
+'use  The form mode default linked to  group entity( team )': group.team.default
+'use  The form mode default linked to  group_content entity( league-group_membership )': group_content.league-group_membership.default
+'use  The form mode default linked to  group_content entity( sport-group_membership )': group_content.sport-group_membership.default
+'use  The form mode default linked to  group_content entity( team-group_membership )': group_content.team-group_membership.default
+'use  The form mode default linked to  media entity( audio )': media.audio.default
+'use  The form mode media_library linked to  media entity( audio )': media.audio.media_library
+'use  The form mode default linked to  media entity( document )': media.document.default
+'use  The form mode media_library linked to  media entity( document )': media.document.media_library
+'use  The form mode default linked to  media entity( highlight )': media.highlight.default
+'use  The form mode media_library linked to  media entity( highlight )': media.highlight.media_library
+'use  The form mode default linked to  media entity( image )': media.image.default
+'use  The form mode media_library linked to  media entity( image )': media.image.media_library
+'use  The form mode default linked to  media entity( remote_video )': media.remote_video.default
+'use  The form mode media_library linked to  media entity( remote_video )': media.remote_video.media_library
+'use  The form mode default linked to  media entity( video )': media.video.default
+'use  The form mode media_library linked to  media entity( video )': media.video.media_library
+'use  The form mode default linked to  node entity( article )': node.article.default
+'use  The form mode default linked to  node entity( game )': node.game.default
+'use  The form mode default linked to  node entity( game_recap )': node.game_recap.default
+'use  The form mode default linked to  node entity( highlight )': node.highlight.default
+'use  The form mode basic_content_form linked to  node entity( image )': node.image.basic_content_form
+'use  The form mode default linked to  node entity( image )': node.image.default
+'use  The form mode default linked to  node entity( link )': node.link.default
+'use  The form mode default linked to  node entity( page )': node.page.default
+'use  The form mode default linked to  node entity( podcast_episode )': node.podcast_episode.default
+'use  The form mode default linked to  node entity( reddit_post )': node.reddit_post.default
+'use  The form mode default linked to  node entity( text_post )': node.text_post.default
+'use  The form mode default linked to  node entity( tweet )': node.tweet.default
+'use  The form mode default linked to  node entity( user_post )': node.user_post.default
+'use  The form mode default linked to  node entity( webform )': node.webform.default
+'use  The form mode default linked to  node entity( youtube_video )': node.youtube_video.default
+'use  The form mode default linked to  paragraph entity( block )': paragraph.block.default
+'use  The form mode default linked to  paragraph entity( group_automod_filter )': paragraph.group_automod_filter.default
+'use  The form mode default linked to  paragraph entity( media )': paragraph.media.default
+'use  The form mode default linked to  paragraph entity( section )': paragraph.section.default
+'use  The form mode default linked to  paragraph entity( text )': paragraph.text.default
+'use  The form mode default linked to  private_message entity( private_message )': private_message.private_message.default
+'use  The form mode default linked to  private_message_thread entity( private_message_thread )': private_message_thread.private_message_thread.default
+'use  The form mode default linked to  user entity( user )': user.user.default
+'use  The form mode moderator linked to  user entity( user )': user.user.moderator
+'use  The form mode user linked to  user entity( user )': user.user.user
+creation+administrator+media+audio: media.audio.default
+modification+administrator+media+audio: media.audio.default
+creation+administrator+media+document: media.document.default
+modification+administrator+media+document: media.document.default
+creation+administrator+media+highlight: media.highlight.default
+modification+administrator+media+highlight: media.highlight.default
+creation+administrator+media+image: media.image.default
+modification+administrator+media+image: media.image.default
+creation+administrator+media+remote_video: media.remote_video.default
+modification+administrator+media+remote_video: media.remote_video.default
+creation+administrator+media+video: media.video.default
+modification+administrator+media+video: media.video.default
+creation+administrator+node+highlight: node.highlight.default
+modification+administrator+node+highlight: node.highlight.default
+creation+administrator+node+image: node.image.default
+modification+administrator+node+image: node.image.default
+creation+authenticated+user+user: user.user.user
+creation+administrator+user+user: user.user.default
+creation+moderator+user+user: user.user.moderator
+modification+authenticated+user+user: user.user.user
+modification+administrator+user+user: user.user.default
+modification+moderator+user+user: user.user.moderator
