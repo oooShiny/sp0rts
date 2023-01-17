@@ -71,7 +71,8 @@
         "drupal/mentions": "^1.0@alpha",
         "drupal/comment_notify": "^1.3",
         "drupal/oembed_providers": "^2.1",
-        "drupal/prepopulate": "^2.3"
+        "drupal/prepopulate": "^2.3",
+        "drupal/conditional_fields": "^4.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -116,7 +117,11 @@
         "patches": {
             "drupal/core": {
                 "3111991: oEmbeds without thumbnails": "https://www.drupal.org/files/issues/2022-12-05/supports-oembed-providers-without-thumbnails-dimensions-3111991-9.patch",
-                "3331771: Check for thumbnail before creating OEmbed resource": "https://www.drupal.org/files/issues/2023-01-07/oembed-fails-to-save-if-thumbnail-fails-to-download-3331771-1.patch"
+                "3331771: Check for thumbnail before creating OEmbed resource": "https://www.drupal.org/files/issues/2023-01-07/oembed-fails-to-save-if-thumbnail-fails-to-download-3331771-1.patch",
+                "2880154: Make comments revisionable": "web/patches/2880154-comment-revisions.patch"
+            },
+            "drupal/gcontent_moderation": {
+                "3309542: Groups 2.x compatibility": "https://www.drupal.org/files/issues/2023-01-10/3309542-8-group-2.x-compatability.patch"
             },
             "drupal/mentions": {
                 "3331783: Fix error when text field has no value": "https://www.drupal.org/files/issues/2023-01-07/check-for-empty-value-3331783-2.patch"

@@ -1,0 +1,56 @@
+uuid: 9a5716ed-4654-4735-8f66-82391d05c0ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.moderator
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
+    - field.field.user.user.field_welcomed
+    - field.field.user.user.user_picture
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.moderator
+targetEntityType: user
+bundle: user
+mode: moderator
+content:
+  field_group_comment_ban:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_group_post_ban:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  account: true
+  comment_notify_settings: true
+  contact: true
+  field_welcomed: true
+  language: true
+  path: true
+  private_messages: true
+  timezone: true
+  user_picture: true

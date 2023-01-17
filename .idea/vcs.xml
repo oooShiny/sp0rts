@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/flag" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/modules/contrib/nodejs" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/web/modules/contrib/twig_extensions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web/themes/custom/tailwindcss" vcs="Git" />
   </component>
 </project>

@@ -1,0 +1,19 @@
+uuid: a1b240b3-fe1a-400c-9d33-b90a97ed31da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_note
+    - paragraphs.paragraphs_type.group_automod_filter
+id: paragraph.group_automod_filter.field_mod_note
+field_name: field_mod_note
+entity_type: paragraph
+bundle: group_automod_filter
+label: 'Mod Note'
+description: 'The note to send to a user if this filter is triggered.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

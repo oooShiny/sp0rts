@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.group.teaser
+    - field.field.group.team.field_automod_filters
     - field.field.group.team.field_conference_division
     - field.field.group.team.field_group_subreddit
     - field.field.group.team.field_group_youtube_channel
@@ -46,6 +47,7 @@ hidden:
   breadcrumbs: true
   changed: true
   created: true
+  field_automod_filters: true
   field_conference_division: true
   field_group_subreddit: true
   field_group_youtube_channel: true

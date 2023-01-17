@@ -1,0 +1,20 @@
+uuid: ba85afa6-d69d-400a-98ec-0ca7a852869f
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - user
+id: user.field_group_post_ban
+field_name: field_group_post_ban
+entity_type: user
+type: entity_reference
+settings:
+  target_type: group
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

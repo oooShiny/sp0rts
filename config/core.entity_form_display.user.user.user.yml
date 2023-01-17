@@ -1,8 +1,9 @@
-uuid: 263ea6cc-e251-48d0-8aba-4c6413081e96
+uuid: c571d41f-47af-4c5d-9fe4-482574bf17a1
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.user.user
     - field.field.user.user.field_group_comment_ban
     - field.field.user.user.field_group_post_ban
     - field.field.user.user.field_welcomed
@@ -21,10 +22,10 @@ third_party_settings:
       label: ''
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
-id: user.user.default
+id: user.user.user
 targetEntityType: user
 bundle: user
-mode: default
+mode: user
 content:
   account:
     weight: 0
@@ -32,7 +33,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   comment_notify_settings:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -41,26 +42,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_group_comment_ban:
-    type: entity_reference_autocomplete
-    weight: 7
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_group_post_ban:
-    type: entity_reference_autocomplete
-    weight: 8
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   language:
     weight: 3
     region: content
@@ -68,7 +49,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -78,7 +59,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -91,4 +72,6 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  field_group_comment_ban: true
+  field_group_post_ban: true
   field_welcomed: true

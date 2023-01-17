@@ -1,0 +1,10 @@
+uuid: f292dc10-2cec-4e56-83fd-6c2b6183b5bf
+langcode: en
+status: true
+dependencies: {  }
+id: group_automod_filter
+label: 'Group Automod Filter'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

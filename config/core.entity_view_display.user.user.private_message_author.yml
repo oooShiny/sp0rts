@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.private_message_author
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
     - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
   module:
@@ -31,6 +33,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_group_comment_ban: true
+  field_group_post_ban: true
   field_welcomed: true
   member_for: true
   private_message_link: true

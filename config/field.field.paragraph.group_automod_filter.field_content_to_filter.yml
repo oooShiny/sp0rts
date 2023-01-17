@@ -1,0 +1,21 @@
+uuid: 748e6e48-4eba-4725-97af-6ff8f85d19f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_to_filter
+    - paragraphs.paragraphs_type.group_automod_filter
+id: paragraph.group_automod_filter.field_content_to_filter
+field_name: field_content_to_filter
+entity_type: paragraph
+bundle: group_automod_filter
+label: 'Content to Filter'
+description: 'Add one item per line to have automod filter any submissions containing this content. This field can also accept <a href="https://regex101.com/" target="_blank">regex</a>.'
+required: false
+translatable: false
+default_value:
+  -
+    value: "'\\bfaget\\b'\r\n'\\bho+mo+(?!(ge|phob|sexual))'\r\n'\\bfags?\\b'\r\n'fudge[\\s\\-]*packers?'\r\n'fagc[ao]n'\r\n'fgts'\r\n'bundle\\s*of\\s*sticks'\r\n'(f|ph)a+gg?[0oei]+t'\r\n'\\bphag'\r\n'\\bk[iy]ke'\r\n'nig(ger|ga(?!4lyfe))'\r\n'nigra\\b'\r\n'niggah'\r\n'homer'\r\n'doomer'\r\n'homers'\r\n'doomers'"
+default_value_callback: ''
+settings: {  }
+field_type: string_long

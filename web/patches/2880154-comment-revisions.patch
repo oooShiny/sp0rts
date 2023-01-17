@@ -1,0 +1,789 @@
+From 299f0f19ad00c056c9206df000273c6a962353d7 Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Fri, 14 Oct 2022 10:28:47 +0200
+Subject: [PATCH 1/7] Add the re-rolled patch from #63
+
+---
+ core/modules/comment/comment.install          | 50 +++++++++++++++++++
+ core/modules/comment/comment.module           | 24 +++++++++
+ core/modules/comment/comment.post_update.php  | 28 +++++++++++
+ core/modules/comment/src/Entity/Comment.php   | 32 ++++++++----
+ .../Rest/CommentResourceTestBase.php          | 13 +++++
+ 5 files changed, 138 insertions(+), 9 deletions(-)
+
+diff --git a/core/modules/comment/comment.install b/core/modules/comment/comment.install
+index 2a0808b5c02..94a2ecbf6e7 100644
+--- a/core/modules/comment/comment.install
++++ b/core/modules/comment/comment.install
+@@ -5,6 +5,7 @@
+  * Install, update and uninstall functions for the Comment module.
+  */
+ 
++use Drupal\Core\Field\BaseFieldDefinition;
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\field\Entity\FieldStorageConfig;
+ 
+@@ -134,3 +135,52 @@ function comment_update_10100(&$sandbox = NULL) {
+     $connection->schema()->changeField('comment_entity_statistics', 'last_comment_timestamp', 'last_comment_timestamp', $new);
+   }
+ }
++
++/**
++ * Add the revisionable metadata fields to comments.
++ */
++function comment_update_10101() {
++  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
++  // Add the revisionable metadata fields to the comment entity type.
++  $entity_type = $definition_update_manager->getEntityType('comment');
++
++  $revision_metadata_keys = [
++    'revision_user' => 'revision_user',
++    'revision_created' => 'revision_created',
++    'revision_log_message' => 'revision_log_message',
++  ];
++  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
++  $definition_update_manager->updateEntityType($entity_type);
++
++  // Add the revision metadata fields.
++  $revision_created = BaseFieldDefinition::create('created')
++    ->setLabel(t('Revision create time'))
++    ->setDescription(t('The time that the current revision was created.'))
++    ->setRevisionable(TRUE)
++    ->setInitialValueFromField('created');
++  $definition_update_manager->installFieldStorageDefinition('revision_created', 'comment', 'comment', $revision_created);
++
++  $revision_user = BaseFieldDefinition::create('entity_reference')
++    ->setLabel(t('Revision user'))
++    ->setDescription(t('The user ID of the author of the current revision.'))
++    ->setSetting('target_type', 'user')
++    ->setRevisionable(TRUE)
++    ->setInitialValueFromField('uid');
++  $definition_update_manager->installFieldStorageDefinition('revision_user', 'comment', 'comment', $revision_user);
++
++  $revision_log_message = BaseFieldDefinition::create('string_long')
++    ->setLabel(t('Revision log message'))
++    ->setDescription(t('Briefly describe the changes you have made.'))
++    ->setRevisionable(TRUE)
++    ->setDefaultValue('')
++    ->setDisplayOptions('form', [
++      'type' => 'string_textarea',
++      'weight' => 25,
++      'settings' => [
++        'rows' => 4,
++      ],
++    ]);
++  $definition_update_manager->installFieldStorageDefinition('revision_log_message', 'comment', 'comment', $revision_log_message);
++
++  return t('Comments have been converted to revisionable.');
++}
+diff --git a/core/modules/comment/comment.module b/core/modules/comment/comment.module
+index 4a41c5f2956..f2112a9aa3f 100644
+--- a/core/modules/comment/comment.module
++++ b/core/modules/comment/comment.module
+@@ -12,6 +12,7 @@
+ 
+ use Drupal\comment\CommentInterface;
+ use Drupal\comment\Entity\CommentType;
++use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Entity\FieldableEntityInterface;
+ use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+ use Drupal\Core\Entity\Entity\EntityViewMode;
+@@ -771,3 +772,26 @@ function comment_entity_view_display_presave(EntityViewDisplayInterface $display
+     }
+   }
+ }
++
++/**
++ * Implements hook_entity_base_field_info_alter().
++ */
++function comment_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
++  // Provide a better default value for the moderation state field if the
++  // content moderation is enabled for comments.
++  if (\Drupal::moduleHandler()->moduleExists('content_moderation') && \Drupal::service('content_moderation.moderation_information')->canModerateEntitiesOfEntityType($entity_type) && isset($fields['moderation_state'])) {
++    $fields['moderation_state']->setDefaultValueCallback('comment_get_default_moderation_state');
++  }
++}
++
++/**
++ * Default value callback for the 'moderation_state' base field definition.
++ *
++ * @return array
++ *   An array of default values.
++ */
++function comment_get_default_moderation_state() {
++  $default_moderation_state = \Drupal::currentUser()->hasPermission('skip comment approval') ? 'published' : 'draft';
++
++  return [$default_moderation_state];
++}
+diff --git a/core/modules/comment/comment.post_update.php b/core/modules/comment/comment.post_update.php
+index 2c07518c49c..a799dbf97ad 100644
+--- a/core/modules/comment/comment.post_update.php
++++ b/core/modules/comment/comment.post_update.php
+@@ -5,6 +5,8 @@
+  * Post update functions for the comment module.
+  */
+ 
++use Drupal\Core\Entity\Sql\SqlContentEntityStorageSchemaConverter;
++
+ /**
+  * Implements hook_removed_post_updates().
+  */
+@@ -14,3 +16,29 @@ function comment_removed_post_updates() {
+     'comment_post_update_add_ip_address_setting' => '9.0.0',
+   ];
+ }
++
++/**
++ * Update comments to be revisionable.
++ */
++function comment_post_update_make_comment_revisionable(&$sandbox) {
++  $schema_converter = new SqlContentEntityStorageSchemaConverter(
++    'comment',
++    \Drupal::entityTypeManager(),
++    \Drupal::entityDefinitionUpdateManager(),
++    \Drupal::service('entity.last_installed_schema.repository'),
++    \Drupal::keyValue('entity.storage_schema.sql'),
++    \Drupal::database()
++  );
++  $schema_converter->convertToRevisionable(
++    $sandbox,
++    [
++      'subject',
++      'name',
++      'mail',
++      'homepage',
++      'hostname',
++      'created',
++      'changed',
++    ]
++  );
++}
+diff --git a/core/modules/comment/src/Entity/Comment.php b/core/modules/comment/src/Entity/Comment.php
+index 43123b7a17f..e627c952dcc 100644
+--- a/core/modules/comment/src/Entity/Comment.php
++++ b/core/modules/comment/src/Entity/Comment.php
+@@ -4,10 +4,8 @@
+ 
+ use Drupal\Component\Utility\Number;
+ use Drupal\Core\Cache\Cache;
+-use Drupal\Core\Entity\ContentEntityBase;
+ use Drupal\comment\CommentInterface;
+-use Drupal\Core\Entity\EntityChangedTrait;
+-use Drupal\Core\Entity\EntityPublishedTrait;
++use Drupal\Core\Entity\EditorialContentEntityBase;
+ use Drupal\Core\Entity\EntityStorageInterface;
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Field\BaseFieldDefinition;
+@@ -43,10 +41,13 @@
+  *   },
+  *   base_table = "comment",
+  *   data_table = "comment_field_data",
++ *   revision_table = "comment_revision",
++ *   revision_data_table = "comment_field_revision",
+  *   uri_callback = "comment_uri",
+  *   translatable = TRUE,
+  *   entity_keys = {
+  *     "id" = "cid",
++ *     "revision" = "revision_id",
+  *     "bundle" = "comment_type",
+  *     "label" = "subject",
+  *     "langcode" = "langcode",
+@@ -54,6 +55,11 @@
+  *     "published" = "status",
+  *     "owner" = "uid",
+  *   },
++ *   revision_metadata_keys = {
++ *     "revision_user" = "revision_user",
++ *     "revision_created" = "revision_created",
++ *     "revision_log_message" = "revision_log_message",
++ *   },
+  *   links = {
+  *     "canonical" = "/comment/{comment}",
+  *     "delete-form" = "/comment/{comment}/delete",
+@@ -68,11 +74,9 @@
+  *   }
+  * )
+  */
+-class Comment extends ContentEntityBase implements CommentInterface {
++class Comment extends EditorialContentEntityBase implements CommentInterface {
+ 
+-  use EntityChangedTrait;
+   use EntityOwnerTrait;
+-  use EntityPublishedTrait;
+ 
+   /**
+    * The thread for which a lock was acquired.
+@@ -224,7 +228,6 @@ public function permalink() {
+   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+     /** @var \Drupal\Core\Field\BaseFieldDefinition[] $fields */
+     $fields = parent::baseFieldDefinitions($entity_type);
+-    $fields += static::publishedBaseFieldDefinitions($entity_type);
+     $fields += static::ownerBaseFieldDefinitions($entity_type);
+ 
+     $fields['cid']->setLabel(t('Comment ID'))
+@@ -253,6 +256,7 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+     $fields['subject'] = BaseFieldDefinition::create('string')
+       ->setLabel(t('Subject'))
+       ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE)
+       ->setSetting('max_length', 64)
+       ->setDisplayOptions('form', [
+         'type' => 'string_textfield',
+@@ -268,6 +272,7 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+       ->setLabel(t('Name'))
+       ->setDescription(t("The comment author's name."))
+       ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE)
+       ->setSetting('max_length', 60)
+       ->setDefaultValue('');
+ 
+@@ -280,6 +285,8 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+       ->setLabel(t('Homepage'))
+       ->setDescription(t("The comment author's home page address."))
+       ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE)
++      ->setRevisionable(TRUE)
+       // URIs are not length limited by RFC 2616, but we can only store 255
+       // characters in our comment DB schema.
+       ->setSetting('max_length', 255);
+@@ -288,18 +295,21 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+       ->setLabel(t('Hostname'))
+       ->setDescription(t("The comment author's hostname."))
+       ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE)
+       ->setSetting('max_length', 128)
+       ->setDefaultValueCallback(static::class . '::getDefaultHostname');
+ 
+     $fields['created'] = BaseFieldDefinition::create('created')
+       ->setLabel(t('Created'))
+       ->setDescription(t('The time that the comment was created.'))
+-      ->setTranslatable(TRUE);
++      ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE);
+ 
+     $fields['changed'] = BaseFieldDefinition::create('changed')
+       ->setLabel(t('Changed'))
+       ->setDescription(t('The time that the comment was last edited.'))
+-      ->setTranslatable(TRUE);
++      ->setTranslatable(TRUE)
++      ->setRevisionable(TRUE);
+ 
+     $fields['thread'] = BaseFieldDefinition::create('string')
+       ->setLabel(t('Thread place'))
+@@ -320,6 +330,10 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+       ->setSetting('is_ascii', TRUE)
+       ->setSetting('max_length', FieldStorageConfig::NAME_MAX_LENGTH);
+ 
++    // Hide the revision log message field by default.
++    $fields['revision_log_message']->setDisplayOptions('form', [
++      'region' => 'hidden',
++    ]);
+     return $fields;
+   }
+ 
+diff --git a/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php b/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
+index 67c3bd12dd5..8434e8c6643 100644
+--- a/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
++++ b/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
+@@ -126,6 +126,9 @@ protected function getExpectedNormalizedEntity() {
+       'cid' => [
+         ['value' => 1],
+       ],
++      'revision_id' => [
++        ['value' => 1],
++      ],
+       'uuid' => [
+         ['value' => $this->entity->uuid()],
+       ],
+@@ -202,6 +205,16 @@ protected function getExpectedNormalizedEntity() {
+           'value' => '01/',
+         ],
+       ],
++      'revision_created' => [
++        $this->formatExpectedTimestampItemValues((int) $this->entity->getRevisionCreationTime()),
++      ],
++      'revision_user' => [],
++      'revision_log_message' => [],
++      'revision_translation_affected' => [
++        [
++          'value' => TRUE,
++        ],
++      ],
+       'comment_body' => [
+         [
+           'value' => 'The name "llama" was adopted by European settlers from native Peruvians.',
+-- 
+GitLab
+
+
+From 25a9f1cdce8899e94a66d360e77c357d509448b9 Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Fri, 14 Oct 2022 10:31:02 +0200
+Subject: [PATCH 2/7] Remove usage of SqlContentEntityStorageSchemaConverter
+
+---
+ core/modules/comment/comment.post_update.php | 113 +++++++++++++++----
+ 1 file changed, 92 insertions(+), 21 deletions(-)
+
+diff --git a/core/modules/comment/comment.post_update.php b/core/modules/comment/comment.post_update.php
+index a799dbf97ad..cfa3ccdfe30 100644
+--- a/core/modules/comment/comment.post_update.php
++++ b/core/modules/comment/comment.post_update.php
+@@ -5,7 +5,8 @@
+  * Post update functions for the comment module.
+  */
+ 
+-use Drupal\Core\Entity\Sql\SqlContentEntityStorageSchemaConverter;
++use Drupal\Core\Field\BaseFieldDefinition;
++use Drupal\Core\StringTranslation\TranslatableMarkup;
+ 
+ /**
+  * Implements hook_removed_post_updates().
+@@ -21,24 +22,94 @@ function comment_removed_post_updates() {
+  * Update comments to be revisionable.
+  */
+ function comment_post_update_make_comment_revisionable(&$sandbox) {
+-  $schema_converter = new SqlContentEntityStorageSchemaConverter(
+-    'comment',
+-    \Drupal::entityTypeManager(),
+-    \Drupal::entityDefinitionUpdateManager(),
+-    \Drupal::service('entity.last_installed_schema.repository'),
+-    \Drupal::keyValue('entity.storage_schema.sql'),
+-    \Drupal::database()
+-  );
+-  $schema_converter->convertToRevisionable(
+-    $sandbox,
+-    [
+-      'subject',
+-      'name',
+-      'mail',
+-      'homepage',
+-      'hostname',
+-      'created',
+-      'changed',
+-    ]
+-  );
++  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
++  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository */
++  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
++
++  $entity_type = $definition_update_manager->getEntityType('comment');
++  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('comment');
++
++  // Update the entity type definition.
++  $entity_keys = $entity_type->getKeys();
++  $entity_keys['revision'] = 'revision_id';
++  $entity_keys['revision_translation_affected'] = 'revision_translation_affected';
++  $entity_type->set('entity_keys', $entity_keys);
++  $entity_type->set('revision_table', 'comment_revision');
++  $entity_type->set('revision_data_table', 'comment_field_revision');
++  $revision_metadata_keys = [
++    'revision_default' => 'revision_default',
++    'revision_user' => 'revision_user',
++    'revision_created' => 'revision_created',
++    'revision_log_message' => 'revision_log_message',
++  ];
++  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
++
++  // Update the field storage definitions and add the new ones required by a
++  // revisionable entity type.
++  $field_storage_definitions['subject']->setRevisionable(TRUE);
++  $field_storage_definitions['name']->setRevisionable(TRUE);
++  $field_storage_definitions['mail']->setRevisionable(TRUE);
++  $field_storage_definitions['homepage']->setRevisionable(TRUE);
++  $field_storage_definitions['hostname']->setRevisionable(TRUE);
++  $field_storage_definitions['created']->setRevisionable(TRUE);
++  $field_storage_definitions['changed']->setRevisionable(TRUE);
++
++  $field_storage_definitions['revision_id'] = BaseFieldDefinition::create('integer')
++    ->setName('revision_id')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Revision ID'))
++    ->setReadOnly(TRUE)
++    ->setSetting('unsigned', TRUE);
++
++  $field_storage_definitions['revision_default'] = BaseFieldDefinition::create('boolean')
++    ->setName('revision_default')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Default revision'))
++    ->setDescription(new TranslatableMarkup('A flag indicating whether this was a default revision when it was saved.'))
++    ->setStorageRequired(TRUE)
++    ->setInternal(TRUE)
++    ->setTranslatable(FALSE)
++    ->setRevisionable(TRUE);
++
++  $field_storage_definitions['revision_translation_affected'] = BaseFieldDefinition::create('boolean')
++    ->setName('revision_translation_affected')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Revision translation affected'))
++    ->setDescription(new TranslatableMarkup('Indicates if the last edit of a translation belongs to current revision.'))
++    ->setReadOnly(TRUE)
++    ->setRevisionable(TRUE)
++    ->setTranslatable(TRUE);
++
++  $field_storage_definitions['revision_created'] = BaseFieldDefinition::create('created')
++    ->setName('revision_created')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Revision create time'))
++    ->setDescription(new TranslatableMarkup('The time that the current revision was created.'))
++    ->setRevisionable(TRUE);
++
++  $field_storage_definitions['revision_user'] = BaseFieldDefinition::create('entity_reference')
++    ->setName('revision_user')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Revision user'))
++    ->setDescription(new TranslatableMarkup('The user ID of the author of the current revision.'))
++    ->setSetting('target_type', 'user')
++    ->setRevisionable(TRUE);
++
++  $field_storage_definitions['revision_log_message'] = BaseFieldDefinition::create('string_long')
++    ->setName('revision_log_message')
++    ->setTargetEntityTypeId('comment')
++    ->setTargetBundle(NULL)
++    ->setLabel(new TranslatableMarkup('Revision log message'))
++    ->setDescription(new TranslatableMarkup('Briefly describe the changes you have made.'))
++    ->setRevisionable(TRUE)
++    ->setDefaultValue('');
++
++  $definition_update_manager->updateFieldableEntityType($entity_type, $field_storage_definitions, $sandbox);
++
++  return t('Comments have been converted to be revisionable.');
+ }
+-- 
+GitLab
+
+
+From ae333c0e646574ae75a399e1b827b7bf7b6330dd Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Fri, 14 Oct 2022 10:31:08 +0200
+Subject: [PATCH 3/7] Update comment
+
+---
+ core/modules/comment/src/Entity/Comment.php | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/core/modules/comment/src/Entity/Comment.php b/core/modules/comment/src/Entity/Comment.php
+index e627c952dcc..077ce16e2fa 100644
+--- a/core/modules/comment/src/Entity/Comment.php
++++ b/core/modules/comment/src/Entity/Comment.php
+@@ -330,7 +330,8 @@ public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+       ->setSetting('is_ascii', TRUE)
+       ->setSetting('max_length', FieldStorageConfig::NAME_MAX_LENGTH);
+ 
+-    // Hide the revision log message field by default.
++    // @todo Keep this field hidden until we have a revision UI for comments.
++    // @see https://www.drupal.org/project/drupal/issues/2350939
+     $fields['revision_log_message']->setDisplayOptions('form', [
+       'region' => 'hidden',
+     ]);
+-- 
+GitLab
+
+
+From 3908635d1d84fce04bb8ceedd0c1015c407b7558 Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Fri, 14 Oct 2022 10:31:55 +0200
+Subject: [PATCH 4/7] Set initial values for new revision fields
+
+---
+ core/modules/comment/comment.post_update.php | 26 ++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/core/modules/comment/comment.post_update.php b/core/modules/comment/comment.post_update.php
+index cfa3ccdfe30..2a31a80cde9 100644
+--- a/core/modules/comment/comment.post_update.php
++++ b/core/modules/comment/comment.post_update.php
+@@ -113,3 +113,29 @@ function comment_post_update_make_comment_revisionable(&$sandbox) {
+ 
+   return t('Comments have been converted to be revisionable.');
+ }
++
++/**
++ * Set initial values for new revision fields.
++ */
++function comment_post_update_set_initial_revision_field_values(&$sandbox) {
++  $connection = \Drupal::database();
++  $fields = [
++    'revision_created' => 'created',
++    'revision_user' => 'uid',
++  ];
++
++  $definition = \Drupal::entityTypeManager()->getDefinition('comment');
++  $dataTable = $definition->getDataTable();
++  $revisionTable = $definition->getRevisionTable();
++
++  foreach ($fields as $newFieldName => $existingFieldName) {
++    $subQuery = $connection->select($dataTable, 'cfd')
++      ->fields('cfd', [$existingFieldName])
++      ->where("$revisionTable.cid = cfd.cid AND $revisionTable.revision_id = cfd.revision_id AND $revisionTable.langcode = cfd.langcode");
++
++    $connection->update($revisionTable)
++      ->expression($newFieldName, $subQuery)
++      ->isNull($newFieldName)
++      ->execute();
++  }
++}
+-- 
+GitLab
+
+
+From dd151e1997c543ae1309e9e5ac213e1f4fa916d4 Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Fri, 14 Oct 2022 14:27:12 +0200
+Subject: [PATCH 5/7] Remove unneeded comment_update_10101
+
+---
+ core/modules/comment/comment.install | 49 ----------------------------
+ 1 file changed, 49 deletions(-)
+
+diff --git a/core/modules/comment/comment.install b/core/modules/comment/comment.install
+index 94a2ecbf6e7..0eb60020bce 100644
+--- a/core/modules/comment/comment.install
++++ b/core/modules/comment/comment.install
+@@ -135,52 +135,3 @@ function comment_update_10100(&$sandbox = NULL) {
+     $connection->schema()->changeField('comment_entity_statistics', 'last_comment_timestamp', 'last_comment_timestamp', $new);
+   }
+ }
+-
+-/**
+- * Add the revisionable metadata fields to comments.
+- */
+-function comment_update_10101() {
+-  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+-  // Add the revisionable metadata fields to the comment entity type.
+-  $entity_type = $definition_update_manager->getEntityType('comment');
+-
+-  $revision_metadata_keys = [
+-    'revision_user' => 'revision_user',
+-    'revision_created' => 'revision_created',
+-    'revision_log_message' => 'revision_log_message',
+-  ];
+-  $entity_type->set('revision_metadata_keys', $revision_metadata_keys);
+-  $definition_update_manager->updateEntityType($entity_type);
+-
+-  // Add the revision metadata fields.
+-  $revision_created = BaseFieldDefinition::create('created')
+-    ->setLabel(t('Revision create time'))
+-    ->setDescription(t('The time that the current revision was created.'))
+-    ->setRevisionable(TRUE)
+-    ->setInitialValueFromField('created');
+-  $definition_update_manager->installFieldStorageDefinition('revision_created', 'comment', 'comment', $revision_created);
+-
+-  $revision_user = BaseFieldDefinition::create('entity_reference')
+-    ->setLabel(t('Revision user'))
+-    ->setDescription(t('The user ID of the author of the current revision.'))
+-    ->setSetting('target_type', 'user')
+-    ->setRevisionable(TRUE)
+-    ->setInitialValueFromField('uid');
+-  $definition_update_manager->installFieldStorageDefinition('revision_user', 'comment', 'comment', $revision_user);
+-
+-  $revision_log_message = BaseFieldDefinition::create('string_long')
+-    ->setLabel(t('Revision log message'))
+-    ->setDescription(t('Briefly describe the changes you have made.'))
+-    ->setRevisionable(TRUE)
+-    ->setDefaultValue('')
+-    ->setDisplayOptions('form', [
+-      'type' => 'string_textarea',
+-      'weight' => 25,
+-      'settings' => [
+-        'rows' => 4,
+-      ],
+-    ]);
+-  $definition_update_manager->installFieldStorageDefinition('revision_log_message', 'comment', 'comment', $revision_log_message);
+-
+-  return t('Comments have been converted to revisionable.');
+-}
+-- 
+GitLab
+
+
+From 5901ac3f59cd43bea5aeb9015735ad4988930c9d Mon Sep 17 00:00:00 2001
+From: Ravi Shankar <ravi.s@opensenselabs.com>
+Date: Tue, 18 Oct 2022 15:21:17 +0530
+Subject: [PATCH 6/7] Fixed drupal cs issues.
+
+---
+ core/modules/comment/comment.install                            | 1 -
+ .../tests/src/Functional/Rest/CommentResourceTestBase.php       | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/core/modules/comment/comment.install b/core/modules/comment/comment.install
+index 0eb60020bce..2a0808b5c02 100644
+--- a/core/modules/comment/comment.install
++++ b/core/modules/comment/comment.install
+@@ -5,7 +5,6 @@
+  * Install, update and uninstall functions for the Comment module.
+  */
+ 
+-use Drupal\Core\Field\BaseFieldDefinition;
+ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\field\Entity\FieldStorageConfig;
+ 
+diff --git a/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php b/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
+index 8434e8c6643..b0bd9869c7c 100644
+--- a/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
++++ b/core/modules/comment/tests/src/Functional/Rest/CommentResourceTestBase.php
+@@ -206,7 +206,7 @@ protected function getExpectedNormalizedEntity() {
+         ],
+       ],
+       'revision_created' => [
+-        $this->formatExpectedTimestampItemValues((int) $this->entity->getRevisionCreationTime()),
++        (new \DateTime())->setTimestamp((int) $this->entity->getRevisionCreationTime())->setTimezone(new \DateTimeZone("UTC"))->format(\DateTime::RFC3339),
+       ],
+       'revision_user' => [],
+       'revision_log_message' => [],
+-- 
+GitLab
+
+
+From 52c1c01057d3346b1465463800238b70effaad9c Mon Sep 17 00:00:00 2001
+From: Dieter Holvoet <dieter.holvoet@gmail.com>
+Date: Wed, 2 Nov 2022 15:13:09 +0100
+Subject: [PATCH 7/7] Add new_revision field to comment types
+
+---
+ core/modules/comment/src/CommentTypeForm.php  | 44 +++++++++++++++++++
+ .../comment/src/CommentTypeInterface.php      |  3 +-
+ .../comment/src/Entity/CommentType.php        | 22 ++++++++++
+ 3 files changed, 68 insertions(+), 1 deletion(-)
+
+diff --git a/core/modules/comment/src/CommentTypeForm.php b/core/modules/comment/src/CommentTypeForm.php
+index 37b1bf973b6..af51dfc9302 100644
+--- a/core/modules/comment/src/CommentTypeForm.php
++++ b/core/modules/comment/src/CommentTypeForm.php
+@@ -126,6 +126,26 @@ public function form(array $form, FormStateInterface $form_state) {
+       ];
+     }
+ 
++    $form['additional_settings'] = [
++      '#type' => 'vertical_tabs',
++    ];
++
++    $form['workflow'] = [
++      '#type' => 'details',
++      '#title' => $this->t('Publishing options'),
++      '#group' => 'additional_settings',
++    ];
++
++    $form['workflow']['options'] = [
++      '#type' => 'checkboxes',
++      '#title' => $this->t('Default options'),
++      '#description' => $this->t('Automatically create new revisions.'),
++      '#default_value' => $this->getWorkflowOptions(),
++      '#options' => [
++        'new_revision' => $this->t('Create new revision'),
++      ],
++    ];
++
+     if ($this->moduleHandler->moduleExists('content_translation')) {
+       $form['language'] = [
+         '#type' => 'details',
+@@ -155,6 +175,21 @@ public function form(array $form, FormStateInterface $form_state) {
+     return $form;
+   }
+ 
++  /**
++   * Prepares workflow options to be used in the 'checkboxes' form element.
++   *
++   * @return array
++   *   Array of options ready to be used in #options.
++   */
++  protected function getWorkflowOptions() {
++    $workflow_options = [
++      'new_revision' => $this->entity->shouldCreateNewRevision(),
++    ];
++    // Prepare workflow options to be used for 'checkboxes' form element.
++    $keys = array_keys(array_filter($workflow_options));
++    return array_combine($keys, $keys);
++  }
++
+   /**
+    * Wraps _comment_entity_uses_integer_id().
+    *
+@@ -168,6 +203,15 @@ protected function entityTypeSupportsComments(EntityTypeInterface $entity_type)
+     return $entity_type->entityClassImplements(FieldableEntityInterface::class) && _comment_entity_uses_integer_id($entity_type->id());
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state) {
++    parent::submitForm($form, $form_state);
++
++    $this->entity->setNewRevision((bool) $form_state->getValue(['options', 'new_revision']));
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+diff --git a/core/modules/comment/src/CommentTypeInterface.php b/core/modules/comment/src/CommentTypeInterface.php
+index acde96c694f..cdb2adbf110 100644
+--- a/core/modules/comment/src/CommentTypeInterface.php
++++ b/core/modules/comment/src/CommentTypeInterface.php
+@@ -3,11 +3,12 @@
+ namespace Drupal\comment;
+ 
+ use Drupal\Core\Config\Entity\ConfigEntityInterface;
++use Drupal\Core\Entity\RevisionableEntityBundleInterface;
+ 
+ /**
+  * Provides an interface defining a comment type entity.
+  */
+-interface CommentTypeInterface extends ConfigEntityInterface {
++interface CommentTypeInterface extends ConfigEntityInterface, RevisionableEntityBundleInterface {
+ 
+   /**
+    * Returns the comment type description.
+diff --git a/core/modules/comment/src/Entity/CommentType.php b/core/modules/comment/src/Entity/CommentType.php
+index 77aa049538b..a4ae6954b86 100644
+--- a/core/modules/comment/src/Entity/CommentType.php
++++ b/core/modules/comment/src/Entity/CommentType.php
+@@ -48,6 +48,7 @@
+  *     "label",
+  *     "target_entity_type_id",
+  *     "description",
++ *     "new_revision",
+  *   }
+  * )
+  */
+@@ -81,6 +82,13 @@ class CommentType extends ConfigEntityBundleBase implements CommentTypeInterface
+    */
+   protected $target_entity_type_id;
+ 
++  /**
++   * Default value of the 'Create new revision' checkbox of this comment type.
++   *
++   * @var bool
++   */
++  protected $new_revision = FALSE;
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -103,4 +111,18 @@ public function getTargetEntityTypeId() {
+     return $this->target_entity_type_id;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function shouldCreateNewRevision() {
++    return $this->new_revision;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function setNewRevision($new_revision) {
++    return $this->set('new_revision', $new_revision);
++  }
++
+ }
+-- 
+GitLab
+

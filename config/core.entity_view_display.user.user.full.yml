@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.full
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
     - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -54,6 +56,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_group_comment_ban: true
+  field_group_post_ban: true
   field_welcomed: true
   linked_username: true
   private_message_link: true

@@ -1,0 +1,15 @@
+uuid: c662e12e-fc84-48f3-a058-c72f9c4a88f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+    - user.role.administrator
+id: team-admin
+label: Admin
+weight: 7
+admin: true
+scope: insider
+global_role: administrator
+group_type: team
+permissions: {  }

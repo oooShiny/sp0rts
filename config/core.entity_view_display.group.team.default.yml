@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.team.field_automod_filters
     - field.field.group.team.field_conference_division
     - field.field.group.team.field_group_subreddit
     - field.field.group.team.field_group_youtube_channel
@@ -15,6 +16,7 @@ dependencies:
     - image.style.thumbnail
     - image.style.wide
   module:
+    - entity_reference_revisions
     - field_layout
     - image
     - layout_builder
@@ -188,12 +190,38 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 9
             additional: {  }
+          094defb2-1b1f-446d-9b8b-67dc3f61332e:
+            uuid: 094defb2-1b1f-446d-9b8b-67dc3f61332e
+            region: content
+            configuration:
+              id: 'field_block:group:team:field_automod_filters'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
         third_party_settings: {  }
 id: group.team.default
 targetEntityType: group
 bundle: team
 mode: default
 content:
+  field_automod_filters:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_conference_division:
     type: entity_reference_label
     label: above

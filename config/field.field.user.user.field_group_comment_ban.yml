@@ -1,0 +1,34 @@
+uuid: 91dc161f-1b60-44ce-b9b4-b897eee5d58f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_group_comment_ban
+    - group.type.league
+    - group.type.sport
+    - group.type.team
+  module:
+    - user
+id: user.user.field_group_comment_ban
+field_name: field_group_comment_ban
+entity_type: user
+bundle: user
+label: 'Group Comment Ban'
+description: 'A list of groups this user has been banned from commenting in.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      league: league
+      sport: sport
+      team: team
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: league
+field_type: entity_reference

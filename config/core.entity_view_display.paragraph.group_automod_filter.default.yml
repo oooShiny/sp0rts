@@ -1,0 +1,58 @@
+uuid: 3d70a1e2-b837-4f7d-8024-7e061be12c04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.group_automod_filter.field_content_to_filter
+    - field.field.paragraph.group_automod_filter.field_filter_type
+    - field.field.paragraph.group_automod_filter.field_mod_note
+    - field.field.paragraph.group_automod_filter.field_send_mod_note
+    - field.field.paragraph.group_automod_filter.field_set_content_to
+    - paragraphs.paragraphs_type.group_automod_filter
+  module:
+    - options
+id: paragraph.group_automod_filter.default
+targetEntityType: paragraph
+bundle: group_automod_filter
+mode: default
+content:
+  field_content_to_filter:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_filter_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_mod_note:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_send_mod_note:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_set_content_to:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 4b90959a-f316-4232-ac13-e92d8315a012
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_set_content_to
+    - paragraphs.paragraphs_type.group_automod_filter
+  module:
+    - options
+id: paragraph.group_automod_filter.field_set_content_to
+field_name: field_set_content_to
+entity_type: paragraph
+bundle: group_automod_filter
+label: 'Set content to'
+description: 'Automatically flag or remove the content if it triggers this filter.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

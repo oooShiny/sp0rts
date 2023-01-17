@@ -1,0 +1,15 @@
+uuid: 6ad1b4a9-75da-4ffd-a6b3-0c6c335e98cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.league
+    - user.role.administrator
+id: league-admin
+label: Admin
+weight: 8
+admin: true
+scope: insider
+global_role: administrator
+group_type: league
+permissions: {  }

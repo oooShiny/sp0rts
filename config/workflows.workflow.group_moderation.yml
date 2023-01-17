@@ -1,0 +1,86 @@
+uuid: 720c15c5-7384-4d99-a8e4-7973095f65db
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - node.type.highlight
+    - node.type.image
+    - node.type.link
+    - node.type.podcast_episode
+    - node.type.reddit_post
+    - node.type.text_post
+    - node.type.tweet
+    - node.type.user_post
+    - node.type.webform
+    - node.type.youtube_video
+  module:
+    - content_moderation
+id: group_moderation
+label: 'Group Moderation'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    flagged:
+      label: Flagged
+      weight: 2
+      published: false
+      default_revision: true
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    removed:
+      label: Removed
+      weight: 3
+      published: false
+      default_revision: true
+  transitions:
+    flagged:
+      label: Flagged
+      from:
+        - draft
+      to: flagged
+      weight: 2
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+      to: published
+      weight: 1
+    reinstated:
+      label: Reinstated
+      from:
+        - removed
+      to: published
+      weight: 4
+    removed:
+      label: Removed
+      from:
+        - draft
+        - flagged
+        - published
+      to: removed
+      weight: 3
+  entity_types:
+    comment:
+      - comment
+    node:
+      - highlight
+      - image
+      - link
+      - podcast_episode
+      - reddit_post
+      - text_post
+      - tweet
+      - user_post
+      - webform
+      - youtube_video
+  default_moderation_state: published

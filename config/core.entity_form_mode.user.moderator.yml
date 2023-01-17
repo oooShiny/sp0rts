@@ -1,0 +1,10 @@
+uuid: 4c5cdd0b-08dc-4da1-a2c7-daf229ff8c32
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.moderator
+label: Moderator
+targetEntityType: user
+cache: true

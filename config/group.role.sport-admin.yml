@@ -1,0 +1,15 @@
+uuid: 087eea58-e57d-438e-8bef-ec7053936cf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.sport
+    - user.role.administrator
+id: sport-admin
+label: Admin
+weight: 9
+admin: true
+scope: insider
+global_role: administrator
+group_type: sport
+permissions: {  }

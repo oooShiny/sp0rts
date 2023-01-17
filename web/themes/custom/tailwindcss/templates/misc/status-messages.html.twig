@@ -21,9 +21,10 @@
 #}
 <div data-drupal-messages>
 {% for type, messages in message_list %}
-  <div class="bg-blue-100 border border-blue-500 text-blue-700 p-4" role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% if type == 'error' %}
-      <div role="alert" class="bg-red-100 border border-red-500 text-red-700">
+      <div role="alert" class="bg-red-100 border border-red-500 text-red-700 p-4" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
+    {% else %}
+        <div class="bg-blue-100 border border-blue-500 text-blue-700 p-4" role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
     {% endif %}
       {% if status_headings[type] %}
         <h2 class="visually-hidden">{{ status_headings[type] }}</h2>

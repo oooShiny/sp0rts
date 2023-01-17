@@ -1,0 +1,20 @@
+uuid: f203781f-4aed-4617-af03-15a23643eb24
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - user
+id: user.field_group_comment_ban
+field_name: field_group_comment_ban
+entity_type: user
+type: entity_reference
+settings:
+  target_type: group
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

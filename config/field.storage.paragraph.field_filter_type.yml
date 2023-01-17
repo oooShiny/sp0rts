@@ -1,0 +1,27 @@
+uuid: 2c611fdc-7e4e-4b6d-9ca7-01da3589d719
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_filter_type
+field_name: field_filter_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: comment
+      label: Comments
+    -
+      value: post
+      label: Posts
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

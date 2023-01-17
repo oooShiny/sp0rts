@@ -1,0 +1,21 @@
+uuid: 5c08c373-c7a1-4651-b98d-4c2c523d03b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_filter_type
+    - paragraphs.paragraphs_type.group_automod_filter
+  module:
+    - options
+id: paragraph.group_automod_filter.field_filter_type
+field_name: field_filter_type
+entity_type: paragraph
+bundle: group_automod_filter
+label: 'Filter Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

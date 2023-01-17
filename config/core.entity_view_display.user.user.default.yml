@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
     - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -26,6 +28,22 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_group_comment_ban:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_group_post_ban:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
   flag_ban_user:
     settings: {  }
     third_party_settings: {  }

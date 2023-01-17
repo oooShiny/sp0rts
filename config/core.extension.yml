@@ -22,8 +22,10 @@ module:
   color: 0
   comment: 0
   comments_order: 0
+  conditional_fields: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -100,6 +102,7 @@ module:
   shortcut: 0
   sports_comments: 0
   sports_importer: 0
+  sports_moderation: 0
   sports_module: 0
   sports_users: 0
   standard: 0
@@ -122,6 +125,7 @@ module:
   webform: 0
   webform_node: 0
   webform_ui: 0
+  workflows: 0
   yasm: 0
   yasm_blocks: 0
   pathauto: 1
@@ -136,4 +140,5 @@ theme:
   stable: 0
   tailwindcss: 0
   tailwind_sports: 0
+  tailwind5: 0
 profile: standard

@@ -11,6 +11,7 @@ dependencies:
     - comment
     - flag
     - node
+    - paragraphs_type_permissions
     - scheduler
     - system
     - toolbar
@@ -25,12 +26,14 @@ permissions:
   - 'administer comments'
   - 'create highlight content'
   - 'create link content'
+  - 'create paragraph content group_automod_filter'
   - 'create text_post content'
   - 'create youtube_video content'
   - 'delete own highlight content'
   - 'delete own link content'
   - 'delete own text_post content'
   - 'delete own youtube_video content'
+  - 'delete paragraph content group_automod_filter'
   - 'edit own highlight content'
   - 'edit own link content'
   - 'edit own text_post content'
@@ -38,5 +41,7 @@ permissions:
   - 'flag ban_user'
   - 'schedule publishing of nodes'
   - 'unflag ban_user'
+  - 'update paragraph content group_automod_filter'
   - 'view own unpublished content'
+  - 'view paragraph content group_automod_filter'
   - 'view the administration theme'

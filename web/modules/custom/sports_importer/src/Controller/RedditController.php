@@ -42,21 +42,22 @@ class RedditController extends ControllerBase {
         foreach ($result->data->children as $post) {
           $p = $post->data;
           if ($p->ups > 100) {
-            $posts[] = [
-              'id' => $p->id,
-              'reddit_url' => $p->permalink,
-              'title' => $p->title,
-              'author' => $p->author,
-              'popularity' => $p->ups,
-              'url' => $p->url,
-              'text' => $p->selftext
-            ];
+
             // Create the Reddit node and assign it to the group.
             // Check to see if there's any content with this id already.
             $nodes = \Drupal::entityTypeManager()
               ->getStorage('node')
               ->loadByProperties(['field_reddit_id' => $p->id]);
             if (empty($nodes)) {
+              $posts[] = [
+                'id' => $p->id,
+                'reddit_url' => $p->permalink,
+                'title' => $p->title,
+                'author' => $p->author,
+                'popularity' => $p->ups,
+                'url' => $p->url,
+                'text' => $p->selftext
+              ];
               $title = Xss::filter($p->title);
               $body = Xss::filter($p->selftext);
               if (strlen($title) > 255) {
@@ -93,10 +94,12 @@ class RedditController extends ControllerBase {
                   'uri' => $p->url,
                   'title' => $post_title
                 ],
+                'field_popularity' => ''
               ]);
 
               $node->enforceIsNew();
               $node->save();
+
 
               $relation = $group->getRelationshipsByEntity($node, 'group_node:reddit_post');
               if (!$relation) {

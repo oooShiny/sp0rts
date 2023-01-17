@@ -9,9 +9,11 @@ dependencies:
     - node.type.text_post
     - node.type.user_post
     - node.type.youtube_video
+    - workflows.workflow.group_moderation
   module:
     - comment
     - contact
+    - content_moderation
     - filter
     - flag
     - media
@@ -34,16 +36,21 @@ permissions:
   - 'cancel account'
   - 'cast rate vote on comment on node of game'
   - 'cast rate vote on comment on node of link'
+  - 'cast rate vote on comment on node of podcast_episode'
   - 'cast rate vote on comment on node of reddit_post'
   - 'cast rate vote on comment on node of text_post'
   - 'cast rate vote on comment on node of tweet'
+  - 'cast rate vote on comment on node of youtube_video'
   - 'cast rate vote on node of game'
   - 'cast rate vote on node of game_recap'
   - 'cast rate vote on node of highlight'
+  - 'cast rate vote on node of image'
   - 'cast rate vote on node of link'
+  - 'cast rate vote on node of podcast_episode'
   - 'cast rate vote on node of reddit_post'
   - 'cast rate vote on node of text_post'
   - 'cast rate vote on node of tweet'
+  - 'cast rate vote on node of user_post'
   - 'cast rate vote on node of youtube_video'
   - 'change own username'
   - 'create highlight content'
@@ -72,8 +79,13 @@ permissions:
   - 'unflag flag_inappropriate_comment_'
   - 'unflag flag_inappropriate_content'
   - 'unflag following'
+  - 'use group_moderation transition flagged'
+  - 'use group_moderation transition publish'
+  - 'use group_moderation transition removed'
   - 'use private messaging system'
   - 'use text format basic_html'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view media'
   - 'view own unpublished content'
   - 'view the administration theme'

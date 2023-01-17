@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
     - field.field.user.user.field_welcomed
     - field.field.user.user.user_picture
   module:
@@ -41,6 +43,8 @@ content:
     weight: 5
     region: content
 hidden:
+  field_group_comment_ban: true
+  field_group_post_ban: true
   field_welcomed: true
   linked_username: true
   member_for: true
