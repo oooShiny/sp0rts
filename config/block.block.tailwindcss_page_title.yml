@@ -9,7 +9,7 @@ dependencies:
 id: tailwindcss_page_title
 theme: tailwindcss
 region: content
-weight: -16
+weight: -14
 provider: null
 plugin: page_title_block
 settings:

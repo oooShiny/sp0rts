@@ -11,7 +11,7 @@ dependencies:
 id: tailwindcss_account_menu
 theme: tailwindcss
 region: secondary_menu
-weight: -15
+weight: -14
 provider: null
 plugin: 'system_menu_block:account'
 settings:

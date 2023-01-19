@@ -19,6 +19,7 @@
 
 <article{{ attributes.addClass('flex gap-2 hidden user-actions') }}>
   {% if content %}
+    {{ drupal_entity('block', 'sportsmoderationblocklink') }}
     {{- content -}}
   {% endif %}
 </article>

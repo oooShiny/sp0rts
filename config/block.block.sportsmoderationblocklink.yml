@@ -1,0 +1,30 @@
+uuid: 228763f5-92f3-42c8-b3bb-b9f7cd87761b
+langcode: en
+status: true
+dependencies:
+  module:
+    - sports_moderation
+    - user
+  theme:
+    - tailwindcss
+id: sportsmoderationblocklink
+theme: tailwindcss
+region: help
+weight: -14
+provider: null
+plugin: sports_moderation_block_link
+settings:
+  id: sports_moderation_block_link
+  label: 'Sports Moderation Block Link'
+  label_display: '0'
+  provider: sports_moderation
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      moderator: moderator

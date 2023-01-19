@@ -7,6 +7,16 @@ use Drupal\group\Entity\GroupRelationship;
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 
+function sports_moderation_theme($existing, $type, $theme, $path) {
+  return [
+    'sports_moderation_block_link' => [
+      'variables' => [
+        'url' => '',
+        'title' => ''
+      ]
+    ]
+  ];
+}
 /**
  * Implements hook_entity_presave().
  */

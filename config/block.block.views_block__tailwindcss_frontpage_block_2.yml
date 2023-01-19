@@ -12,7 +12,7 @@ dependencies:
 id: views_block__tailwindcss_frontpage_block_2
 theme: tailwindcss
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: 'views_block:frontpage-block_2'
 settings:

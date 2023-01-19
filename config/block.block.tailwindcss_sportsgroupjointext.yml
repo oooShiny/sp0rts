@@ -10,7 +10,7 @@ dependencies:
 id: tailwindcss_sportsgroupjointext
 theme: tailwindcss
 region: content
-weight: -12
+weight: -10
 provider: null
 plugin: sports_group_join_text
 settings:

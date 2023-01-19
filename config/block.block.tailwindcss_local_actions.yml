@@ -7,7 +7,7 @@ dependencies:
 id: tailwindcss_local_actions
 theme: tailwindcss
 region: content
-weight: -13
+weight: -11
 provider: null
 plugin: local_actions_block
 settings:

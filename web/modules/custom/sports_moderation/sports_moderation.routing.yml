@@ -1,0 +1,13 @@
+sports_moderation.ban:
+  path: '/ban/{user}/group/{group}'
+  defaults:
+    _controller: '\Drupal\sports_moderation\Controller\BanController::ban_user'
+    _title: 'Ban User from Group'
+  options:
+    parameters:
+      user:
+        type: entity:user
+      group:
+        type: entity:group
+  requirements:
+    _role: 'moderator'

@@ -60,7 +60,10 @@
 
   {{ page.highlighted }}
 
-  {{ page.help }}
+  {# Put any hidden blocks here that we want to display in other ways. #}
+  <div class="hidden">
+    {{ page.help }}
+  </div>
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}

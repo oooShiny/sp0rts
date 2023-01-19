@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
+    - field.field.node.game.field_game_has_ended
     - field.field.node.game.field_line
     - field.field.node.game.field_popularity
     - field.field.node.game.field_team_1
@@ -186,4 +187,5 @@ content:
     weight: 2
     region: content
 hidden:
+  field_game_has_ended: true
   private_message_link: true

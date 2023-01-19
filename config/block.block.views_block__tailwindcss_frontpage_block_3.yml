@@ -13,7 +13,7 @@ dependencies:
 id: views_block__tailwindcss_frontpage_block_3
 theme: tailwindcss
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: 'views_block:frontpage-block_3'
 settings:

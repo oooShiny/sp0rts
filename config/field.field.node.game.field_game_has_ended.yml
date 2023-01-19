@@ -1,0 +1,23 @@
+uuid: ef142916-0cec-4852-bd9d-8e436354a170
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_game_has_ended
+    - node.type.game
+id: node.game.field_game_has_ended
+field_name: field_game_has_ended
+entity_type: node
+bundle: game
+label: 'Game has Ended'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
