@@ -1,0 +1,6 @@
+name: DELETE ME
+description: A sub theme of Tailwind CSS base theme.
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: stable
