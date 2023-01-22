@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.game.field_weather
     - node.type.game
   module:
+    - datetime
     - text
     - user
 id: node.game.teaser
@@ -36,36 +37,72 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 4
+    region: content
+  field_game_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_team_1:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_team_1_logo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_team_2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_team_2_logo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
     region: content
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
   rate_vote:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
   comment: true
   field_espn_id: true
   field_favorite: true
-  field_game_date: true
   field_game_has_ended: true
   field_line: true
   field_popularity: true
-  field_team_1: true
-  field_team_1_logo: true
   field_team_1_record: true
-  field_team_2: true
-  field_team_2_logo: true
   field_team_2_record: true
   field_temperature: true
   field_venue: true

@@ -9,6 +9,8 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\file\Entity\File;
+use Drupal\group\Entity\Group;
+use Drupal\group\Entity\GroupRelationship;
 use Drupal\media\Entity\Media;
 
 /**
@@ -144,6 +146,20 @@ function tailwindcss_preprocess_node(&$variables) {
     $variables['favorite'] = $node->get('field_favorite')->value;
     $variables['line'] = $node->get('field_line')->value;
     $variables['espn_id'] = $node->get('field_espn_id')->value;
+
+    // Pass group to Game Card.
+    if ($variables['view_mode'] == 'game_card') {
+      $group_contents = GroupRelationship::loadByEntity($node);
+      if ($group_contents) {
+        foreach ($group_contents as $group_content) {
+          $group = Group::load($group_content->getGroup()->id());
+        }
+        $variables['group_name'] = $group->label();
+        $variables['group_id'] = $group->id();
+        $uri = File::load($group->get('field_logo')->target_id)->getFileUri();
+        $variables['group_logo'] = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+      }
+    }
   }
 
   // Podcast episode overrides.

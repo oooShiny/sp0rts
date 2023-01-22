@@ -1,0 +1,10 @@
+uuid: 012b2c53-3ffb-4dd4-8f4d-713d19fca07b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.game_card
+label: 'Game Card'
+targetEntityType: node
+cache: true
