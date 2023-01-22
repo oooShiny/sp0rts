@@ -32,6 +32,15 @@ aside div.views-element-container {
     background-color: rgb(21 128 61 / var(--tw-bg-opacity)) !important;
 }
 
+
+.type-26, /* Interception */
+.type-29 /* Fumble recovered by opp */
+{
+    --tw-border-opacity: 1;
+    border-color: rgb(220 38 38 / var(--tw-border-opacity));
+    border-width: 2px;
+}
+
 a {
     font-weight: bold;
 }

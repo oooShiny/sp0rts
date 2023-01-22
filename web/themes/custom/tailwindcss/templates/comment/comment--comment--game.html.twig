@@ -90,7 +90,6 @@
   {% if parent %}
 
 {# Comment template for regular comments. #}
-      <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
       <div{{ content_attributes }}>
         <div class="text-sm text-gray-600">{{ submitted }}</div>
         <div class="p-2">{{ content.comment_body }}</div>
@@ -100,36 +99,7 @@
 
   {# If this is the parent comment, it's a play update. Style specially. #}
   {% else %}
-    <div{{ content_attributes.addClass('bg-sky-800 p-4') }}>
-      <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-      <div class="text-center">
-        {{ content.comment_body }}
-{# Comment template for plays. #}
-        <script id="play-comment-template" type="text/x-template">
-          <div class="text-center bg-sky-800">
-            <div property="schema:text"><h4>[[play_title]]</h4>
-              <p>
-                <span class="play-quarter border p-1">[[play_quarter]]</span>
-                <span class="play-time border p-1">[[play_time]]</span>
-              </p>
-              <div class="gap-10 flex gap-5 justify-center">
-                <img class="h-20" src="[[play_t1_logo]]" alt="">
-                <span class="pt-0 text-3xl">[[play_score]]</span>
-                <img class="h-20" src="[[play_t2_logo]]" alt="">
-              </div>
-              <p>
-                {# play_down|format_ordinal_number #}
-                <span class="play-down">[[play_down]]</span> and <span class="play-distance">[[play_distance]]</span>
-              </p>
-              <p>
-                <a href="/node/add/highlight" class="button">Create Highlight for this play</a>
-              </p>
-            </div>
-          </div>
-        </script>
-{# End comment template. #}
-      </div>
-    </div>
+    {{ content.comment_body }}
     {{ content.links }}
   {% endif %}
 </article>

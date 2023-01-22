@@ -118,10 +118,10 @@
   <div class="comments-list" id="comments-list">
     {# Comment template for plays. #}
     <script id="play-comment-template" type="text/x-template">
-      <div class="text-center bg-sky-800 scored-[[play_scored]]">
+      <div class="text-center bg-sky-800 scored-[[play_scored]] type-[[play_type]]">
         <div property="schema:text"><h4>[[play_title]]</h4>
-          <p>
-            <span class="play-quarter border p-1">[[play_quarter]]</span>
+          <p class="py-2">
+            <span class="play-quarter border p-1">Q[[play_quarter]]</span>
             <span class="play-time border p-1">[[play_time]]</span>
           </p>
           <div class="gap-10 flex gap-5 justify-center">
@@ -130,7 +130,7 @@
             <img class="h-20" src="[[play_t2_logo]]" alt="">
           </div>
           <p>
-            <span class="play-down">[[play_down]]</span> and <span class="play-distance">[[play_distance]]</span>
+            [[play_dandd]]
           </p>
           <p>
             <a href="/node/add/highlight" class="button">Submit a highlight for this play</a>

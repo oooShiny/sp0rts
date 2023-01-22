@@ -36,13 +36,23 @@
                 console.log(data);
                 if (data.play_title) {
                     let newCommentHtml = playCommentTemplate.innerHTML.replace('[[play_title]]', data.play_title);
+                    newCommentHtml = newCommentHtml.replace('[[play_type]]', data.play_type);
                     newCommentHtml = newCommentHtml.replace('[[play_quarter]]', data.play_quarter);
                     newCommentHtml = newCommentHtml.replace('[[play_time]]', data.play_time);
                     newCommentHtml = newCommentHtml.replace('[[play_t1_logo]]', data.play_t1_logo);
                     newCommentHtml = newCommentHtml.replace('[[play_t2_logo]]', data.play_t2_logo);
                     newCommentHtml = newCommentHtml.replace('[[play_score]]', data.play_score);
-                    newCommentHtml = newCommentHtml.replace('[[play_down]]', data.play_down);
-                    newCommentHtml = newCommentHtml.replace('[[play_distance]]', data.play_distance);
+                    if (data.play_down) {
+                        let dandd = '<span class="play-down">'+
+                            data.play_down +
+                            '</span> and <span class="play-distance">'+
+                            data.play_distance+
+                            '</span>';
+                        newCommentHtml = newCommentHtml.replace('[[play_dandd]]', dandd);
+                    }
+                    else {
+                        newCommentHtml = newCommentHtml.replace('[[play_dandd]]', '');
+                    }
                     newCommentHtml = newCommentHtml.replace('[[play_scored]]', data.play_scored);
                     const newCommentNode = document.createElement('div');
                     newCommentNode.classList.add('comment');
