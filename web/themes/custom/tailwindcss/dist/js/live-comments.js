@@ -46,7 +46,7 @@
                         let dandd = '<span class="play-down">'+
                             data.play_down +
                             '</span> and <span class="play-distance">'+
-                            data.play_distance+
+                            data.play_distance +
                             '</span>';
                         newCommentHtml = newCommentHtml.replace('[[play_dandd]]', dandd);
                     }
