@@ -74,8 +74,11 @@
 <article{{ attributes.addClass('node') }}>
 
   <div{{ content_attributes.addClass('border bg-sky-800') }}>
-    <div class="bg-slate-700 border-b flex justify-evenly p-2 text-center">
-      <a href="/group/{{ group_id }}"><img src="{{ group_logo }}" alt="{{ group_name }} logo" class="h-8 w-8">{{ group_name }} Group</a>
+    <div class="bg-slate-700 border-b p-2 text-center">
+      <a class="flex justify-evenly font-light uppercase" href="/group/{{ group_id }}">
+        <img src="{{ group_logo }}" alt="{{ group_name }} logo" class="h-6">
+        {{ group_name }} Group
+      </a>
     </div>
     <a href="{{ url }}" rel="bookmark">
       <div class="flex justify-evenly">
