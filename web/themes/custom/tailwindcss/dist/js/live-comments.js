@@ -54,9 +54,9 @@
                         newCommentHtml = newCommentHtml.replace('[[play_dandd]]', '');
                     }
                     newCommentHtml = newCommentHtml.replace('[[play_scored]]', data.play_scored);
-                    newCommentHtml = newCommentHtml.replace('[[play_timestamp]]', data.play_timestamp);
                     const newCommentNode = document.createElement('div');
-                    newCommentNode.classList.add('m-2');
+                    newCommentNode.classList.add('hidden');
+                    newCommentNode.dataset.timestamp = data.play_timestamp;
                     newCommentNode.innerHTML = newCommentHtml;
                     let firstComment = commentsList.firstChild;
                     commentsList.insertBefore(newCommentNode, firstComment);
