@@ -263,9 +263,9 @@ display:
           columns: 4
           automatic_width: false
           alignment: horizontal
-          row_class_custom: tw-flex
+          row_class_custom: flex
           row_class_default: true
-          col_class_custom: tw-w-16
+          col_class_custom: w-16
           col_class_default: false
       row:
         type: fields
