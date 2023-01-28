@@ -246,7 +246,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: 'tw-flex tw-gap-1'
+          row_class: 'flex gap-1'
           default_row_class: true
       row:
         type: fields
