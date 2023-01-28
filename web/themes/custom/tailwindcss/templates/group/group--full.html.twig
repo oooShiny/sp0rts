@@ -44,7 +44,9 @@
 <div>
     {% if header_bg %}
     <div class="team-header flex h-48 items-center text-white uppercase" style="background-image: url('{{ header_bg }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <h1 class="font-extrabold font-serif text-3xl text-center w-full">{{ label }}</h1>
+        <h1 class="font-extrabold font-serif text-3xl text-center w-full py-5
+        bg-gradient-to-t from-transparent via-black to-transparent"
+        style="-webkit-text-stroke: 1px black;">{{ label }}</h1>
     </div>
     {% else %}
         <div class="team-header flex h-48 items-center justify-center uppercase flex">
