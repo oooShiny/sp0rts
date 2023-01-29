@@ -110,7 +110,7 @@
   <div class="bg-red-400 border border-red-500 m-2 p-2 text-black">
     <h3>Admin Links:</h3>
     <ul>
-      <li><a href="https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ espn_id }}/competitions/{{ espn_id }}/plays?limit=400">https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{{ espn_id }}/competitions/{{ espn_id }}/plays?limit=400</a></li>
+      <li><a href="{{ content.field_espn_endpoint }}">{{ content.field_espn_endpoint }}</a></li>
     </ul>
   </div>
   {% endif %}
@@ -160,6 +160,12 @@
           </div>
           <p>[[play_dandd]]</p>
         </div>
+      </div>
+      <div id="play-chat-[[play_id]]">
+        <form id="play-chat-[[play_id]]-form">
+          <textarea placeholder="enter comment text" required id="new_comment_text" rows="3"></textarea>
+          <button type="submit" class="button">Comment</button>
+        </form>
       </div>
     </script>
     {# End comment template. #}

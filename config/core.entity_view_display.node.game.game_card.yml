@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.node.game_card
     - field.field.node.game.body
     - field.field.node.game.comment
+    - field.field.node.game.field_espn_endpoint
     - field.field.node.game.field_espn_id
     - field.field.node.game.field_favorite
     - field.field.node.game.field_game_date
@@ -193,5 +194,6 @@ content:
     weight: 2
     region: content
 hidden:
+  field_espn_endpoint: true
   field_game_has_ended: true
   private_message_link: true

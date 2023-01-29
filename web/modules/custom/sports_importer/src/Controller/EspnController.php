@@ -85,6 +85,14 @@ class EspnController extends ControllerBase {
             $text = $team1['name'] . '('.$team1['record'].') : ' . $team2['name'] . '('.$team2['record'].')';
 
             foreach ($groups as $gr) {
+              foreach ($gr->get('field_parent_sport')->referencedEntities() as $sport) {
+                $game_sport = strtolower($sport->label());
+              }
+              foreach ($gr->get('field_parent_league')->referencedEntities() as $league) {
+                $game_league = strtolower($league->label());
+              }
+
+              $endpoint = 'https://sports.core.api.espn.com/v2/sports/'.$game_sport.'/leagues/'.$game_league.'/events/'.$g['id'].'/competitions/'.$g['id'].'/plays?limit=400';
 
               $node = Node::create([
                 'type' => 'game',
@@ -95,6 +103,7 @@ class EspnController extends ControllerBase {
                   'value' => '<p>' . $text . '</p>',
                   'format' => 'full_html',
                 ],
+                'field_espn_endpoint' => $endpoint,
                 'field_espn_id' => $g['id'],
                 'field_team_1' => $team1['name'],
                 'field_team_1_logo' => $team1['logo'],

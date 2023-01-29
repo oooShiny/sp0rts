@@ -1,0 +1,19 @@
+uuid: cd91dfca-774d-4c9b-90b0-69a89cb7f8eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_espn_endpoint
+    - node.type.game
+id: node.game.field_espn_endpoint
+field_name: field_espn_endpoint
+entity_type: node
+bundle: game
+label: 'ESPN Endpoint'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
