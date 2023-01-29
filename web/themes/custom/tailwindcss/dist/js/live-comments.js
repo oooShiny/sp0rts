@@ -42,6 +42,7 @@
                     newCommentHtml = newCommentHtml.replace('[[play_t1_logo]]', data.play_t1_logo);
                     newCommentHtml = newCommentHtml.replace('[[play_t2_logo]]', data.play_t2_logo);
                     newCommentHtml = newCommentHtml.replace('[[play_score]]', data.play_score);
+                    newCommentHtml = newCommentHtml.replaceAll('[[play_id]]', data.play_id);
                     if (data.play_down) {
                         let dandd = '<span class="play-down">'+
                             data.play_down +
