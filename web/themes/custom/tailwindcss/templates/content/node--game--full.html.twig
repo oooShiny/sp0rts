@@ -136,7 +136,7 @@
       let plays = document.querySelectorAll('#comments-list > div.hidden')
       plays.forEach(element => {
         let playTime = +element.dataset.timestamp;
-        let delay = playTime + slider.value;
+        let delay = parseInt(playTime + slider.value, 10);
         if (delay < Date.now()) {
           element.classList.remove('hidden');
         }
