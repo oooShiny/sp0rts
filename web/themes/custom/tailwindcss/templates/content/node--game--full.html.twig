@@ -138,7 +138,8 @@
         let playTime = +element.dataset.timestamp;
         let slideTime = +slider.value;
         let delay = playTime + slideTime;
-        if (delay < Date.now()) {
+        let now = Date.now();
+        if (delay < now) {
           element.classList.remove('hidden');
         }
       })
