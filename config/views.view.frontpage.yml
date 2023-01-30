@@ -508,7 +508,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img class="h-8" src="/themes/custom/tailwind_sports/icons/{{ type__target_id }}.svg" />'
+            text: '<img class="h-8" src="/themes/custom/tailwindcss/icons/{{ type__target_id }}.svg" />'
             make_link: false
             path: ''
             absolute: false

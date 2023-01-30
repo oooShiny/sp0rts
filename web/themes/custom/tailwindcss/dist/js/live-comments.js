@@ -1,7 +1,7 @@
 (function (Pusher, Drupal, drupalSettings, once) {
     Drupal.behaviors.liveComments = {
         attach: function (context) {
-            const commentForm = document.getElementById('comment-form');
+            const commentForm = document.getElementById('play-chat-[[play_id]]-form');
             const commentsList = document.getElementById('comments-list');
             const playCommentTemplate = document.getElementById('play-comment-template');
             once('liveComments', document.querySelector('#comments-list'), context).forEach(function () {
@@ -20,7 +20,6 @@
 
                 // Binding to Pusher Event on our 'sp0rts-comments' Channel.
                 let pusherEvent = 'new_play_' + nid;
-                console.log(pusherEvent);
                 channel.bind(pusherEvent, newCommentReceived);
             });
 
@@ -33,7 +32,6 @@
             function newCommentReceived(data) {
 
                 // If data has a play_title property, this is a play comment.
-                console.log(data);
                 if (data.play_title) {
                     let newCommentHtml = playCommentTemplate.innerHTML.replace('[[play_title]]', data.play_title);
                     newCommentHtml = newCommentHtml.replace('[[play_type]]', data.play_type);
