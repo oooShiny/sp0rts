@@ -135,7 +135,7 @@
     const timer = setInterval(function (){
       let plays = document.querySelectorAll('#comments-list > div.hidden')
       plays.forEach(element => {
-        let playTime = element.dataset.timestamp;
+        let playTime = +element.dataset.timestamp;
         let delay = playTime + slider.value;
         if (delay < Date.now()) {
           element.classList.remove('hidden');
