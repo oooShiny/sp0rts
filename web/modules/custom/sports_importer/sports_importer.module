@@ -49,8 +49,8 @@ function sports_importer_theme($existing, $type, $theme, $path) {
 function sports_importer_cron() {
   $espn_importer  = new EspnController;
   // Get NFL data.
-  $espn_importer->get_data('football', 'nfl', '32');
-  $espn_importer->get_data('basketball', 'nba', '30');
+  $espn_importer->get_data('football', 'nfl', '32', '400');
+  $espn_importer->get_data('basketball', 'nba', '30', '900');
 
   $youtube_importer = new YoutubeController;
   // Get videos.

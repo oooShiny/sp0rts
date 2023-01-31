@@ -9,7 +9,7 @@ dependencies:
 id: tailwindcss_help
 theme: tailwindcss
 region: content
-weight: -12
+weight: -13
 provider: null
 plugin: help_block
 settings:

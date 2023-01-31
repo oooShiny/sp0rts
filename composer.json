@@ -73,7 +73,8 @@
         "drupal/oembed_providers": "^2.1",
         "drupal/prepopulate": "^2.3",
         "drupal/conditional_fields": "^4.0@alpha",
-        "drupal/form_mode_control": "^2.1"
+        "drupal/form_mode_control": "^2.1",
+        "drupal/better_exposed_filters": "^6.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -119,7 +120,8 @@
             "drupal/core": {
                 "3111991: oEmbeds without thumbnails": "https://www.drupal.org/files/issues/2022-12-05/supports-oembed-providers-without-thumbnails-dimensions-3111991-9.patch",
                 "3331771: Check for thumbnail before creating OEmbed resource": "https://www.drupal.org/files/issues/2023-01-07/oembed-fails-to-save-if-thumbnail-fails-to-download-3331771-1.patch",
-                "2880154: Make comments revisionable": "web/patches/2880154-comment-revisions.patch"
+                "2880154: Make comments revisionable": "web/patches/2880154-comment-revisions.patch",
+                "2916377: Allowing characters in views classes": "https://www.drupal.org/files/issues/2022-07-28/2916377-40.patch"
             },
             "drupal/gcontent_moderation": {
                 "3309542: Groups 2.x compatibility": "https://www.drupal.org/files/issues/2023-01-10/3309542-8-group-2.x-compatability.patch"
@@ -156,7 +158,7 @@
         "preferred-install": "dist",
         "sort-packages": false,
         "platform": {
-            "php": "7.4"
+            "php": "8.1.13"
         },
         "allow-plugins": {
             "composer/installers": true,

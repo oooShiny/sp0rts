@@ -16,7 +16,7 @@ class EspnController extends ControllerBase {
   /**
    * Builds new nodes based on daily game data from ESPN.
    */
-  public function get_data($sport = 'football', $league = 'nfl', $team_count = '32') {
+  public function get_data($sport = 'football', $league = 'nfl', $team_count = '32', $plays = '400') {
     $client = new Client();
     $games = [];
 
@@ -92,7 +92,7 @@ class EspnController extends ControllerBase {
                 $game_league = strtolower($league->label());
               }
 
-              $endpoint = 'https://sports.core.api.espn.com/v2/sports/'.$game_sport.'/leagues/'.$game_league.'/events/'.$g['id'].'/competitions/'.$g['id'].'/plays?limit=400';
+              $endpoint = 'https://sports.core.api.espn.com/v2/sports/'.$game_sport.'/leagues/'.$game_league.'/events/'.$g['id'].'/competitions/'.$g['id'].'/plays?limit='.$plays;
 
               $node = Node::create([
                 'type' => 'game',
