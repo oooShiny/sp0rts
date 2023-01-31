@@ -46,8 +46,14 @@ class EspnController extends ControllerBase {
           ];
 
           // Create the title text for the node.
-          $week = 'Week ' . $g['week']['number'];
-          $game_title = $g['season']['year'] . ' ' . $week . ': ' . $g['name'];
+          if (isset($g['week'])) {
+            $week = 'Week ' . $g['week']['number'];
+            $game_title = $g['season']['year'] . ' ' . $week . ': ' . $g['name'];
+          }
+          else {
+            $game_title = $g['name'];
+          }
+
           if (isset($g['competitions'][0]['odds'])) {
             $odds = explode(' ', $g['competitions'][0]['odds'][0]['details']);
           }

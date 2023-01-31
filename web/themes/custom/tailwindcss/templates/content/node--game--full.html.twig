@@ -110,10 +110,11 @@
   <div class="bg-red-400 border border-red-500 m-2 p-2 text-black">
     <h3>Admin Links:</h3>
     <ul>
-      <li><a href="{{ content.field_espn_endpoint }}">{{ content.field_espn_endpoint }}</a></li>
+      <li><a href="{{ content.field_espn_endpoint|render|striptags|trim|lower }}">{{ content.field_espn_endpoint|render|striptags|trim|lower }}</a></li>
     </ul>
   </div>
   {% endif %}
+
   {# Delay slider #}
   <div class="md:w-1/3 m-auto text-center border p-4">
     <p>Set a delay to match new plays to your TV feed:</p>
