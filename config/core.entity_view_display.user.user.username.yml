@@ -1,0 +1,43 @@
+uuid: f6d2891b-e3f7-4c1a-a7f6-184aa388fea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.username
+    - field.field.user.user.field_group_comment_ban
+    - field.field.user.user.field_group_post_ban
+    - field.field.user.user.field_welcomed
+    - field.field.user.user.user_picture
+  module:
+    - field_layout
+    - layout_builder
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: E1qmUI2SlozLlJ308jfMMFKT67l1p6PywE2LTRbeYS4
+id: user.user.username
+targetEntityType: user
+bundle: user
+mode: username
+content:
+  linked_username:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_group_comment_ban: true
+  field_group_post_ban: true
+  field_welcomed: true
+  flag_ban_user: true
+  flag_following: true
+  member_for: true
+  private_message_link: true
+  user_picture: true

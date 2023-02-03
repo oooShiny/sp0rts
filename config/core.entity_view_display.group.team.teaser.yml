@@ -10,6 +10,7 @@ dependencies:
     - field.field.group.team.field_group_youtube_channel
     - field.field.group.team.field_header_image
     - field.field.group.team.field_logo
+    - field.field.group.team.field_number_of_flags_to_remove_
     - field.field.group.team.field_parent_league
     - field.field.group.team.field_parent_sport
     - field.field.group.team.field_twitter_account
@@ -52,6 +53,7 @@ hidden:
   field_group_subreddit: true
   field_group_youtube_channel: true
   field_header_image: true
+  field_number_of_flags_to_remove_: true
   field_parent_league: true
   field_parent_sport: true
   field_twitter_account: true

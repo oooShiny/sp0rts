@@ -1,0 +1,20 @@
+uuid: c1f65147-043d-4c75-83ad-b9d754343816
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_number_of_flags_to_remove_
+field_name: field_number_of_flags_to_remove_
+entity_type: group
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

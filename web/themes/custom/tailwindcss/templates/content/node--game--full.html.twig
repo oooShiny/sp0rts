@@ -146,7 +146,6 @@
       })
     }, 1000)
   </script>
-
   <div class="comments-list" id="comments-list">
     {# Comment template for plays. #}
     <script id="play-comment-template" type="text/x-template">
@@ -166,13 +165,43 @@
       </div>
       <div id="play-chat-[[play_id]]">
         <form id="play-chat-[[play_id]]-form">
-          <textarea placeholder="enter comment text" required id="new_comment_text" rows="3"></textarea>
-          <button type="submit" class="button">Comment</button>
+          <input type="text" disabled id="name" value="{{ drupal_entity('user', user.id, 'username') }}">
+          <input type="hidden" id="play_id" value="[[play_id]]">
+          <textarea required id="comment_text" rows="1"></textarea>
+          <button onclick="getChat(this.form)" class="button">Comment</button>
         </form>
       </div>
     </script>
-    {# End comment template. #}
+    {# End play comment template. #}
+
+    <script id="chat-comment-template" type="text/x-template">
+      <div id="play-chat-[[play_id]]">
+        <p>[[chat_name]]</p>
+        <p>[[chat_comment]]</p>
+      </div>
+    </script>
     <!-- Live comments show here -->
   </div>
   {{ content.comment }}
 </article>
+<script>
+  function getChat(form) {
+    let formData = new FormData([form]);
+    const newComment = {
+      "name": formData.get('name'),
+      "comment": formData.get('comment_text'),
+      "play_id": formData.get('play_id')
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://patsbot.com/comment", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4 || xhr.status !== 200) return;
+
+      // On Success of creating a new Comment
+      console.log("Success: " + xhr.responseText);
+    };
+    xhr.send(JSON.stringify(newComment));
+  }
+</script>

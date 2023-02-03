@@ -9,6 +9,7 @@ dependencies:
     - field.field.group.team.field_group_youtube_channel
     - field.field.group.team.field_header_image
     - field.field.group.team.field_logo
+    - field.field.group.team.field_number_of_flags_to_remove_
     - field.field.group.team.field_parent_league
     - field.field.group.team.field_parent_sport
     - field.field.group.team.field_twitter_account
@@ -48,20 +49,21 @@ third_party_settings:
         open: true
     group_automod_tabs:
       children:
+        - field_number_of_flags_to_remove_
         - field_automod_filters
       label: Automod
       region: content
-      parent_name: ''
-      weight: 2
-      format_type: details
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
+        formatter: closed
         description: ''
         required_fields: true
-        formatter: closed
+        open: false
         direction: vertical
         width_breakpoint: 640
     group_group_media:
@@ -85,6 +87,7 @@ third_party_settings:
         - group_group_info
         - group_group_media
         - group_social_media_accounts
+        - group_automod_tabs
       label: Tabs
       region: content
       parent_name: ''
@@ -94,7 +97,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        direction: vertical
+        direction: horizontal
         width_breakpoint: 640
     group_group_info:
       children:
@@ -120,14 +123,14 @@ mode: default
 content:
   field_automod_filters:
     type: paragraphs
-    weight: 3
+    weight: 5
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
-      autocollapse: none
+      autocollapse: all
       closed_mode_threshold: 0
       add_mode: button
       form_display_mode: default
@@ -177,6 +180,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_number_of_flags_to_remove_:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_parent_league:
     type: entity_reference_autocomplete

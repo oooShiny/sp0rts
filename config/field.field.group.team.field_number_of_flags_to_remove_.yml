@@ -1,0 +1,25 @@
+uuid: 5cc85ff3-9083-4d47-b892-5ba129e07e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_number_of_flags_to_remove_
+    - group.type.team
+id: group.team.field_number_of_flags_to_remove_
+field_name: field_number_of_flags_to_remove_
+entity_type: group
+bundle: team
+label: 'Number of flags to remove content'
+description: 'How many times does a content/comment need to be flagged as inappropriate before it gets automatically removed?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

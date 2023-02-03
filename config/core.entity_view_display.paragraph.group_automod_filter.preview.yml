@@ -1,8 +1,9 @@
-uuid: 3d70a1e2-b837-4f7d-8024-7e061be12c04
+uuid: 62a5623a-90dc-40f1-8e2d-eefd588f998e
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.group_automod_filter.field_content_to_filter
     - field.field.paragraph.group_automod_filter.field_filter_name
     - field.field.paragraph.group_automod_filter.field_filter_type
@@ -11,57 +12,46 @@ dependencies:
     - field.field.paragraph.group_automod_filter.field_set_content_to
     - paragraphs.paragraphs_type.group_automod_filter
   module:
+    - layout_builder
     - options
-id: paragraph.group_automod_filter.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.group_automod_filter.preview
 targetEntityType: paragraph
 bundle: group_automod_filter
-mode: default
+mode: preview
 content:
   field_content_to_filter:
     type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_filter_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_filter_type:
-    type: list_default
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  field_mod_note:
+  field_filter_name:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
-  field_send_mod_note:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+  field_filter_type:
+    type: list_default
+    label: inline
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   field_set_content_to:
     type: list_default
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
-hidden: {  }
+hidden:
+  field_mod_note: true
+  field_send_mod_note: true

@@ -1,12 +1,12 @@
 (function (Pusher, Drupal, drupalSettings, once) {
-    Drupal.behaviors.liveComments = {
+    Drupal.behaviors.liveChat = {
         attach: function (context) {
             const commentForm = document.getElementById('play-chat-[[play_id]]-form');
             const commentsList = document.getElementById('comments-list');
             const playCommentTemplate = document.getElementById('play-comment-template');
             once('liveComments', document.querySelector('#comments-list'), context).forEach(function () {
                 // Enable pusher logging - don't include this in production
-                Pusher.logToConsole = true;
+                // Pusher.logToConsole = true;
                 const nid = drupalSettings.sports_comments.nid;
                 const serverUrl = "/",
                     comments = [],
@@ -19,7 +19,7 @@
 
 
                 // Binding to Pusher Event on our 'sp0rts-comments' Channel.
-                let pusherEvent = 'new_play_' + nid;
+                let pusherEvent = 'play-chat-' + nid;
                 channel.bind(pusherEvent, newCommentReceived);
             });
 
