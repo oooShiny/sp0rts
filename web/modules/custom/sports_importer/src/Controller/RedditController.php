@@ -39,9 +39,15 @@ class RedditController extends ControllerBase {
         $sr_array = explode('/', rtrim($group->get('field_group_subreddit')->value, '/'));
         $subreddit = end($sr_array);
         $result = $reddit->getListing($subreddit, 100);
+        if ($group->hasField('field_minimum_reddit_upvotes') && !$group->field_minimum_reddit_upvotes->isEmpty()) {
+          $upvotes = $group->get('field_minimum_reddit_upvotes')->value;
+        }
+        else {
+          $upvotes = 100;
+        }
         foreach ($result->data->children as $post) {
           $p = $post->data;
-          if ($p->ups > 100) {
+          if ($p->ups > $upvotes) {
 
             // Create the Reddit node and assign it to the group.
             // Check to see if there's any content with this id already.
@@ -93,8 +99,7 @@ class RedditController extends ControllerBase {
                 'field_post_link' => [
                   'uri' => $p->url,
                   'title' => $post_title
-                ],
-                'field_popularity' => ''
+                ]
               ]);
 
               $node->enforceIsNew();
