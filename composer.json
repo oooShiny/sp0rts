@@ -133,6 +133,9 @@
                 "3257036: Drupal 9 non-existent service 'entity.manager'": "https://www.drupal.org/files/issues/2022-01-05/d9_enitity_manager.patch",
                 "3327286: Undefined array key 'type' in nodejs_library_info_build": "https://www.drupal.org/files/issues/2022-12-17/undefined-array-key-3327286-1.patch"
             },
+            "drupal/radioactivity" : {
+                "3325229: Radioactivity not set when creating nodes in code": "https://www.drupal.org/files/issues/2023-02-05/radioactivity-move_entity_management_from_field_widget_to_entity_level-3325229-6--fix-only.patch"
+            },
             "drupal/react_comments": {
                 "3173271: Changing paths to get working with D9": "https://www.drupal.org/files/issues/2022-12-30/react_comments_3173271-14.patch"
             }
