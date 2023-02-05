@@ -60,12 +60,27 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 3
             additional: {  }
+          38444bf4-f050-4633-ae1b-d3c3c13ced56:
+            uuid: 38444bf4-f050-4633-ae1b-d3c3c13ced56
+            region: content
+            configuration:
+              id: 'extra_field_block:node:highlight:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: node.highlight.teaser
 targetEntityType: node
 bundle: highlight
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   flag_flag_inappropriate_content:
     settings: {  }
     third_party_settings: {  }

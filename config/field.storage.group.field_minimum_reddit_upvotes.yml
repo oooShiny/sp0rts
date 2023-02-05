@@ -1,0 +1,20 @@
+uuid: 73ae8940-2829-4c0b-a7d9-c9a7b7f9cc6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_minimum_reddit_upvotes
+field_name: field_minimum_reddit_upvotes
+entity_type: group
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

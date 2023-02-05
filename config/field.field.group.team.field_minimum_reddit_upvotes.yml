@@ -1,0 +1,25 @@
+uuid: c3012e9c-b3d0-426e-97f5-acdf168ef9d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_minimum_reddit_upvotes
+    - group.type.team
+id: group.team.field_minimum_reddit_upvotes
+field_name: field_minimum_reddit_upvotes
+entity_type: group
+bundle: team
+label: 'Minimum Reddit Upvotes'
+description: 'The site will automatically import any post from the linked subreddit that have a certain number of upvotes. Set the minimum number of upvotes needed for a post to be imported.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 100
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

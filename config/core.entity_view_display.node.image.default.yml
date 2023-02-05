@@ -29,6 +29,11 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_caption:
     type: string
     label: hidden
@@ -67,6 +72,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  rate_vote:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   private_message_link: true
