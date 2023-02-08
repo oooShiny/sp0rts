@@ -74,8 +74,11 @@ class RedditController extends ControllerBase {
                 $post_title = $title;
                 $post_text = $body;
               }
+
+              // Removing any non-printable characters that break the DB insert.
+              $post_title = preg_replace('/[^[:print:]]/', '', $post_title);
               // Create the reddit post and post it to the correct group.
-              if (is_null($post_title)) {
+              if (empty($post_title) || $post_title == '') {
                 continue;
               }
               $node = Node::create([
@@ -104,7 +107,6 @@ class RedditController extends ControllerBase {
 
               $node->enforceIsNew();
               $node->save();
-
 
               $relation = $group->getRelationshipsByEntity($node, 'group_node:reddit_post');
               if (!$relation) {
