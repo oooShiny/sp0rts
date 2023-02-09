@@ -15,7 +15,6 @@ dependencies:
     - paragraphs_type_permissions
     - scheduler
     - system
-    - toolbar
 id: moderator
 label: Moderator
 weight: 4
@@ -23,7 +22,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content'
-  - 'access toolbar'
   - 'administer comments'
   - 'create highlight content'
   - 'create link content'
