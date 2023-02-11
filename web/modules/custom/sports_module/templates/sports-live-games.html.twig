@@ -1,0 +1,31 @@
+<div class="flex justify-evenly w-full flex-wrap gap-5">
+    {% for espn_id, game in games %}
+        <div class="max-w-sm border bg-sky-800">
+            <div class="flex justify-evenly">
+                <div class="text-center">
+                    <img src="{{ game.data.team_1_logo }}" alt="Team 1 Logo" class="h-16 m-auto w-16">
+                    <p>{{ game.data.team_1_name }}</p>
+                    <p>({{ game.data.team_1_record }})</p>
+                </div>
+                <div class="text-center">
+                    <img src="{{ game.data.team_2_logo }}" alt="Team 2 Logo" class="h-16 m-auto w-16">
+                    <p>{{ game.data.team_2_name }}</p>
+                    <p>({{ game.data.team_2_record }})</p>
+                </div>
+            </div>
+
+            <div class="text-center p-2 mx-auto">
+                <p>{{ game.data.date }}</p>
+                <p>{{ game.data.venue }}</p>
+            </div>
+            <div class="bg-slate-700 border-t p-2 text-center flex justify-evenly divide-x">
+                <a class="font-light uppercase" href="/group/{{ game.1.group_id }}">
+                    Watch in {{ game.1.group_name }} Group &raquo;
+                </a>
+                <a class="font-light uppercase" href="/group/{{ game.0.group_id }}">
+                    Watch in {{ game.0.group_name }} Group &raquo;
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

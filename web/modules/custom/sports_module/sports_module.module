@@ -20,6 +20,11 @@ function sports_module_theme($existing, $type, $theme, $path) {
                 'title' => ''
             ]
         ],
+      'sports_live_games' => [
+        'variables' => [
+          'games' => ''
+        ]
+      ],
       'sports_group_mod_apply' => [
         'variables' => [
           'url' => '',

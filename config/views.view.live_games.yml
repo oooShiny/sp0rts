@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.game_card
     - node.type.game
+    - user.role.administrator
   module:
     - datetime
     - node
@@ -88,9 +89,10 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -227,7 +229,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   page_1:
     id: page_1
@@ -236,12 +238,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: live-games
+      path: live-games-view
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }

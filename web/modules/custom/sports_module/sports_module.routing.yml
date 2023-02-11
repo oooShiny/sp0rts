@@ -1,0 +1,7 @@
+sports_module.live_games:
+  path: '/live-games'
+  defaults:
+    _controller: '\Drupal\sports_module\Controller\SportsLiveGames::build'
+    _title: 'Live and Upcoming Games'
+  requirements:
+    _role: 'authenticated+anonymous'
