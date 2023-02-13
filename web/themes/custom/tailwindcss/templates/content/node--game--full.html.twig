@@ -165,7 +165,7 @@
       </div>
       <div id="play-chat-[[play_id]]">
         <form id="play-chat-[[play_id]]-form">
-          <input type="text" disabled id="name" value="{{ drupal_entity('user', user.id, 'username') }}">
+          <input type="text" disabled id="name" value="{{ current_user }}">
           <input type="hidden" id="play_id" value="[[play_id]]">
           <textarea required id="comment_text" rows="1"></textarea>
           <button onclick="getChat(this.form)" class="button">Comment</button>

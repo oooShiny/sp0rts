@@ -147,6 +147,7 @@ function tailwindcss_preprocess_node(&$variables) {
     $variables['line'] = $node->get('field_line')->value;
     $variables['espn_id'] = $node->get('field_espn_id')->value;
 
+    $variables['current_user'] = \Drupal::currentUser()->getDisplayName();
     // Pass group to Game Card.
     if ($variables['view_mode'] == 'game_card') {
       $group_contents = GroupRelationship::loadByEntity($node);
