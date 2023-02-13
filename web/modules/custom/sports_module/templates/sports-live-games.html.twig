@@ -19,11 +19,11 @@
                 <p>{{ game.data.venue }}</p>
             </div>
             <div class="bg-slate-700 border-t p-2 text-center flex justify-evenly divide-x">
-                <a class="font-light uppercase" href="/group/{{ game.1.group_id }}">
-                    Watch in {{ game.1.group_name }} Group &raquo;
+                <a class="font-light p-2" href="{{ game.1.game_url }}">
+                    Watch in <strong class="font-bold">{{ game.1.group_name }}</strong> Group &raquo;
                 </a>
-                <a class="font-light uppercase" href="/group/{{ game.0.group_id }}">
-                    Watch in {{ game.0.group_name }} Group &raquo;
+                <a class="font-light p-2" href="{{ game.0.game_url }}">
+                    Watch in <strong class="font-bold">{{ game.0.group_name }}</strong> Group &raquo;
                 </a>
             </div>
         </div>

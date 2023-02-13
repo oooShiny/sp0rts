@@ -35,7 +35,8 @@ class SportsLiveGames extends ControllerBase {
             'team_2_record' => $game_node->field_team_2_record->value,
             'team_2_logo' => $game_node->field_team_2_logo->value,
             'venue' => $game_node->field_venue->value,
-            'date' => $formatted_date
+            'date' => $formatted_date,
+
           ];
         }
         $group_contents = GroupRelationship::loadByEntity($game_node);
@@ -46,7 +47,8 @@ class SportsLiveGames extends ControllerBase {
             $games[$espn_id][] = [
               'group_name' => $group->label(),
               'group_id' => $group->id(),
-              'group_logo' => \Drupal::service('file_url_generator')->generateAbsoluteString($uri)
+              'group_logo' => \Drupal::service('file_url_generator')->generateAbsoluteString($uri),
+              'game_url' => $game_node->toUrl()->toString()
             ];
           }
         }
