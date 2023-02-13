@@ -165,7 +165,7 @@
       </div>
       <div id="play-chat-[[play_id]]">
         <form id="play-chat-[[play_id]]-form">
-          <input type="text" disabled id="name" value="{{ current_user }}">
+          <input type="hidden" id="user" value="{{ current_user }}">
           <input type="hidden" id="play_id" value="[[play_id]]">
           <textarea required id="comment_text" rows="1"></textarea>
           <button onclick="getChat(this.form)" class="button">Comment</button>
@@ -188,7 +188,7 @@
   function getChat(form) {
     let formData = new FormData([form]);
     const newComment = {
-      "name": formData.get('name'),
+      "user": formData.get('user'),
       "comment": formData.get('comment_text'),
       "play_id": formData.get('play_id')
     };
