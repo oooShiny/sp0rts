@@ -1,0 +1,38 @@
+uuid: 3df0d316-e1c7-4378-a574-77f2573a7c0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.moderator-menu
+  module:
+    - system
+    - user
+  theme:
+    - gin
+id: moderatormenu
+theme: gin
+region: header
+weight: -3
+provider: null
+plugin: 'system_menu_block:moderator-menu'
+settings:
+  id: 'system_menu_block:moderator-menu'
+  label: 'Moderator Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /admin/mod/dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      moderator: moderator

@@ -1,0 +1,59 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Create new database table for storing basic Game comments.
+ */
+function sports_comments_update_9001(&$sandbox) {
+  $comments_table = [
+    'description' => 'Stores chat items from Game nodes.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique comment ID.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'nid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Node ID of Game post.",
+      ],
+      'username' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Username.',
+      ],
+      'comment' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Text of the comment.',
+      ],
+      'deleted' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Boolean to track deleted comments.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'username' => ['username'],
+      'nid' => ['nid'],
+    ],
+  ];
+
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('sp0rts_comments', $comments_table);
+}

@@ -11,3 +11,10 @@ sports_moderation.ban:
         type: entity:group
   requirements:
     _role: 'moderator'
+sports_moderation.dashboard:
+  path: '/admin/mod/dashboard'
+  defaults:
+    _controller: '\Drupal\sports_moderation\Controller\ModDashboardController::build'
+    _title: 'Moderator Dashboard'
+  requirements:
+    _role: 'moderator+administrator'

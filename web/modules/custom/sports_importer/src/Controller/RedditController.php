@@ -81,10 +81,12 @@ class RedditController extends ControllerBase {
               if (empty($post_title) || $post_title == '') {
                 continue;
               }
+              $created = $p->created_utc;
               $node = Node::create([
                 'type' => 'reddit_post',
                 'title' => $post_title,
                 'uid' => 1,
+                'created' => $created,
                 'body' => [
                   'summary' => '',
                   'value' => $post_text,

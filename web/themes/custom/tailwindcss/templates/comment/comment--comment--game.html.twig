@@ -100,6 +100,13 @@
   {# If this is the parent comment, it's a play update. Style specially. #}
   {% else %}
     {{ content.comment_body }}
-    {{ content.links }}
+    <div id="play-chat-[[play_id]]">
+      <form id="play-chat-[[play_id]]-form">
+        <input type="hidden" id="user" value="{{ current_user }}">
+        <input type="hidden" id="play_id" value="[[play_id]]">
+        <textarea required id="comment_text" rows="1"></textarea>
+        <button onclick="getChat(this.form)" class="button">Comment</button>
+      </form>
+    </div>
   {% endif %}
 </article>
