@@ -2,7 +2,10 @@
 
 namespace Drupal\sports_importer\Controller;
 
+use Dflydev\DotAccessData\Data;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Render\Element\Date;
 use Drupal\group\Entity\Group;
 use Drupal\node\Entity\Node;
 use GuzzleHttp\Client;
@@ -68,6 +71,7 @@ class YoutubeController extends ControllerBase {
               'type' => 'youtube_video',
               'title' => $video['snippet']['title'],
               'uid' => 1,
+              'created' => $vid_date->getTimestamp(),
               'body' => [
                 'summary' => '',
                 'value' => '<p>' . $video['snippet']['description'] . '</p>',
