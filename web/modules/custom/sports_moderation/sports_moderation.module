@@ -163,7 +163,7 @@ function _moderate_content($filter, $entity) {
       }
       $mod_state = $filter->get('field_set_content_to')->value;
       if (!is_null($mod_state)) {
-        $entity->set('moderation_state', $mod_state);;
+        $entity->set('moderation_state', $mod_state);
       }
     }
   }

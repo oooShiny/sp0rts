@@ -1,0 +1,5 @@
+services:
+  sports_moderation.bad_flag_subscriber:
+    class: Drupal\sports_moderation\EventSubscriber\BadFlagSubscriber
+    tags:
+      - { name: event_subscriber }
