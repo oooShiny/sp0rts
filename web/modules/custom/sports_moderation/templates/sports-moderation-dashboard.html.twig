@@ -1,0 +1,15 @@
+<p>
+    Welcome to your moderation dashboard. Below you'll find a list of content
+    in your group(s) that has been flagged by users as inappropriate. Use the
+    action bar to remove or restore the content.
+</p>
+
+{% for id, name in groups %}
+    <div style="border-top: 1px solid lightgray;">
+        <h2><a href="/group/{{ id }}">{{ name }}</a> Group Moderation</h2>
+        <h3>Flagged Content</h3>
+        {{ drupal_view('flagged_content', 'block_1', id) }}
+        <h3>Flagged Comments</h3>
+        {{ drupal_view('flagged_comments', 'block_1', id) }}
+    </div>
+{% endfor %}
