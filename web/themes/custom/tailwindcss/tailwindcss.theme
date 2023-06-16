@@ -132,6 +132,7 @@ function tailwindcss_preprocess_node(&$variables) {
   // Reddit post overrides.
   if ($node->bundle() == 'reddit_post') {
     $variables['reddit_id'] = $node->get('field_reddit_id')->value;
+    $variables['reddit_url'] = $node->field_reddit_url->uri;
   }
 
 

@@ -98,7 +98,7 @@ class RedditController extends ControllerBase {
                   'title' => $p->author
                 ],
                 'field_reddit_url' => [
-                  'uri' => 'https://reddit.com/' . $p->permalink,
+                  'uri' => 'https://reddit.com' . $p->permalink,
                   'title' => $p->permalink
                 ],
                 'field_post_link' => [
